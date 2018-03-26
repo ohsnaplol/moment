@@ -9,9 +9,11 @@ const userSchema = new Schema({
   socialNetworks: [{
     networkName: { type: String, required: true },
     userName: { type: String },
-    url: { type: String }
+    url: { type: String },
+    privacy: { type: String }
   }],
-  friends: { type: String },
+  friends: [{ type: Schema.Types.ObjectId }],
+  following: [{ type: Schema.Types.ObjectId }],
   lastSettingsUpdate: { type: Date },
   dateJoined: { type: Date, default: Date.now }
 })
