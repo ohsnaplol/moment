@@ -5,8 +5,8 @@ class Login extends Component {
     return (
       <div>
         <form>
-          <p>Username</p>
-          <input type="text"></input>
+          <p>Email</p>
+          <input type="email"></input>
           <p>Password</p>
           <input type="password"></input>
           <button>Create Account</button>
