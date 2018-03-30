@@ -18,7 +18,7 @@ module.exports = {
   },
   // Create a new user
   create: function(req, res) {
-    console.log('user controller create ' + req)
+    console.log('user controller create ' + req.body)
     db.User
       .create(req.body)
       .then(dbModel => res.json(dbModel))
