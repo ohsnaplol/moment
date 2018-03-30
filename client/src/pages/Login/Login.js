@@ -6,9 +6,9 @@ class Login extends Component {
     return (
       <div>
         <form>
-          <p>Email</p>
+          <label>Email</label>
           <input type="email"></input>
-          <p>Password</p>
+          <label>Password</label>
           <input type="password"></input>
           <button type="submit">Login</button>
         </form>
