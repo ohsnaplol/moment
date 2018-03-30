@@ -15,7 +15,7 @@ export default {
   },
   // Saves a user to the database
   createUser: function(userData) {
-    console.log('axios ' + userData)
+    console.log('axios ' + JSON.stringify(userData))
     return axios.post("/api/user", userData);
   }
 };
