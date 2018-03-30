@@ -1,15 +1,24 @@
 import React, { Component } from "react";
+import API from "../../utils/API";
 
 class Login extends Component {
+
+  handleFormSubmit = event => {
+    event.preventDefault()
+    console.log(event)
+  }
+
   render() {
     return (
       <div>
         <form>
-          <p>Username</p>
-          <input type="text"></input>
-          <p>Password</p>
+          <label>Email</label>
+          <input type="email"></input>
+          <label>Password</label>
           <input type="password"></input>
-          <button>Create Account</button>
+          <label>Verify Password</label>
+          <input type="password"></input>
+          <button onClick={this.handleFormSubmit}>Create Account</button>
         </form>
       </div>
     )
