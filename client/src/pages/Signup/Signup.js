@@ -1,6 +1,13 @@
 import React, { Component } from "react";
+import API from "../../utils/API";
 
 class Login extends Component {
+
+  handleFormSubmit = event => {
+    event.preventDefault()
+    console.log(event)
+  }
+
   render() {
     return (
       <div>
@@ -11,7 +18,7 @@ class Login extends Component {
           <input type="password"></input>
           <p>Verify Password</p>
           <input type="password"></input>
-          <button>Create Account</button>
+          <button onClick={this.handleFormSubmit}>Create Account</button>
         </form>
       </div>
     )
