@@ -25,7 +25,7 @@ class Signup extends Component {
     let password = this.state.password1
     let email = this.state.email
     // verify both passwords are the same
-    if (this.state.password1 === this.state.password2 && this.state.password1 > 7) {
+    if (this.state.password1 === this.state.password2 && this.state.password1.length > 7) {
       // check if email doesnt already exist in db
       console.log('lets get users')
       API.getUsers({ email: email }, function(err, docs) {
