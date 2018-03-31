@@ -6,6 +6,11 @@ const styles = ({
     backgroundColor: "#056ecf",
     height: 128,
     width: 128
+  }, 
+    button2: {
+    backgroundColor: "#056ecf",
+    height: 20,
+    width: 10
   }
 });
 
@@ -26,7 +31,7 @@ class Login extends Component {
           <input type="submit" value="Login"/>
         </form>
         <Link to="/signup">
-          <button className='btn btn-danger'>Create Account</button>
+          <button style={styles.button}>Create Account</button>
         </Link>
       </div>
     )
