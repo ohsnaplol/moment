@@ -1,10 +1,13 @@
 const db = require('../models')
+const passport = require('../passport')
 
 module.exports = {
   // Return information on every user
   findAll: function(req, res) {
+    console.log('findAll req : ' + req)
+    console.log('findAll req.query : ' + req.query)
     db.User
-      .find(req.query)
+      .find()
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -15,6 +18,24 @@ module.exports = {
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))
+  },
+  login: function(req, res, next) {
+    passport.authenticate('local'),
+    (req, res) => {
+      console.log('logged in ', req.body.email);
+      var userInfo = {
+        username: req.body.email
+      }
+      res.send(userInfo)
+    }
+  },
+  logout: function(req, res) {
+    if (req.email) {
+      req.logout()
+      res.send({msg: 'logging out'})
+    } else {
+      res.send({msg: 'no user to log out'})
+    }
   },
   // Create a new user
   create: function(req, res) {
