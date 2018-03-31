@@ -1,5 +1,14 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react'; 
+import { Link } from 'react-router-dom'; 
+
+const styles = ({
+  button: {
+    backgroundColor: "#056ecf",
+    height: 128,
+    width: 128
+  }
+});
+
 
 class Login extends Component {
   render() {
@@ -17,7 +26,7 @@ class Login extends Component {
           <input type="submit" value="Login"/>
         </form>
         <Link to="/signup">
-          <button>Create Account</button>
+          <button className='btn btn-danger'>Create Account</button>
         </Link>
       </div>
     )
