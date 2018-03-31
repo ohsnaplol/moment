@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require('bcryptjs')
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
@@ -17,6 +18,15 @@ const userSchema = new Schema({
   lastSettingsUpdate: { type: Date },
   dateJoined: { type: Date, default: Date.now }
 })
+
+userSchema.methods = {
+  checkPassword: function (inputPassword) {
+    return bcrypt.compareSync(inputPassword, this.password)
+},
+  hashPassword: plainTextPassword => {
+    return bcrypt.hashSync(plainTextPassword, 10)
+  }
+}
 
 const User = mongoose.model("User", userSchema)
 
