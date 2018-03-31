@@ -2,12 +2,12 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  realName: { type: String, required: true },
+  realName: { type: String },
   nicknames: [{ type: String }],
   email: { type: String, required: true },
   password: { type: String, required: true},
   socialNetworks: [{
-    networkName: { type: String, required: true },
+    networkName: { type: String },
     userName: { type: String },
     url: { type: String },
     privacy: { type: String }
