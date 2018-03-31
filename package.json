@@ -14,7 +14,7 @@
   "author": "ohsnaplol <emyb@bellsouth.net>",
   "license": "MIT",
   "devDependencies": {
-    "concurrently": "^3.5.0",
+    "concurrently": "^3.5.1",
     "nodemon": "^1.11.0"
   },
   "dependencies": {
@@ -22,6 +22,8 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.3",
     "mongoose": "^5.0.12",
+    "morgan": "^1.9.0",
+    "react": "^16.3.0",
     "react-router-dom": "^4.2.2"
   }
 }

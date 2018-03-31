@@ -1,4 +1,5 @@
 const express = require("express")
+const morgan = require("morgan")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 const routes = require("./routes")
@@ -10,6 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 // Serve up static assets
 app.use(express.static("client/build"))
+app.use(morgan('combined'))
 // Add routes, both API and view
 app.use(routes)
 
