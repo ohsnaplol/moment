@@ -1,5 +1,6 @@
 const express = require("express")
 const session = require('express-session')
+const passport = require('./passport')
 const morgan = require("morgan")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
@@ -17,6 +18,9 @@ app.use(
   saveUninitialized: false //required
   })
 )
+// Passport
+app.use(passport.initialize())
+app.use(passport.session()) // calls serializeUser and deserializeUser
 // Serve up static assets
 app.use(express.static("client/build"))
 app.use(morgan('dev'))
