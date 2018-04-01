@@ -8,31 +8,39 @@ class NetworkTag extends Component {
     switch (network) {
       case 'facebook':
         return (
-          <div style={{backgroundColor: 'rgb(59, 89, 152)'}}>
-            <FontAwesomeIcon color='white' icon={["fab", "facebook-f"]} size='2x'/>
-            <span style={{color: 'white'}}>Facebook</span>
-          </div>
+          <a href={url} target="blank">
+            <div style={{backgroundColor: 'rgb(59, 89, 152)'}}>
+              <FontAwesomeIcon color='white' icon={["fab", "facebook-f"]} size='2x'/>
+              <span style={{color: 'white'}}>Facebook</span>
+            </div>
+          </a>
         );
       case 'snapchat': 
         return (
-          <div style={{backgroundColor: 'rgb(255, 251, 83)'}}>
-            <FontAwesomeIcon color="white" icon={["fab", "snapchat-ghost"]} size='2x'/>
-            <span>Snapchat: {username}</span>
-          </div>
+          <a href={url} target="blank">
+            <div style={{backgroundColor: 'rgb(255, 251, 83)'}}>
+              <FontAwesomeIcon color="white" icon={["fab", "snapchat-ghost"]} size='2x'/>
+              <span>Snapchat: {username}</span>
+            </div>
+          </a>
         );
       case 'twitch': 
         return (
-          <div style={{backgroundColor: 'rgb(72, 56, 120)'}}>
-            <FontAwesomeIcon color="white" icon={["fab", "twitch"]} size='2x'/>
-            <span>Twitch</span>
-          </div>
+          <a href={url} target="blank">
+            <div style={{backgroundColor: 'rgb(72, 56, 120)'}}>
+              <FontAwesomeIcon color="white" icon={["fab", "twitch"]} size='2x'/>
+              <span>Twitch</span>
+            </div>
+          </a>
         );
       case 'twitter': 
         return (
-          <div style={{backgroundColor: 'rgb(29, 161, 242)'}}>
-            <FontAwesomeIcon color='white' icon={["fab", "twitter"]} size='2x'/>
-            <span style={{color: 'white'}}>Twitter</span>
-          </div>
+          <a href={url} target="blank">
+            <div style={{backgroundColor: 'rgb(29, 161, 242)'}}>
+              <FontAwesomeIcon color='white' icon={["fab", "twitter"]} size='2x'/>
+              <span style={{color: 'white'}}>Twitter</span>
+            </div>
+          </a>
         );
       default: 
       return (
