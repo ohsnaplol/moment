@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import Home from "./pages/Home"
-import API from "./utils/API";
+// import API from "./utils/API";
 
 
 class App extends Component {
@@ -28,24 +28,24 @@ class App extends Component {
   }
 
   getUser() {
-    API.getUsers()
-      .then(response => {
-        console.log(JSON.stringify(response))
-        if (response.data.user) {
-          console.log('Get User: There is a user saved in the server session: ')
+    // API.getUsers()
+    //   .then(response => {
+    //     console.log(JSON.stringify(response))
+    //     if (response.data.user) {
+    //       console.log('Get User: There is a user saved in the server session: ')
   
-          this.setState({
-            loggedIn: true,
-            username: response.data.user.username
-          })
-        } else {
-          console.log('Get user: no user');
-          this.setState({
-            loggedIn: false,
-            username: null
-          })
-        }
-      })
+    //       this.setState({
+    //         loggedIn: true,
+    //         username: response.data.user.username
+    //       })
+    //     } else {
+    //       console.log('Get user: no user');
+    //       this.setState({
+    //         loggedIn: false,
+    //         username: null
+    //       })
+    //     }
+    //   })
     // axios.get('/user/').then(response => {
       // console.log('Get user response: ')
       // console.log(response.data)
