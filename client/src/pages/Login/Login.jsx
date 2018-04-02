@@ -63,11 +63,6 @@ class Login extends Component {
         <Link to="/signup">
           <button>Create Account</button>
         </Link>
-        <p>Sample user profile:</p>
-        <NetworkTag network='facebook'/>
-        <NetworkTag network='snapchat' username='blimey123'/>
-        <NetworkTag network='twitch'/>
-        <NetworkTag network='twitter'/>
       </div>
     )
   }
