@@ -1,10 +1,13 @@
 const db = require('../models')
+const passport = require('../passport')
 
 module.exports = {
   // Return information on every user
   findAll: function(req, res) {
+    console.log('findAll req : ' + req)
+    console.log('findAll req.query : ' + req.query)
     db.User
-      .find(req.query)
+      .find()
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -16,13 +19,53 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))
   },
+  login: function(req, res, next) {
+    passport.authenticate('local'),
+    (req, res) => {
+      console.log('logged in ', req.body.email);
+      var userInfo = {
+        username: req.body.email
+      }
+      res.send(userInfo)
+    }
+  },
+  logout: function(req, res) {
+    if (req.email) {
+      req.logout()
+      res.send({msg: 'logging out'})
+    } else {
+      res.send({msg: 'no user to log out'})
+    }
+  },
   // Create a new user
   create: function(req, res) {
-    console.log('user controller create ' + JSON.stringify(req.body))
-    db.User
-      .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+    const { email, password } = req.body
+    db.User.findOne({ email: email }, (err, user) => {
+      console.log('findOne result = ' + JSON.stringify(user))
+      if (err) {
+        res.json(err) //db error
+      } else if (user) {
+        res.json({
+          'error': `A user with email ${email} already exists`
+        })
+      } else {
+        console.log('saving new user...')
+        var user = new db.User({email: email, password: password})
+        user.save(function(err) {
+          if (err) {
+            res.json(err)
+          } else {
+            res.json({'success': 'weee'})
+          }
+        })
+        // db.User
+        // .create({email: req.body.email, password: req.body.password})
+        // .then(dbModel => res.json(dbModel))
+        // .catch(err => {
+        //   res.status(422).json(err)
+        // });
+      }
+    })
   },
   // Change user information with given id
   update: function(req, res) {
