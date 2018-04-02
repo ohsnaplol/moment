@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom'
 import API from "../../utils/API";
 
 class Signup extends Component {
@@ -27,25 +28,19 @@ class Signup extends Component {
     // verify both passwords are the same
     if (this.state.password1 === this.state.password2 && this.state.password1.length > 7) {
       // check if email doesnt already exist in db
-      console.log('lets get users')
-      API.getUsers({ email: email }).then(res => {
-        if (res.data.length) {
-          console.log("Email already exists")
+      API.createUser({ 
+        email: email, 
+        password: password 
+      }).then(res => {
+        console.log('api create user res is ' + JSON.stringify(res))
+        if(res.data.error) {
+          console.log('entry exists')
         } else {
-          API.createUser({ 
-            email: email, 
-            password: password 
+          this.setState({ //redirect to login page (try to)
+            redirectTo: '/'
           })
-            .then(res => {
-              console.log('create user then'+res)
-              this.setState({ //redirect to login page
-                redirectTo: '/'
-              })
-            })
-            .catch(error => console.log(error))
         }
-      })
-        .catch(error => console.log(error))
+      }).catch(error => console.log(error))
     } else {
       if(this.state.password1.length < 8 )
         console.log("Password must be at least 8 characterse")
@@ -57,6 +52,9 @@ class Signup extends Component {
   render() {
     return (
       <div>
+        <Link to="/">
+          <button>Back to Login</button>
+        </Link>
         <form onSubmit={this.handleFormSubmit}>
           <label>
             Email:
