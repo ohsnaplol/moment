@@ -12,9 +12,7 @@ const PORT = process.env.PORT || 3001
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-// Passport
-app.use(passport.initialize())
-app.use(passport.session()) // calls serializeUser and deserializeUser
+
 // Serve up static assets
 app.use(express.static("client/build"))
 app.use(morgan('dev'))
@@ -34,11 +32,14 @@ mongoose.connect(dbConnection)
 app.use(
   session({
   secret: 'pxoqgcgoewrs', // random string to make the hash that is generated secure
-  store: new MongoStore({ mongooseConnection: dbConnection }),
+  // store: new MongoStore({ mongooseConnection: dbConnection }),
   resave: false, //required
   saveUninitialized: false //required
   })
 )
+// Passport
+app.use(passport.initialize())
+app.use(passport.session()) // calls serializeUser and deserializeUser
 
 // Start the API server
 app.listen(PORT, function() {
