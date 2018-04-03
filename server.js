@@ -34,7 +34,7 @@ mongoose.connect(dbConnection)
 app.use(
   session({
   secret: 'pxoqgcgoewrs', // random string to make the hash that is generated secure
-  store: new MongoStore({ mongooseConnection: dbConnection }),
+  // store: new MongoStore({ mongooseConnection: dbConnection }),
   resave: false, //required
   saveUninitialized: false //required
   })

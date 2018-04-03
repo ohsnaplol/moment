@@ -30,12 +30,8 @@
     "express-session": "^1.15.6",
     "mongoose": "^5.0.12",
     "morgan": "^1.9.0",
-<<<<<<< HEAD
-    "react": "^16.3.0",
-=======
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
->>>>>>> b15607cb7504ef99fd0ebab2585caafd008f3405
     "react-router-dom": "^4.2.2"
   }
 }
