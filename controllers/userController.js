@@ -14,6 +14,7 @@ module.exports = {
   },
   // Return user information with given user id
   findById: function(req, res) {
+    console.log(req.params)
     db.User
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
