@@ -14,7 +14,7 @@
   "author": "ohsnaplol <emyb@bellsouth.net>",
   "license": "MIT",
   "devDependencies": {
-    "concurrently": "^3.5.0",
+    "concurrently": "^3.5.1",
     "nodemon": "^1.11.0"
   },
   "dependencies": {
