@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import Home from "./pages/Home"
+import Profile from "./pages/Profile"
+
 // import API from "./utils/API";
 
 
@@ -73,6 +75,7 @@ class App extends Component {
             <Route exact path="/" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/home" component={Home} />
+            <Route exact path="/profile" component={Profile} />
           </Switch>
         </div>
       </Router>
