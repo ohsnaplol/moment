@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Route, Link, Redirect } from 'react-router-dom'
-import axios from 'axios'
+import { Link } from 'react-router-dom'
+import API from "../../utils/API";
 
 class Navbar extends Component {
   constructor() {
@@ -11,7 +11,7 @@ class Navbar extends Component {
   logout(event) {
     event.preventDefault()
     console.log('logging out')
-    axios.post('/user/logout').then(response => {
+    API.logout().then(response => {
       console.log(response.data)
       if (response.status === 200) {
         this.props.updateUser({
@@ -26,25 +26,30 @@ class Navbar extends Component {
 
   render() {
     const loggedIn = this.props.loggedIn;
-    console.log('navbar render, props: ')
-    console.log(this.props);
 
     return (
       <div>
-
         <header className="navbar App-header" id="nav-container">
           <div className="col-4" >
             {loggedIn ? (
               <section className="navbar-section">
+                <Link to="/home" className="btn btn-link text-secondary">
+                  <span className="text-secondary">Home</span>
+                </Link>
+                <input />
+                <Link to={"/profile/"+this.props.id} className="btn btn-link text-secondary">
+                  <span className="text-secondary">My Profile</span>
+                </Link>
+                <Link to="/settings" className="btn btn-link text-secondary">
+                  <span className="text-secondary">Settings</span>
+                </Link>
                 <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
-                  <span className="text-secondary">logout</span></Link>
-
+                  <span className="text-secondary">Logout</span>
+                </Link>
               </section>
             ) : (
                 <section className="navbar-section">
-                  <Link to="/home" className="btn btn-link text-secondary">
-                    <span className="text-secondary">home</span>
-                  </Link>
+                  <input />
                   <Link to="/" className="btn btn-link text-secondary">
                     <span className="text-secondary">login</span>
                   </Link>
@@ -53,10 +58,6 @@ class Navbar extends Component {
                   </Link>
                 </section>
               )}
-          </div>
-          <div className="col-4 col-mr-auto">
-            <div id="top-filler"></div>
-            <h1 className="App-title">MERN Passport</h1>
           </div>
         </header>
       </div>

@@ -14,28 +14,11 @@ module.exports = {
   },
   // Return user information with given user id
   findById: function(req, res) {
+    console.log(req.params)
     db.User
       .findById(req.params.id)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))
-  },
-  login: function(req, res, next) {
-    passport.authenticate('local'),
-    (req, res) => {
-      console.log('logged in ', req.body.email);
-      var userInfo = {
-        username: req.body.email
-      }
-      res.send(userInfo)
-    }
-  },
-  logout: function(req, res) {
-    if (req.email) {
-      req.logout()
-      res.send({msg: 'logging out'})
-    } else {
-      res.send({msg: 'no user to log out'})
-    }
   },
   // Create a new user
   create: function(req, res) {
@@ -58,12 +41,6 @@ module.exports = {
             res.json({'success': 'weee'})
           }
         })
-        // db.User
-        // .create({email: req.body.email, password: req.body.password})
-        // .then(dbModel => res.json(dbModel))
-        // .catch(err => {
-        //   res.status(422).json(err)
-        // });
       }
     })
   },
