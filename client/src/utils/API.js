@@ -5,15 +5,18 @@ export default {
   getUsers: function() {
     return axios.get("/api/user");
   },
+  validate: function() {
+    return axios.get("/api/user/validate");
+  },
   // Gets the user with the given id
   getUser: function(id) {
     return axios.get("/api/user/" + id);
   },
-  login: function() {
-    return axios.get("/api/user/login");
+  login: function(data) {
+    return axios.post("/api/user/login", data);
   },
   logout: function() {
-    return axios.get("/api/user/logout");
+    return axios.post("/api/user/logout");
   },
   // Deletes the user with the given id
   deleteUser: function(id) {
