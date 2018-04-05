@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom'
 import API from "../../utils/API";
 
+<<<<<<< HEAD
 document.body.style.backgroundcolor = '#141320'; 
 
  const formStyle = { 
@@ -24,6 +25,8 @@ const buttonStyle = {
       margin-top: '13px', 
  }
 
+=======
+>>>>>>> c548952e37f09148d98a211fbd3e6c4421bf672e
 class Signup extends Component {
   constructor() {
     super()
@@ -74,8 +77,15 @@ class Signup extends Component {
   render() {
     return (
       <div>
+<<<<<<< HEAD
 
         <form style={formStyle} onSubmit={this.handleFormSubmit}>
+=======
+        <Link to="/">
+          <button>Back to Login</button>
+        </Link>
+        <form onSubmit={this.handleFormSubmit}>
+>>>>>>> c548952e37f09148d98a211fbd3e6c4421bf672e
           <label>
             Email:
             <input 
@@ -103,14 +113,22 @@ class Signup extends Component {
               onChange={this.handleInputChange}
             ></input>
           </label>
+<<<<<<< HEAD
           <input style={buttonStyle} type="submit" value="Create Account" />
           <Link to="/">
             <button style={buttonStyle} >Back to Login</button>
           </Link>
+=======
+          <input type="submit" value="Create Account" />
+>>>>>>> c548952e37f09148d98a211fbd3e6c4421bf672e
         </form>
       </div>
     )
   }
 }
 
+<<<<<<< HEAD
 export default Signup;
+=======
+export default Signup;
+>>>>>>> c548952e37f09148d98a211fbd3e6c4421bf672e
