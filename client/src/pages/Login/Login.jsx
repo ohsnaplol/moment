@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link, Redirect} from 'react-router-dom'
 import API from "../../utils/API";
+import "./style.css";
 
 class Login extends Component {
   constructor() {
@@ -50,7 +51,7 @@ class Login extends Component {
     } else {
     return (
       <div>
-        <form onSubmit={this.handleFormSubmit}>
+        <form className="login-form" onSubmit={this.handleFormSubmit}>
           <label>
             Email:
             <input value={this.state.email} onChange={this.handleInputChange} name="email" type="email"/>
@@ -59,7 +60,7 @@ class Login extends Component {
             Password:
             <input value={this.state.password} onChange={this.handleInputChange} name="password" type="password" />
           </label>
-          <input type="submit" value="Login"/>
+          <input className="login-button" type="submit" value="Login"/>
         </form>
         <Link to="/signup">
           <button>Create Account</button>
