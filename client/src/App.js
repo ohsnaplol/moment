@@ -8,6 +8,13 @@ import Profile from "./pages/Profile"
 import API from "./utils/API";
 import NavBar from "./components/NavBar"
 
+const styles =({ 
+  background: {
+    backgroundColor: "#141320", 
+  }
+
+})
+
 // Context experimentation
 // const UserContext = React.createContext()
 // // Then create a provider Component
@@ -121,7 +128,9 @@ class App extends Component {
               </div>
             )} />
             <Route exact path="/login" render={() => (
-              <Login updateUser={this.updateUser} loggedIn={this.state.loggedIn}/>
+              <div style={styles.background}>
+                <Login updateUser={this.updateUser} loggedIn={this.state.loggedIn}/>
+              </div>
             )}/>
             <Route exact path="/profile/:id" render={() => (
               <div>
