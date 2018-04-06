@@ -1,0 +1,21 @@
+
+  .login-form  { 
+    max-width: 187px; 
+    position: absolute; 
+    left: 600px; 
+    top: 250px; 
+    background-color: lavenderblush; 
+    padding-bottom: 50px; 
+    padding-top: 50px;
+    padding-left: 90px;
+    padding-right: 90px;
+    text-align: center;
+    border-radius: 35px;
+    font-family: "Helvetica";
+  }
+
+  .login-button { 
+    margin-top: 20px;
+    margin-right: 8px;
+  }
+
