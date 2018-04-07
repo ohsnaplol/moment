@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, Redirect} from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import API from "../../utils/API";
 import "./style.css";
 // This will be uncommented out, with the image tag, one we have an image with transparency around it. 
@@ -21,7 +21,7 @@ class Login extends Component {
     let password = this.state.password
     let email = this.state.email
     API.login({
-      username: email, 
+      username: email,
       password: password
     }).then(response => {
       if (response.status === 200) {
@@ -34,7 +34,7 @@ class Login extends Component {
         this.setState({
           redirectTo: '/home'
         })
-    }
+      }
     }).catch(err => {
       console.log('Error in login handleFormSubmit ' + err)
     })
