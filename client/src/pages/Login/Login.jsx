@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, Redirect} from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import API from "../../utils/API";
 import "./style.css";
 
@@ -19,7 +19,7 @@ class Login extends Component {
     let password = this.state.password
     let email = this.state.email
     API.login({
-      username: email, 
+      username: email,
       password: password
     }).then(response => {
       if (response.status === 200) {
@@ -32,7 +32,7 @@ class Login extends Component {
         this.setState({
           redirectTo: '/home'
         })
-    }
+      }
     }).catch(err => {
       console.log('Error in login handleFormSubmit ' + err)
     })
@@ -49,25 +49,25 @@ class Login extends Component {
     if (this.state.redirectTo) {
       return <Redirect to={{ pathname: this.state.redirectTo }} />
     } else {
-    return (
-      <div>
-        <form className="login-form" onSubmit={this.handleFormSubmit}>
-          <label>
-            Email:
-            <input value={this.state.email} onChange={this.handleInputChange} name="email" type="email"/>
-          </label>
-          <label>
-            Password:
+      return (
+        <div>
+          <form className="login-form" onSubmit={this.handleFormSubmit}>
+            <label>
+              Email:
+            <input value={this.state.email} onChange={this.handleInputChange} name="email" type="email" />
+            </label>
+            <label>
+              Password:
             <input value={this.state.password} onChange={this.handleInputChange} name="password" type="password" />
-          </label>
-          <input className="login-button" type="submit" value="Login"/>
-        </form>
-        <Link to="/signup">
-          <button>Create Account</button>
-        </Link>
-      </div>
-    )
-  }
+            </label>
+            <input className="login-button" type="submit" value="Login" />
+          </form>
+          <Link to="/signup">
+            <button>Create Account</button>
+          </Link>
+        </div>
+      )
+    }
   }
 }
 
