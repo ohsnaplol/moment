@@ -5,6 +5,7 @@ import "./style.css";
 // This will be uncommented out, with the image tag, one we have an image with transparency around it. 
 // import FLOWPINK from './flowtrans.png';
 
+// Marcello, please dont kill, Sherwino made me do it.  He wanted to fix something. lol. 
 class Login extends Component {
   constructor() {
     super()
