@@ -55,7 +55,7 @@ class Settings extends Component {
             <p>{JSON.stringify(this.state)}</p>
           </div>
         ) : (
-          <h1>Loading</h1>
+          <p>Loading</p>
         )}
         <form onSubmit={this.saveState}>
           <label>
