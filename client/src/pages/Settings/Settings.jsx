@@ -53,26 +53,28 @@ class Settings extends Component {
         {this.state._id ? (
           <div>
             <p>{JSON.stringify(this.state)}</p>
+            <form onSubmit={this.saveState}>
+              <label>
+                Change name:
+                <input type='text' name="realName" value={this.state.realName} onChange={this.handleInputChange}/>
+              </label>
+              <br />
+              <label>
+                Add Network
+                <select>
+                  <option default value="Facebook">Facebook</option>
+                  <option value="Twitter">Twitter</option>
+                  <option value="Snapchat">Snapchat</option>
+                  <option value="YouTube">YouTube</option>
+                </select>
+              </label>
+              <br />
+              <input type="submit" value="Save" />
+            </form>
           </div>
         ) : (
           <p>Loading</p>
         )}
-        <form onSubmit={this.saveState}>
-          <label>
-            Change name:
-            {/* <input value={this.state.realName}/> */}
-          </label>
-          <label>
-            Add Network
-            {/* Only fill list based on what network they have not added */}
-            <select>
-              <option default value="Facebook">Facebook</option>
-              <option value="Twitter">Twitter</option>
-              <option value="Snapchat">Snapchat</option>
-              <option value="YouTube">YouTube</option>
-            </select>
-          </label>
-        </form>
       </div>
     )
   }
