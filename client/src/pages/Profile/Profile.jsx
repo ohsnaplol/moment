@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import API from "../../utils/API"
+import { withRouter } from 'react-router';
 import NetworkTag from '../../components/NetworkTag'
 import "./style.css";
 
 
 class Profile extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       realName: '',
       nicknames: [],
@@ -15,10 +16,7 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    console.log('componentWillMount()')
-    const testid = '5ac5aa2cfa8d2e1d862e57c2'
-    console.log('profile props: ' + JSON.stringify(this.props))
-    API.getUser(testid) // normally use this.props.id
+    API.getUser(this.props.id) // normally use this.props.id
       .then(response => {
         this.setState(response.data)
         console.log('user data: ' + JSON.stringify(this.state))
@@ -40,4 +38,4 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
+export default withRouter(Profile);
