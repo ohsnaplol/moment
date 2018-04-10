@@ -58,7 +58,7 @@ class Login extends Component {
           <h1 className="solid-moment">
             Moment
           </h1> 
-          <h2 className="solid-faded">
+          <h2 className="moment-faded">
             Moment
           </h2> 
         </header> 

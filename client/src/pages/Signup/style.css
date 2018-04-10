@@ -1,8 +1,44 @@
-.signup-form{ 
-    background-color: lavenderblush;
-    padding: 100px;
-    max-width: 370px;
-    border-radius: 25px;
-    text-align: center;
+    .signup-form{ 
+        background-color: lavenderblush;
+        padding: 84px;
+        max-width: 370px;
+        border-radius: 25px;
+        text-align: center;
 
-}
+    }
+    .email-entry-text { 
+        margin-bottom: 13px;
+
+    }
+    .email-entry{ 
+        font-family: helvetica;
+
+    }
+    .password-entry-text { 
+        margin-bottom: 13px;
+    }
+    .password-entry{ 
+        font-family: helvetica;
+
+    }
+    .password-verify-text{ 
+        margin-bottom: 13px;
+
+    }
+    .password-verify{ 
+        font-family: helvetica;
+
+    }
+    .create-account{ 
+        background-color: #3e3973;
+        color: lavenderblush;
+        border-radius: 16px;
+
+    }
+    .back-login{ 
+
+        background-color: #3e3973;
+        color: lavenderblush;
+        border-radius: 16px;
+        margin-left: 11px;
+    }

@@ -33,9 +33,9 @@ class Profile extends Component {
       <div>
         <h1 className="h1-profile">{this.state.realName}</h1>
       </div>
-      <div> 
+      // <div> 
         
-      </div> 
+      // </div> 
     )
   }
 }

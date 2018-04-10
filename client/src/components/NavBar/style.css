@@ -1,11 +1,10 @@
-.navbar-section{ 
+ .navbar-section{ 
     background-color: lavenderblush;
     padding: 39px;
     border-radius: 30px;
     position: absolute;
-    /* margin-top: -539px;
-    margin-left: -735px; */
-
+    margin-top: -372px;
+    margin-left: -232px;
 }
 
 .btn btn-link text-secondary{ 

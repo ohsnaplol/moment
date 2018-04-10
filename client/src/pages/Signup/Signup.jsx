@@ -58,7 +58,7 @@ class Signup extends Component {
           <h1 className="solid-moment">
             Moment
           </h1> 
-          <h2 className="solid-faded">
+          <h2 className="moment-faded">
             Moment
           </h2> 
         </header> 
@@ -67,6 +67,7 @@ class Signup extends Component {
           <label>
             Email:
             <input 
+              className="email-entry-text"
               type="email" 
               value={this.state.email} 
               name="email"
@@ -78,6 +79,7 @@ class Signup extends Component {
           <label>
             Password:
             <input 
+              className="password-entry-text"
               type="password" 
               value={this.state.password1} 
               name="password1"
@@ -89,6 +91,7 @@ class Signup extends Component {
           <label>
             Verify Password:
             <input 
+              className="password-verify-text"
               type="password" 
               value={this.state.password2} 
               name="password2"
@@ -96,9 +99,9 @@ class Signup extends Component {
             ></input>
           </label>
           </div>
-          <input type="submit" value="Create Account" />
+          <input className="create-account" type="submit" value="Create Account" />
           <Link to="/">
-          <button>Back to Login</button>
+          <button className="back-login">Back to Login</button>
         </Link>
         </form>
       </div>
