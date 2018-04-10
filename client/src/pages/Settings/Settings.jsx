@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router';
+import { withRouter } from 'react-router'
 import API from '../../utils/API'
 
 class Settings extends Component {
@@ -13,12 +13,91 @@ class Settings extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault()
+    API.update(this.state)
+      .then(response => {
+        console.log('upload success')
+      })
+      .catch(err => {
+        console.log('Error in handleFormSubmit in Settings.jsx: ' + err)
+      })
   }
 
   handleInputChange = event => {
     const { name, value } = event.target
     this.setState({
       [name]: value
+    })
+  }
+
+  // NICKNAMES
+  handleNickNameChange = (idx) => (event) => {
+    const newNicknames = this.state.nicknames.map((nickname, sidx) => {
+      if (idx !== sidx) return nickname
+      return { ...nickname, name: event.target.value }
+    })
+
+    this.setState({ nicknames: newNicknames })
+  }
+
+  handleAddnickname = () => {
+    this.setState({
+      nicknames: this.state.nicknames.concat([{ name: '' }])
+    })
+  }
+
+  handleRemoveNickname = (idx) => () => {
+    if (this.state.nicknames.length === 1) {
+      this.setState({nicknames: []}) // not working
+    } else {
+      this.setState({
+        nicknames: this.state.nicknames.filter((s, sidx) => idx !== sidx)
+      })
+    }
+  }
+
+  // NETWORKS
+  handleAddNetwork = () => {
+    this.setState({
+      socialNetworks: this.state.socialNetworks.concat([{ networkName: 'Facebook', url: '', privacy: 'public', userName: '' }])
+    })
+  }
+
+  handleNetworkChange = (idx) => (event, type) => {
+    const newNetworks = this.state.socialNetworks.map((network, sidx) => {
+      if (idx !== sidx) return network
+      return { ...network, networkName: event.target.value }
+      // return { ...network, [type]: event.target.value }
+    })
+    this.setState({ socialNetworks: newNetworks })
+  }
+
+  handleNetworkUrlChange = (idx) => (event) => {
+    const newNetworks = this.state.socialNetworks.map((network, sidx) => {
+      if (idx !== sidx) return network
+      return { ...network, url: event.target.value }
+    })
+    this.setState({ socialNetworks: newNetworks })
+  }
+
+  handleNetworkUsernameChange = (idx) => (event) => {
+    const newNetworks = this.state.socialNetworks.map((network, sidx) => {
+      if (idx !== sidx) return network
+      return { ...network, userName: event.target.value }
+    })
+    this.setState({ socialNetworks: newNetworks })
+  }
+
+  handleNetworkPrivacyChange = (idx) => (event) => {
+    const newNetworks = this.state.socialNetworks.map((network, sidx) => {
+      if (idx !== sidx) return network
+      return { ...network, privacy: event.target.value }
+    })
+    this.setState({ socialNetworks: newNetworks })
+  }
+
+  handleRemoveNetwork = (idx) => () => {
+    this.setState({
+      socialNetworks: this.state.socialNetworks.filter((s, sidx) => idx !== sidx)
     })
   }
 
@@ -32,10 +111,6 @@ class Settings extends Component {
       })
   }
 
-  saveState() {
-    const id = this.props.id
-    API.update(id)
-  }
 
   componentDidMount() {
     if(this.props.uid) {
@@ -53,23 +128,55 @@ class Settings extends Component {
         {this.state._id ? (
           <div>
             <p>{JSON.stringify(this.state)}</p>
-            <form onSubmit={this.saveState}>
+            <form onSubmit={this.handleFormSubmit}>
               <label>
                 Change name:
                 <input type='text' name="realName" value={this.state.realName} onChange={this.handleInputChange}/>
               </label>
               <br />
               <label>
-                Add Network
-                <select>
-                  <option default value="Facebook">Facebook</option>
-                  <option value="Twitter">Twitter</option>
-                  <option value="Snapchat">Snapchat</option>
-                  <option value="YouTube">YouTube</option>
-                </select>
+                Edit nicknames:<br />
+                {this.state.nicknames.map((nickname, idx) => (
+                  <div key={idx}>
+                    <input
+                      type="text"
+                      placeholder={`Nickname #${idx + 1}`}
+                      value={nickname.name}
+                      onChange={this.handleNickNameChange(idx)}
+                    />
+                    <button type="button" onClick={this.handleRemoveNickname(idx)} className="small">-</button>
+                  </div>
+                ))}
+                <button type="button" onClick={this.handleAddnickname} className="small">Add Nickname</button>
               </label>
               <br />
-              <input type="submit" value="Save" />
+              <label>
+                Add Network<br />
+                {this.state.socialNetworks.map((network, idx) => (
+                  <div key={idx}>
+                    <select value={network.networkName} onChange={this.handleNetworkChange(idx)}>
+                      <option default value="facebook">Facebook</option>
+                      <option value="twitter">Twitter</option>
+                      <option value="snapchat">Snapchat</option>
+                      <option value="youtube">YouTube</option>
+                    </select>
+                    <select value={network.privacy} onChange={this.handleNetworkPrivacyChange(idx)}>
+                      <option value='public'>Public</option>
+                      <option default value='private'>Private</option>
+                      <option value='secret'>Secret</option>
+                    </select>
+                    {network.networkName === 'snapchat' ? (
+                      <input type='text' placeholder='Username' value={network.userName} onChange={this.handleNetworkUsernameChange(idx)}/>
+                    ) : (
+                      <input type='text' placeholder='URL' value={network.url} onChange={this.handleNetworkUrlChange(idx)}/>
+                    )}
+                    <button type="button" onClick={this.handleRemoveNetwork(idx)} className='small'>-</button>
+                  </div>
+                ))}
+                <button type="button" onClick={this.handleAddNetwork}>Add Network</button>
+              </label>
+              <br />
+              <input type="submit" value="Save"/>
             </form>
           </div>
         ) : (

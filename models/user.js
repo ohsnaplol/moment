@@ -4,10 +4,14 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
   realName: { type: String },
-  nicknames: [{ type: String }],
+  nicknames: [{ 
+    _id: false,
+    name: { type: String } 
+  }],
   email: { type: String, required: true },
   password: { type: String, required: true},
   socialNetworks: [{
+    _id: false,
     networkName: { type: String },
     userName: { type: String },
     url: { type: String },

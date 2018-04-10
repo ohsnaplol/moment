@@ -66,7 +66,7 @@ class App extends Component {
             <Route exact path="/home" render={() => (
               <div>
                 <NavBar updateUser={this.updateUser} loggedIn={this.state.loggedIn} id={this.state.id}/>
-                <Home name={this.state.name} loggedIn={this.state.loggedIn}/>
+                <Home uid={this.state.id} loggedIn={this.state.loggedIn}/>
               </div>
             )} />
             <Route exact path="/login" render={() => (
