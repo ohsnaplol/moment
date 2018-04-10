@@ -58,7 +58,7 @@ class Settings extends Component {
   // NETWORKS
   handleAddNetwork = () => {
     this.setState({
-      socialNetworks: this.state.socialNetworks.concat([{ networkName: 'Facebook', url: '', privacy: 'public', userName: '' }])
+      socialNetworks: this.state.socialNetworks.concat([{ networkName: 'facebook', url: '', privacy: 'public', userName: '' }])
     })
   }
 
@@ -111,6 +111,18 @@ class Settings extends Component {
       })
   }
 
+  getInputType(network, idx) {
+    switch (network.networkName) {
+      case 'snapchat':
+      case 'xbox':
+      case 'playstation':
+        return <input type='text' placeholder='Username' value={network.userName} onChange={this.handleNetworkUsernameChange(idx)}/>
+        break;
+      default:
+        return <input type='text' placeholder='URL' value={network.url} onChange={this.handleNetworkUrlChange(idx)}/>
+        break;
+    }
+  }
 
   componentDidMount() {
     if(this.props.uid) {
@@ -159,17 +171,29 @@ class Settings extends Component {
                       <option value="twitter">Twitter</option>
                       <option value="snapchat">Snapchat</option>
                       <option value="youtube">YouTube</option>
+                      <option value="linkedin">LinkedIn</option>
+                      <option value="reddit">Reddit</option>
+                      <option value="instagram">Instagram</option>
+                      <option value="tumblr">Tumblr</option>
+                      <option value="flickr">Flickr</option>
+                      <option value="pinterest">Pinterest</option>
+                      <option value="google">Google</option>
+                      <option value="deviantart">DeviantArt</option>
+                      <option value="medium">Medium</option>
+                      <option value="bandcamp">Bandcamp</option>
+                      <option value="soundcloud">Soundcloud</option>
+                      <option value="github">GitHub</option>
+                      <option value="gitlab">GitLab</option>
+                      <option value="steam">Steam</option>
+                      <option value="xbox">Xbox</option>
+                      <option value="playstation">Playstation</option>
                     </select>
                     <select value={network.privacy} onChange={this.handleNetworkPrivacyChange(idx)}>
                       <option value='public'>Public</option>
                       <option default value='private'>Private</option>
                       <option value='secret'>Secret</option>
                     </select>
-                    {network.networkName === 'snapchat' ? (
-                      <input type='text' placeholder='Username' value={network.userName} onChange={this.handleNetworkUsernameChange(idx)}/>
-                    ) : (
-                      <input type='text' placeholder='URL' value={network.url} onChange={this.handleNetworkUrlChange(idx)}/>
-                    )}
+                    {this.getInputType(network, idx)}
                     <button type="button" onClick={this.handleRemoveNetwork(idx)} className='small'>-</button>
                   </div>
                 ))}
