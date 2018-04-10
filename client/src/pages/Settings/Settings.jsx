@@ -117,10 +117,8 @@ class Settings extends Component {
       case 'xbox':
       case 'playstation':
         return <input type='text' placeholder='Username' value={network.userName} onChange={this.handleNetworkUsernameChange(idx)}/>
-        break;
       default:
         return <input type='text' placeholder='URL' value={network.url} onChange={this.handleNetworkUrlChange(idx)}/>
-        break;
     }
   }
 
