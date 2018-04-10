@@ -1,0 +1,38 @@
+.h1-profile{ 
+    position: absolute;
+    left: 88px;
+    top: 51px;
+}
+
+.navbar-section{ 
+    background-color: lavenderblush;
+    padding: 39px;
+    border-radius: 30px;
+    position: relative;
+    margin-top: -514px;
+    margin-left: -440px;
+
+}
+
+.btn btn-link text-secondary{ 
+    padding-right: 20px; 
+
+}
+
+.text-secondary{ 
+    padding: 0 20px 0 20px;
+    font-family: helvetica;
+    font-size: larger;
+}
+
+.h1-profile{ 
+    position: absolute;
+    color: lavenderblush;
+    left: 35px;
+    top: 50px;
+    font-size: 51px;
+    font-family: helvetica;
+
+}
+
+

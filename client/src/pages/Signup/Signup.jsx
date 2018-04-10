@@ -55,10 +55,10 @@ class Signup extends Component {
     return (
       <div>
         <header> 
-          <h1>
+          <h1 className="solid-moment">
             Moment
           </h1> 
-          <h2>
+          <h2 className="solid-faded">
             Moment
           </h2> 
         </header> 

@@ -40,7 +40,7 @@ html {
   margin: auto;
 }
 
-h1 { 
+.solid-moment { 
   color: #ecd3dc;
   text-align: center;
   font-family: Helvetica;
@@ -49,7 +49,7 @@ h1 {
   font-size: 51px;
   left: 998px; 
 }
-h2 { 
+.solid-faded { 
 color: lavenderblush; 
 text-align: center; 
 font-family: Helvetica;
