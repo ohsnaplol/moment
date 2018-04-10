@@ -4,60 +4,17 @@ import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import Home from "./pages/Home"
 import Profile from "./pages/Profile"
+import Settings from './pages/Settings'
 
 import API from "./utils/API";
 import NavBar from "./components/NavBar"
-
-// Context experimentation
-// const UserContext = React.createContext()
-// // Then create a provider Component
-// class MyProvider extends Component {
-//   state = {
-//     loggedIn: false,
-//     id: null
-//   }
-//   render() {
-//     return (
-//       <UserContext.Provider value={{
-//         state: this.state,
-//         getUser() {
-//           API.validate()
-//             .then(response => {
-//               console.log(JSON.stringify(response))
-//               if (response.data.user) {
-//                 console.log('CONTEXT: Get User: There is a user saved in the server session: ')
-//                 this.setState({
-//                   loggedIn: true,
-//                   id: response.data.user._id
-//                 })
-//                 console.log('CONTEXT state: ' + JSON.stringify(this.state))
-//               } else {
-//                 console.log('Get user: no user');
-//                 this.setState({
-//                   loggedIn: false,
-//                   username: null
-//                 })
-//               }
-//             })
-//         },
-//         updateUser: (userObject) => {
-//           this.setState(userObject)
-//           console.log('context updateUser state set to ' + this.state)
-//         }
-//       }}>
-//         {this.props.children}
-//       </UserContext.Provider>
-//     )
-//   }
-// }
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
       loggedIn: false,
-      id: null,
-      name: null
+      id: null
     }
 
     this.getUser = this.getUser.bind(this)
@@ -76,21 +33,13 @@ class App extends Component {
   getUser() {
     API.validate()
       .then(response => {
-        console.log(JSON.stringify(response))
         if (response.data.user) {
           console.log('Get User: There is a user saved in the server session: ')
-          console.log(JSON.stringify(response.data))
+          console.log(JSON.stringify(response.data.user._id))
           this.setState({
             loggedIn: true,
             id: response.data.user._id
           })
-          API.getUser(response.data.user._id)
-            .then(response => {
-              this.setState({
-                name: response.data.realName
-              })
-              console.log('state: ' + JSON.stringify(this.state))
-            })
         } else {
           console.log('Get user: no user');
           this.setState({
@@ -117,21 +66,22 @@ class App extends Component {
             <Route exact path="/home" render={() => (
               <div>
                 <NavBar updateUser={this.updateUser} loggedIn={this.state.loggedIn} id={this.state.id}/>
-                <Home name={this.state.name} loggedIn={this.state.loggedIn}/>
+                <Home uid={this.state.id} loggedIn={this.state.loggedIn}/>
               </div>
             )} />
             <Route exact path="/login" render={() => (
               <Login updateUser={this.updateUser} loggedIn={this.state.loggedIn}/>
             )}/>
-            <Route exact path="/profile/:id" render={() => (
+            <Route path="/profile/:id" render={({match}) => (
               <div>
                 <NavBar updateUser={this.updateUser} loggedIn={this.state.loggedIn} id={this.state.id}/>
-                <Profile />
+                <Profile id={match.params.id}/>
               </div>
             )} />
             <Route exact path="/settings/" render={() => (
               <div>
                 <NavBar updateUser={this.updateUser} loggedIn={this.state.loggedIn} id={this.state.id}/>
+                <Settings uid={this.state.id} />
               </div>
             )} />
           </Switch>
