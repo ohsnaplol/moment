@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import API from "../../utils/API"
 import NetworkTag from '../../components/NetworkTag'
+import "./style.css";
+
 
 class Profile extends Component {
   constructor() {
@@ -29,8 +31,11 @@ class Profile extends Component {
   render() {
     return (
       <div>
-        <h1>{this.state.realName}</h1>
+        <h1 className="h1-profile">{this.state.realName}</h1>
       </div>
+      // <div> 
+        
+      // </div> 
     )
   }
 }

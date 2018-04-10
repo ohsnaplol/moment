@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom'
 import API from "../../utils/API";
+import "./style.css";
+
 
 class Signup extends Component {
   constructor() {
@@ -52,38 +54,55 @@ class Signup extends Component {
   render() {
     return (
       <div>
-        <Link to="/">
-          <button>Back to Login</button>
-        </Link>
-        <form onSubmit={this.handleFormSubmit}>
+        <header> 
+          <h1 className="solid-moment">
+            Moment
+          </h1> 
+          <h2 className="moment-faded">
+            Moment
+          </h2> 
+        </header> 
+        <form className="signup-form" onSubmit={this.handleFormSubmit}>
+        <div className="email-entry"> 
           <label>
             Email:
             <input 
+              className="email-entry-text"
               type="email" 
               value={this.state.email} 
               name="email"
               onChange={this.handleInputChange}
             ></input>
           </label>
+          </div> 
+          <div className="password-entry"> 
           <label>
             Password:
             <input 
+              className="password-entry-text"
               type="password" 
               value={this.state.password1} 
               name="password1"
               onChange={this.handleInputChange}
             ></input>
           </label>
+          </div> 
+          <div className="password-verify"> 
           <label>
             Verify Password:
             <input 
+              className="password-verify-text"
               type="password" 
               value={this.state.password2} 
               name="password2"
               onChange={this.handleInputChange}
             ></input>
           </label>
-          <input type="submit" value="Create Account" />
+          </div>
+          <input className="create-account" type="submit" value="Create Account" />
+          <Link to="/">
+          <button className="back-login">Back to Login</button>
+        </Link>
         </form>
       </div>
     )
