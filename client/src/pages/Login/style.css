@@ -1,65 +1,64 @@
 .login-form  { 
-    max-width: 187px;
-    position: relative;
-    background-color: lavenderblush;
-    padding-bottom: 50px;
-    padding-top: 50px;
-    padding-left: 150px;
-    padding-right: 150px;
-    text-align: center;
-    border-radius: 35px;
-    font-family: Helvetica;
-    top: -139px;
-    left: 8px;
+  max-width: 187px;
+  position: relative;
+  background-color: lavenderblush;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  padding-left: 150px;
+  padding-right: 150px;
+  text-align: center;
+  border-radius: 35px;
+  font-family: Helvetica;
+  top: -77px;
+  left: 8px;
 }
 .login-button { 
-  margin-top: 20px;
-  margin-right: 8px;
-  border-radius: 30px; 
-  width: 61px;
-  height: 32px;
+margin-top: 20px;
+margin-right: 8px;
+border-radius: 30px; 
+width: 61px;
+height: 32px;
 }
 .create-button{ 
-  margin-top: 20px;
-  margin-right: 8px;
-  border-radius: 30px; 
+margin-top: 20px;
+margin-right: 8px;
+border-radius: 30px; 
 
 
 }
 body{ 
-  background-color: #141320; 
-  display: table-cell;
-  vertical-align: middle;
+background-color: #141320; 
+display: table-cell;
+vertical-align: middle;
 }
 html, body {
-    height: 100%;
+  height: 100%;
 }
 
 html {
-    display: table;
-    margin: auto;
+  display: table;
+  margin: auto;
 }
 
 h1 { 
-  color:#ecd3dc; 
-  text-align: center; 
+  color: #ecd3dc;
+  text-align: center;
   font-family: Helvetica;
-  position: relative;
-  top:60px; 
-  font-size: 51px; 
+  position: absolute;
+  top: 245px;
+  font-size: 51px;
+  left: 998px; 
 }
 h2 { 
-  color: lavenderblush; 
-  text-align: center; 
-  font-family: Helvetica;
-  position: relative;
-  top:60px; 
-  font-size: 100px; 
-  opacity: 0.1;
-  top:-79px; 
+color: lavenderblush; 
+text-align: center; 
+font-family: Helvetica;
+position: absolute;
+top:134px; 
+font-size: 100px; 
+opacity: 0.1;
 }
 .Email-Input { 
-      padding-bottom: 10px;
+    padding-bottom: 10px;
 
 }
-  

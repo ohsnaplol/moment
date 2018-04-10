@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom'
 import API from "../../utils/API";
+import "./style.css";
+
 
 class Signup extends Component {
   constructor() {
@@ -52,10 +54,16 @@ class Signup extends Component {
   render() {
     return (
       <div>
-        <Link to="/">
-          <button>Back to Login</button>
-        </Link>
-        <form onSubmit={this.handleFormSubmit}>
+        <header> 
+          <h1>
+            Moment
+          </h1> 
+          <h2>
+            Moment
+          </h2> 
+        </header> 
+        <form className="signup-form" onSubmit={this.handleFormSubmit}>
+        <div className="email-entry"> 
           <label>
             Email:
             <input 
@@ -65,6 +73,8 @@ class Signup extends Component {
               onChange={this.handleInputChange}
             ></input>
           </label>
+          </div> 
+          <div className="password-entry"> 
           <label>
             Password:
             <input 
@@ -74,6 +84,8 @@ class Signup extends Component {
               onChange={this.handleInputChange}
             ></input>
           </label>
+          </div> 
+          <div className="password-verify"> 
           <label>
             Verify Password:
             <input 
@@ -83,7 +95,11 @@ class Signup extends Component {
               onChange={this.handleInputChange}
             ></input>
           </label>
+          </div>
           <input type="submit" value="Create Account" />
+          <Link to="/">
+          <button>Back to Login</button>
+        </Link>
         </form>
       </div>
     )
