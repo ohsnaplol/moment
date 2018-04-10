@@ -1,0 +1,65 @@
+.login-form  { 
+  max-width: 187px;
+  position: absolute;
+  background-color: lavenderblush;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  padding-left: 150px;
+  padding-right: 150px;
+  text-align: center;
+  border-radius: 35px;
+  font-family: Helvetica;
+  top: 161px;
+  left: 301px;
+}
+.login-button { 
+margin-top: 20px;
+margin-right: 8px;
+border-radius: 30px; 
+width: 61px;
+height: 32px;
+}
+.create-button{ 
+margin-top: 20px;
+margin-right: 8px;
+border-radius: 30px; 
+
+
+}
+body{ 
+background-color: #141320; 
+display: table-cell;
+vertical-align: middle;
+}
+html, body {
+  height: 100%;
+}
+
+html {
+  display: table;
+  margin: auto;
+}
+
+.solid-moment { 
+  color: #ecd3dc;
+  text-align: center;
+  font-family: Helvetica;
+  position: absolute;
+  top: 51px;
+  font-size: 51px;
+  left: 434px;
+}
+.moment-faded { 
+  color: lavenderblush;
+  text-align: center;
+  font-family: Helvetica;
+  position: absolute;
+  top: -54px;
+  font-size: 100px;
+  opacity: 0.1;
+  left: 238px;
+}
+.Email-Input { 
+    padding-bottom: 10px;
+
+}

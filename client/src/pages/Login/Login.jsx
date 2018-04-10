@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
-import { Link, Redirect} from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import API from "../../utils/API";
+import "./style.css";
+// This will be uncommented out, with the image tag, one we have an image with transparency around it. 
+// import FLOWPINK from './flowtrans.png';
 
 class Login extends Component {
   constructor() {
@@ -18,7 +21,7 @@ class Login extends Component {
     let password = this.state.password
     let email = this.state.email
     API.login({
-      username: email, 
+      username: email,
       password: password
     }).then(response => {
       if (response.status === 200) {
@@ -31,7 +34,7 @@ class Login extends Component {
         this.setState({
           redirectTo: '/home'
         })
-    }
+      }
     }).catch(err => {
       console.log('Error in login handleFormSubmit ' + err)
     })
@@ -50,20 +53,34 @@ class Login extends Component {
     } else {
     return (
       <div>
-        <form onSubmit={this.handleFormSubmit}>
-          <label>
-            Email:
-            <input value={this.state.email} onChange={this.handleInputChange} name="email" type="email"/>
-          </label>
-          <label>
-            Password:
-            <input value={this.state.password} onChange={this.handleInputChange} name="password" type="password" />
-          </label>
-          <input type="submit" value="Login"/>
+        {/* <img src={ FLOWPINK }></img>  */}
+        <header> 
+          <h1 className="solid-moment">
+            Moment
+          </h1> 
+          <h2 className="moment-faded">
+            Moment
+          </h2> 
+        </header> 
+        <form className="login-form" onSubmit={this.handleFormSubmit}>
+          <div className="Email-Input">
+            <label>
+              Email:
+              <input value={this.state.email} onChange={this.handleInputChange} name="email" type="email"/>
+            </label>
+          </div> 
+          <div className="Password-Entry">
+            <label>
+              Password:
+              <input value={this.state.password} onChange={this.handleInputChange} name="password" type="password" />
+            </label>
+          </div>
+
+          <input className="login-button" type="submit" value="Login"/>
+          <Link to="/signup">
+            <button className="create-button">Create Account</button>
+          </Link>
         </form>
-        <Link to="/signup">
-          <button>Create Account</button>
-        </Link>
       </div>
     )
   }
