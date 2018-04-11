@@ -1,0 +1,44 @@
+    .signup-form{ 
+        background-color: lavenderblush;
+        padding: 84px;
+        max-width: 370px;
+        border-radius: 25px;
+        text-align: center;
+        margin-top: 161px;
+        margin-left: 301px;
+
+    }
+    .email-entry-text { 
+        margin-bottom: 13px;
+
+    }
+    .email-entry{ 
+        font-family: helvetica;
+
+    }
+    .password-entry-text { 
+        margin-bottom: 13px;
+    }
+    .password-entry{ 
+        font-family: helvetica;
+
+    }
+    .password-verify-text{ 
+        margin-bottom: 13px;
+
+    }
+    .password-verify{ 
+        font-family: helvetica;
+
+    }
+    .create-account{ 
+        background-color: #dad9e478;
+        border-radius: 16px;
+
+    }
+    .back-login{ 
+
+        background-color: #dad9e478;
+        border-radius: 16px;
+        margin-left: 11px;
+    }
