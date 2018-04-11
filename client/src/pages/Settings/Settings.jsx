@@ -147,7 +147,6 @@ class Settings extends Component {
       <div>
         {this.state._id ? (
           <div className="settings-screen">
-            <p className="object-settings">{JSON.stringify(this.state)}</p>
             <form className="form-settings" onSubmit={this.handleFormSubmit}>
               <label className="name-change">
                 Change name:
