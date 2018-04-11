@@ -10,9 +10,9 @@ class NetworkTag extends Component {
     function snippet(fanetworkname, bgcolor, logocolor, textcolor, text) {
       return (
         <a href={fanetworkname === 'twitter' ? (`twitter.com/${text}`) : (url)} target="blank">
-          <div style={{backgroundColor: bgcolor}} className='container'>
+          <div style={{backgroundColor: bgcolor}} className='network-tag-container'>
             <FontAwesomeIcon color={logocolor} icon={["fab", fanetworkname]} size='3x'/>
-            <span style={{color: textcolor}} className='text'>{text}</span>
+            <span style={{color: textcolor}} className='network-tag-text'>{text}</span>
           </div>
         </a>
       )
