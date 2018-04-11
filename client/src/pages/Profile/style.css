@@ -1,23 +1,13 @@
-.navbar-section{ 
-    background-color: lavenderblush;
-    padding: 39px;
-    border-radius: 30px;
-    position: relative;
-    margin-top: -514px;
-    margin-left: -198px;
-
-}
-
-.btn btn-link text-secondary{ 
+/* .btn btn-link text-secondary{ 
     padding-right: 20px; 
 
-}
+} */
 
-.text-secondary{ 
-    padding: 0 20px 0 20px;
-    font-family: helvetica;
-    font-size: larger;
-}
+    .text-secondary{ 
+        padding: 0 20px 0 20px;
+        font-family: helvetica;
+        font-size: larger;
+    }
 
 .h1-profile{ 
     position: absolute;
@@ -30,3 +20,7 @@
 }
 
 
+a:link {
+    text-decoration: none;
+    color:#141320; 
+}

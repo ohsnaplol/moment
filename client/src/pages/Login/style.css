@@ -27,7 +27,7 @@ border-radius: 30px;
 
 }
 body{ 
-background-color: #141320; 
+background-color: #dad9e478; 
 display: table-cell;
 vertical-align: middle;
 }
@@ -36,7 +36,6 @@ html, body {
 }
 
 html {
-  display: table;
   margin: auto;
 }
 
@@ -62,4 +61,8 @@ html {
 .Email-Input { 
     padding-bottom: 10px;
 
+}
+a:link {
+    text-decoration: none;
+    color:#141320; 
 }
