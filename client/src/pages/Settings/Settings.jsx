@@ -141,6 +141,7 @@ class Settings extends Component {
         {this.state._id ? (
           <div className="settings-screen">
             <p className="object-settings">{JSON.stringify(this.state)}</p>
+            <h1 className="settings-header-message">Account Settings</h1>
             <form className="form-settings" onSubmit={this.handleFormSubmit}>
               <label className="name-change">
                 Change name:
@@ -158,10 +159,10 @@ class Settings extends Component {
                       value={nickname.name}
                       onChange={this.handleNickNameChange(idx)}
                     />
-                    <button className="nick-name-button" type="button" onClick={this.handleRemoveNickname(idx)} className="small">-</button>
+                    <button className="nick-name-button" type="button" id="handle-nickname-button" onClick={this.handleRemoveNickname(idx)} className="small">-</button>
                   </div>
                 ))}
-                <button type="button" onClick={this.handleAddnickname} className="small">Add Nickname</button>
+                <button type="button" onClick={this.handleAddnickname} className="small" id="add-nickname-ID">Add Nickname</button>
               </label>
               <br />
               <label className="add-network-label">

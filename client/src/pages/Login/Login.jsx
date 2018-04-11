@@ -55,7 +55,8 @@ class Login extends Component {
     return (
       <div>
         {/* <img src={ FLOWPINK }></img>  */}
-        <header> 
+        <div className="container-div">
+        <header className="header-class-login"> 
           <h1 className="solid-moment">
             Moment
           </h1> 
@@ -82,6 +83,7 @@ class Login extends Component {
             <button className="create-button">Create Account</button>
           </Link>
         </form>
+      </div>
       </div>
     )
   }

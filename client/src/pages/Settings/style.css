@@ -3,50 +3,63 @@
     float: left;
     margin-right: 0;
     padding-left: 63px;
-
+    position: relative;
+    margin-top: 112px;
+    margin-left: 146px;
+    font-family: helvetica; 
+    font-weight: bold;
+    color: #827176;
 
 }
 .nick-name{ 
     margin-top: 5px;
+    display: block;
+
 }
 
 .settings-screen{ 
     position: relative;
     top: 70px;
 }
-/*
-.navbar App-header{ 
-    color: white; 
+.settings-header-message{ 
+    position: absolute;
+    left: 167px;
+    width: 100%;
+    font-family: helvetica;
+    color: #827176;
+    border-bottom: 2px #ecd3dc;
+    border-bottom-style: dashed;
+    border-bottom-width: 9px;
 
 }
-a:link {
-    text-decoration: none;
-    color:#141320; 
-}
-.settings-screen{ 
-    font-family: helvetica; 
-}
-
 .name-change-input{ 
-    margin-bottom: 43px;
+    margin-bottom: 31px;
+    margin-left: 12px;
 
 }
 
-}
-.small{ 
-    margin-bottom: 24px;
-    margin-top: 7px;
-    border-radius: 5px; 
-}
-
-.nick-name-button{ 
-        border-radius: 3px;
+#add-nickname-ID{ 
+    margin-left: 0px;
+    margin-top: 12px;
+    position: relative;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #dad9e478;
 }
 .add-network{ 
-    border-radius: 5px; 
-    margin-bottom: 39px;
-
+    margin-top: 8px;
+    margin-top: 9px;
+    border-radius: 3px;
+    background-color: #dad9e478;
 }
 .submit-button-network{ 
-    border-radius: 5px; 
-} */
+    margin-top: 6px;
+    margin-left: 21px;
+    border-radius: 3px;
+    background-color: #dad9e478;
+}
+select{ 
+    background-color: #e4b6b6;
+    border-radius: 3px;
+    margin-right: 7px;
+}
