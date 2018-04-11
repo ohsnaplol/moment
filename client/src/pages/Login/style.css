@@ -13,16 +13,15 @@
   left: 301px;
 }
 .login-button { 
-margin-top: 20px;
-margin-right: 8px;
-border-radius: 30px; 
-width: 61px;
-height: 32px;
+background-color: #3e3973;
+color: lavenderblush;
+border-radius: 16px;
+margin-left: 11px;
 }
 .create-button{ 
-margin-top: 20px;
-margin-right: 8px;
-border-radius: 30px; 
+background-color: #3e3973;
+color: lavenderblush;
+border-radius: 16px;
 
 
 }
