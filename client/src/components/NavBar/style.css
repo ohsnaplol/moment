@@ -1,0 +1,39 @@
+ 
+ /* 
+ FUll nav bar css 
+ */
+ .navbar-section{ 
+    background-color: lavenderblush;
+    padding-top: 8px;
+    position: fixed;
+    top: 0;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    height: 42px;
+    border-bottom: 1px solid #ecd3dc;
+
+}
+
+.btn btn-link text-secondary{ 
+    padding-right: 20px; 
+
+}
+
+/*
+Hyperlink remover. 
+*/
+a:link, a:visited {
+    text-decoration: none;
+    /* color: red; */
+
+    color:#9D8189; 
+    
+}
+
+/*
+*/ 
+.input-section-nav{ 
+    border-radius: 4px;
+    padding: 5px;
+}
