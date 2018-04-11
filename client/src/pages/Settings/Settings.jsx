@@ -120,7 +120,14 @@ class Settings extends Component {
       case 'xbox':
       case 'playstation':
         return <input type='text' placeholder='Username' value={network.userName} onChange={this.handleNetworkUsernameChange(idx)}/>
-      default:
+      case 'twitter':
+        return (
+            <span>
+            @
+            <input type='text' placeholder='Username' value={network.userName} onChange={this.handleNetworkUsernameChange(idx)}/>
+            </span>
+        )
+        default:
         return <input type='text' placeholder='URL' value={network.url} onChange={this.handleNetworkUrlChange(idx)}/>
     }
   }
@@ -142,6 +149,7 @@ class Settings extends Component {
           <div className="settings-screen">
             <p className="object-settings">{JSON.stringify(this.state)}</p>
             <h1 className="settings-header-message">Account Settings</h1>
+
             <form className="form-settings" onSubmit={this.handleFormSubmit}>
               <label className="name-change">
                 Change name:
