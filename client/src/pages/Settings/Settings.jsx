@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 import API from '../../utils/API'
+import "./style.css";
+
+
 
 class Settings extends Component {
   constructor() {
@@ -143,12 +146,12 @@ class Settings extends Component {
     return (
       <div>
         {this.state._id ? (
-          <div>
-            <p>{JSON.stringify(this.state)}</p>
-            <form onSubmit={this.handleFormSubmit}>
-              <label>
+          <div className="settings-screen">
+            <p className="object-settings">{JSON.stringify(this.state)}</p>
+            <form className="form-settings" onSubmit={this.handleFormSubmit}>
+              <label className="name-change">
                 Change name:
-                <input type='text' name="realName" value={this.state.realName} onChange={this.handleInputChange}/>
+                <input className="name-change-input" type='text' name="realName" value={this.state.realName} onChange={this.handleInputChange}/>
               </label>
               <br />
               <label>
@@ -156,18 +159,19 @@ class Settings extends Component {
                 {this.state.nicknames.map((nickname, idx) => (
                   <div key={idx}>
                     <input
+                      className="nick-name"
                       type="text"
                       placeholder={`Nickname #${idx + 1}`}
                       value={nickname.name}
                       onChange={this.handleNickNameChange(idx)}
                     />
-                    <button type="button" onClick={this.handleRemoveNickname(idx)} className="small">-</button>
+                    <button className="nick-name-button" type="button" onClick={this.handleRemoveNickname(idx)} className="small">-</button>
                   </div>
                 ))}
                 <button type="button" onClick={this.handleAddnickname} className="small">Add Nickname</button>
               </label>
               <br />
-              <label>
+              <label className="add-network-label">
                 Add Network<br />
                 {this.state.socialNetworks.map((network, idx) => (
                   <div key={idx}>
@@ -202,10 +206,10 @@ class Settings extends Component {
                     <button type="button" onClick={this.handleRemoveNetwork(idx)} className='small'>-</button>
                   </div>
                 ))}
-                <button type="button" onClick={this.handleAddNetwork}>Add Network</button>
+                <button className="add-network" type="button" onClick={this.handleAddNetwork}>Add Network</button>
               </label>
               <br />
-              <input type="submit" value="Save"/>
+              <input className="submit-button-network" type="submit" value="Save"/>
             </form>
           </div>
         ) : (
