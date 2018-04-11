@@ -165,7 +165,7 @@ class Settings extends Component {
                       value={nickname.name}
                       onChange={this.handleNickNameChange(idx)}
                     />
-                    <button className="nick-name-button" type="button" onClick={this.handleRemoveNickname(idx)} className="small">-</button>
+                    <button className="nick-name-button small" type="button" onClick={this.handleRemoveNickname(idx)}>-</button>
                   </div>
                 ))}
                 <button type="button" onClick={this.handleAddnickname} className="small">Add Nickname</button>
