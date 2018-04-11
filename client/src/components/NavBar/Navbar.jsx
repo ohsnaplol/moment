@@ -38,7 +38,7 @@ class Navbar extends Component {
                 <Link to="/home" className="btn btn-link text-secondary">
                   <span className="text-secondary">Home</span>
                 </Link>
-                <input />
+                <input className="input-section-nav"/>
                 <Link to={"/profile/"+this.props.id} className="btn btn-link text-secondary">
                   <span className="text-secondary">My Profile</span>
                 </Link>
@@ -50,7 +50,7 @@ class Navbar extends Component {
                 </Link>
               </section>
             ) : (
-                <section className="navbar-section">
+                <section className="navbar-section-2">
                   <input />
                   <Link to="/" className="btn btn-link text-secondary">
                     <span className="text-secondary">login</span>
