@@ -16,8 +16,7 @@
 margin-top: 20px;
 margin-right: 8px;
 border-radius: 30px; 
-width: 61px;
-height: 32px;
+background-color: #dad9e478;
 }
 .create-button{ 
 margin-top: 20px;
@@ -49,7 +48,7 @@ html {
   left: 434px;
 }
 .moment-faded { 
-  color: lavenderblush;
+  color: #af637e;
   text-align: center;
   font-family: Helvetica;
   position: absolute;
