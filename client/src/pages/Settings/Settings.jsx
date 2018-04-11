@@ -119,6 +119,7 @@ class Settings extends Component {
       case 'snapchat':
       case 'xbox':
       case 'playstation':
+      case 'twitch':
         return <input type='text' placeholder='Username' value={network.userName} onChange={this.handleNetworkUsernameChange(idx)}/>
       case 'twitter':
         return (
@@ -179,6 +180,7 @@ class Settings extends Component {
                       <option value="twitter">Twitter</option>
                       <option value="snapchat">Snapchat</option>
                       <option value="youtube">YouTube</option>
+                      <option value="twitch">Twitch</option>
                       <option value="linkedin">LinkedIn</option>
                       <option value="reddit">Reddit</option>
                       <option value="instagram">Instagram</option>
