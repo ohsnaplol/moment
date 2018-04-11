@@ -1,0 +1,14 @@
+.container {
+  /* background-color: lavenderblush Do not change. Done programmatically in jsx file*/
+  width: 200px; 
+  padding: 14px;
+}
+
+.text {
+  /* color: lavenderblush Do not change. Done programmatically in jsx file */
+  font-family: Arial;
+  color: textcolor; 
+  font-size: 4vb; 
+  float: right; 
+  margin-right: 20px;
+}

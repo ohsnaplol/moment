@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import brands from '@fortawesome/fontawesome-free-brands'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import "./style.css"
 
 class NetworkTag extends Component {
   render() {
@@ -9,9 +10,9 @@ class NetworkTag extends Component {
     function snippet(fanetworkname, bgcolor, logocolor, textcolor, text) {
       return (
         <a href={fanetworkname === 'twitter' ? (`twitter.com/${text}`) : (url)} target="blank">
-          <div style={{backgroundColor: bgcolor, width: '200px', padding: '14px'}}>
+          <div style={{backgroundColor: bgcolor}} className='container'>
             <FontAwesomeIcon color={logocolor} icon={["fab", fanetworkname]} size='3x'/>
-            <span style={{fontFamily: 'Arial', color: textcolor, fontSize: '20px', float: 'right', marginRight: '20px'}}>{text}</span>
+            <span style={{color: textcolor}} className='text'>{text}</span>
           </div>
         </a>
       )
