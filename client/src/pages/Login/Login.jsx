@@ -65,15 +65,15 @@ class Login extends Component {
         </header> 
         <form className="login-form" onSubmit={this.handleFormSubmit}>
           <div className="Email-Input">
+          <h3>Welcome to Moment. Your online self in one place.</h3>
+          <h4>Please Login or Sign up</h4>
             <label>
-              Email:
-              <input value={this.state.email} onChange={this.handleInputChange} name="email" type="email"/>
+              <input placeholder= "Email" value={this.state.email} onChange={this.handleInputChange} name="email" type="email"/>
             </label>
           </div> 
           <div className="Password-Entry">
             <label>
-              Password:
-              <input value={this.state.password} onChange={this.handleInputChange} name="password" type="password" />
+              <input placeholder="Password" value={this.state.password} onChange={this.handleInputChange} name="password" type="password" />
             </label>
           </div>
 

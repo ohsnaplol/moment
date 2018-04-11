@@ -68,38 +68,37 @@ class Signup extends Component {
           <form className="signup-form" onSubmit={this.handleFormSubmit}>
           <div className="email-entry"> 
             <label>
-              Email:
               <input 
-                className="email-entry-text"
-                type="email" 
-                value={this.state.email} 
-                name="email"
-                onChange={this.handleInputChange}
-              ></input>
+              placeholder= "Email" 
+              className="email-entry-text" 
+              type="email" 
+              value={this.state.email} 
+              name="email" 
+              onChange={this.handleInputChange}>
+              </input>
             </label>
             </div> 
             <div className="password-entry"> 
             <label>
-              Password:
-              <input 
-                className="password-entry-text"
-                type="password" 
-                value={this.state.password1} 
-                name="password1"
-                onChange={this.handleInputChange}
-              ></input>
+              <input placeholder= "Password" 
+              className="password-entry-text" 
+              type="password" 
+              value={this.state.password1} 
+              name="password1" 
+              onChange={this.handleInputChange}>
+              </input>
             </label>
             </div> 
             <div className="password-verify"> 
             <label>
-              Verify Password:
               <input 
+                placeholder= "Re-enter Password" 
                 className="password-verify-text"
                 type="password" 
                 value={this.state.password2} 
                 name="password2"
-                onChange={this.handleInputChange}
-              ></input>
+                onChange={this.handleInputChange}>
+              </input>
             </label>
             </div>
             <input className="create-account" type="submit" value="Create Account" />
