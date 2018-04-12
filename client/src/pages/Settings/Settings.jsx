@@ -119,8 +119,16 @@ class Settings extends Component {
       case 'snapchat':
       case 'xbox':
       case 'playstation':
+      case 'twitch':
         return <input type='text' placeholder='Username' value={network.userName} onChange={this.handleNetworkUsernameChange(idx)}/>
-      default:
+      case 'twitter':
+        return (
+            <span>
+            @
+            <input type='text' placeholder='Username' value={network.userName} onChange={this.handleNetworkUsernameChange(idx)}/>
+            </span>
+        )
+        default:
         return <input type='text' placeholder='URL' value={network.url} onChange={this.handleNetworkUrlChange(idx)}/>
     }
   }
@@ -140,7 +148,6 @@ class Settings extends Component {
       <div>
         {this.state._id ? (
           <div className="settings-screen">
-            <p className="object-settings">{JSON.stringify(this.state)}</p>
             <form className="form-settings" onSubmit={this.handleFormSubmit}>
               <label className="name-change">
                 Change name:
@@ -158,7 +165,7 @@ class Settings extends Component {
                       value={nickname.name}
                       onChange={this.handleNickNameChange(idx)}
                     />
-                    <button className="nick-name-button" type="button" onClick={this.handleRemoveNickname(idx)} className="small">-</button>
+                    <button className="nick-name-button small" type="button" onClick={this.handleRemoveNickname(idx)}>-</button>
                   </div>
                 ))}
                 <button type="button" onClick={this.handleAddnickname} className="small">Add Nickname</button>
@@ -173,6 +180,7 @@ class Settings extends Component {
                       <option value="twitter">Twitter</option>
                       <option value="snapchat">Snapchat</option>
                       <option value="youtube">YouTube</option>
+                      <option value="twitch">Twitch</option>
                       <option value="linkedin">LinkedIn</option>
                       <option value="reddit">Reddit</option>
                       <option value="instagram">Instagram</option>

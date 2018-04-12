@@ -13,10 +13,17 @@
   left: 301px;
 }
 .login-button { 
+<<<<<<< HEAD
   background-color: #3e3973;
   color: lavenderblush;
   border-radius: 16px;
   margin-left: 11px;
+=======
+margin-top: 20px;
+margin-right: 8px;
+border-radius: 30px; 
+background-color: #dad9e478;
+>>>>>>> ee75be8fb0cc9fa0193cb3a9a3daf573f30b2e83
 }
 .create-button{ 
   background-color: #3e3973;
@@ -46,7 +53,7 @@ html {
   left: 434px;
 }
 .moment-faded { 
-  color: lavenderblush;
+  color: #af637e;
   text-align: center;
   font-family: Helvetica;
   position: absolute;

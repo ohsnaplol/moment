@@ -1,8 +1,8 @@
 .welcome-home-h1 {
     position: fixed;
-    top: 0;
-    left: 0;
-    color: lavenderblush;
+    top: 60px;
+    left: 24px;
+    color: #9D8189;
     width: 25%;
     font-family: helvetica;
 }
