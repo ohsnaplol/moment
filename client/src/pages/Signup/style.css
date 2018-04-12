@@ -32,13 +32,13 @@
 
     }
     .create-account{ 
-        background-color: #dad9e478;
+        background-color: #3e3973;
+        color: lavenderblush;
         border-radius: 16px;
 
     }
     .back-login{ 
-
-        background-color: #dad9e478;
+        background-color: #3e3973;
+        color: lavenderblush;
         border-radius: 16px;
-        margin-left: 11px;
     }
