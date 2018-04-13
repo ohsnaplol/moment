@@ -1834,6 +1834,18 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-alert-template-basic@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-alert-template-basic/-/react-alert-template-basic-1.0.0.tgz#89bcf35095faf5ebdd25e1e7c300e6b4234b5ba1"
+
+react-alert-template-oldschool-dark@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-alert-template-oldschool-dark/-/react-alert-template-oldschool-dark-1.0.1.tgz#1788eaffc0953ca62ff45af36acdfca7cb426f93"
+
+react-alert@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/react-alert/-/react-alert-4.0.2.tgz#f70bcf87e1316502fd96a31b55325d3c4b07ef5c"
+
 react-router-dom@^4.2.2:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.2.2.tgz#c8a81df3adc58bba8a76782e946cbd4eae649b8d"

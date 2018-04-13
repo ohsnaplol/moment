@@ -81,12 +81,12 @@ class Login extends Component {
               <input placeholder="Password" value={this.state.password} onChange={this.handleInputChange} name="password" type="password" />
             </label>
           </div>
-          <div>
-          </div>
-          <div>
+          {/* trying to create padding between pw & lgin bttn */}
+          <div className="login-button-group">
           <input className="login-button" type="submit" value="Log In"/>
           </div>
           <div>
+            {/* switched to link vs bttn due to standard practice */}
           <Link to="/signup">
             Create Account
           </Link>

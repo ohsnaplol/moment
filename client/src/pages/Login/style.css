@@ -20,12 +20,16 @@
   border-radius: 16px;
   margin-left: 11px;
 }
-.create-button{ 
+/* add gap between pw & login */
+.login-button-group {
+  margin: 10px,
+}
+.create-button { 
   background-color: #3e3973;
   color: lavenderblush;
   border-radius: 16px;
 }
-body{ 
+body { 
   background-color: #dad9e478; 
   display: table-cell;
   vertical-align: middle;
@@ -64,8 +68,7 @@ a:link {
     text-decoration: none;
     color:#141320; 
 }
-.header-class-login{ 
-  position: absolute;
+.header-class-login { 
   top: 114px;
   left: 536px;
 
