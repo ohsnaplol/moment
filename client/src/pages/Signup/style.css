@@ -4,6 +4,8 @@
         max-width: 370px;
         border-radius: 25px;
         text-align: center;
+        margin-top: 161px;
+        margin-left: 301px;
 
     }
     .email-entry-text { 
@@ -30,15 +32,13 @@
 
     }
     .create-account{ 
-        background-color: #3e3973;
-        color: lavenderblush;
+        background-color: #dad9e478;
         border-radius: 16px;
 
     }
     .back-login{ 
 
-        background-color: #3e3973;
-        color: lavenderblush;
+        background-color: #dad9e478;
         border-radius: 16px;
         margin-left: 11px;
     }

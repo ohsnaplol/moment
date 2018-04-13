@@ -1,20 +1,35 @@
 import React, { Component } from 'react'
+// eslint-disable-next-line
 import brands from '@fortawesome/fontawesome-free-brands'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import "./style.css"
 
 class NetworkTag extends Component {
   render() {
     const { network, username, url } = this.props
 
+    function setUpUrl(url) {
+      if (network === 'twitter') return `http://twitter.com/${username}`
+      if (network === 'twitch') return `http://twitch.tv/${username}`
+      return insertHttpsIfMissing(url)
+    }
+
+    function insertHttpsIfMissing(url) {
+      if (url.startsWith('http://') || url.startsWith('https://'))
+        return url
+      else
+        return `http://${url}`
+    }
+
     function snippet(fanetworkname, bgcolor, logocolor, textcolor, text) {
       return (
-        <a href={url} target="blank">
-          <div style={{backgroundColor: bgcolor, width: '200px', padding: '14px'}}>
-            <FontAwesomeIcon color={logocolor} icon={["fab", fanetworkname]} size='3x'/>
-            <span style={{fontFamily: 'Arial', color: textcolor, fontSize: '20px', float: 'right', marginRight: '20px'}}>{text}</span>
+        <a href={setUpUrl(url)} target="blank">
+          <div style={{ backgroundColor: bgcolor }} className='network-tag-container'>
+            <FontAwesomeIcon color={logocolor} icon={["fab", fanetworkname]} size='3x' />
+            <span style={{ color: textcolor }} className='network-tag-text'>{text}</span>
           </div>
         </a>
-      );
+      )
     }
 
     switch (network) {
@@ -26,7 +41,7 @@ class NetworkTag extends Component {
           'white',
           'Facebook'
         );
-      case 'snapchat': 
+      case 'snapchat':
         return snippet(
           'snapchat-ghost',
           'rgb(255, 251, 83',
@@ -34,7 +49,7 @@ class NetworkTag extends Component {
           'black',
           username,
         );
-      case 'twitch': 
+      case 'twitch':
         return snippet(
           'twitch',
           'rgb(72, 56, 120',
@@ -42,7 +57,7 @@ class NetworkTag extends Component {
           'white',
           username,
         );
-      case 'twitter': 
+      case 'twitter':
         return snippet(
           'twitter',
           'rgb(29, 161, 242)',
@@ -50,7 +65,7 @@ class NetworkTag extends Component {
           'white',
           username,
         );
-      case 'linkedin': 
+      case 'linkedin':
         return snippet(
           'linkedin',
           'rgb(0, 119, 181)',
@@ -58,7 +73,7 @@ class NetworkTag extends Component {
           'white',
           'LinkedIn',
         );
-      case 'youtube': 
+      case 'youtube':
         return snippet(
           'youtube',
           'white',
@@ -66,7 +81,7 @@ class NetworkTag extends Component {
           'black',
           username,
         );
-      case 'reddit': 
+      case 'reddit':
         return snippet(
           'reddit',
           'white',
@@ -74,7 +89,7 @@ class NetworkTag extends Component {
           'black',
           username,
         );
-      case 'instagram': 
+      case 'instagram':
         return snippet(
           'instagram',
           'rgb(229, 221, 210)',
@@ -82,7 +97,7 @@ class NetworkTag extends Component {
           'rgb(101, 71, 62)',
           username,
         );
-      case 'tumblr': 
+      case 'tumblr':
         return snippet(
           'tumblr',
           'rgb(57, 70, 91)',
@@ -90,7 +105,7 @@ class NetworkTag extends Component {
           'white',
           username,
         );
-      case 'flickr': 
+      case 'flickr':
         return snippet(
           'flickr',
           'rgb(56, 56, 56)',
@@ -98,7 +113,7 @@ class NetworkTag extends Component {
           'white',
           username,
         );
-      case 'steam': 
+      case 'steam':
         return snippet(
           'steam',
           'black',
@@ -106,7 +121,7 @@ class NetworkTag extends Component {
           'white',
           username,
         );
-      case 'xbox': 
+      case 'xbox':
         return snippet(
           'xbox',
           'green',
@@ -114,7 +129,7 @@ class NetworkTag extends Component {
           'white',
           username,
         );
-      case 'playstation': 
+      case 'playstation':
         return snippet(
           'playstation',
           'rgb(0, 55, 145)',
@@ -122,7 +137,7 @@ class NetworkTag extends Component {
           'white',
           username,
         );
-      case 'pinterest': 
+      case 'pinterest':
         return snippet(
           'pinterest',
           'rgb(246, 245, 243)',
@@ -130,7 +145,7 @@ class NetworkTag extends Component {
           'black',
           username,
         );
-      case 'google': 
+      case 'google':
         return snippet(
           'google-plus',
           'white',
@@ -138,7 +153,7 @@ class NetworkTag extends Component {
           'black',
           username,
         );
-      case 'github': 
+      case 'github':
         return snippet(
           'github',
           'rgb(37, 41, 46',
@@ -146,7 +161,7 @@ class NetworkTag extends Component {
           'white',
           username,
         );
-      case 'deviantart': 
+      case 'deviantart':
         return snippet(
           'deviantart',
           'rgb(75, 91, 78)',
@@ -154,7 +169,7 @@ class NetworkTag extends Component {
           'white',
           username,
         );
-      case 'bandcamp': 
+      case 'bandcamp':
         return snippet(
           'bandcamp',
           'rgb(107, 145, 155)',
@@ -162,7 +177,7 @@ class NetworkTag extends Component {
           'white',
           username,
         );
-      case 'soundcloud': 
+      case 'soundcloud':
         return snippet(
           'soundcloud',
           'rgb(238, 97, 43)',
@@ -170,7 +185,7 @@ class NetworkTag extends Component {
           'white',
           username,
         );
-      case 'medium': 
+      case 'medium':
         return snippet(
           'medium',
           'white',
@@ -178,7 +193,7 @@ class NetworkTag extends Component {
           'black',
           username,
         );
-      case 'gitlab': 
+      case 'gitlab':
         return snippet(
           'gitlab',
           'white',
@@ -186,8 +201,8 @@ class NetworkTag extends Component {
           'black',
           username,
         );
-      default: 
-      return snippet();
+      default:
+        return snippet();
     }
   }
 }

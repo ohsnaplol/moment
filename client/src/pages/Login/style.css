@@ -16,8 +16,7 @@
 margin-top: 20px;
 margin-right: 8px;
 border-radius: 30px; 
-width: 61px;
-height: 32px;
+background-color: #dad9e478;
 }
 .create-button{ 
 margin-top: 20px;
@@ -27,7 +26,7 @@ border-radius: 30px;
 
 }
 body{ 
-background-color: #141320; 
+background-color: #dad9e478; 
 display: table-cell;
 vertical-align: middle;
 }
@@ -36,7 +35,6 @@ html, body {
 }
 
 html {
-  display: table;
   margin: auto;
 }
 
@@ -50,7 +48,7 @@ html {
   left: 434px;
 }
 .moment-faded { 
-  color: lavenderblush;
+  color: #af637e;
   text-align: center;
   font-family: Helvetica;
   position: absolute;
@@ -62,4 +60,8 @@ html {
 .Email-Input { 
     padding-bottom: 10px;
 
+}
+a:link {
+    text-decoration: none;
+    color:#141320; 
 }

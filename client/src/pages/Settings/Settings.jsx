@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 import API from '../../utils/API'
+import "./style.css";
+
+
 
 class Settings extends Component {
   constructor() {
@@ -116,8 +119,16 @@ class Settings extends Component {
       case 'snapchat':
       case 'xbox':
       case 'playstation':
+      case 'twitch':
         return <input type='text' placeholder='Username' value={network.userName} onChange={this.handleNetworkUsernameChange(idx)}/>
-      default:
+      case 'twitter':
+        return (
+            <span>
+            @
+            <input type='text' placeholder='Username' value={network.userName} onChange={this.handleNetworkUsernameChange(idx)}/>
+            </span>
+        )
+        default:
         return <input type='text' placeholder='URL' value={network.url} onChange={this.handleNetworkUrlChange(idx)}/>
     }
   }
@@ -136,12 +147,11 @@ class Settings extends Component {
     return (
       <div>
         {this.state._id ? (
-          <div>
-            <p>{JSON.stringify(this.state)}</p>
-            <form onSubmit={this.handleFormSubmit}>
-              <label>
+          <div className="settings-screen">
+            <form className="form-settings" onSubmit={this.handleFormSubmit}>
+              <label className="name-change">
                 Change name:
-                <input type='text' name="realName" value={this.state.realName} onChange={this.handleInputChange}/>
+                <input className="name-change-input" type='text' name="realName" value={this.state.realName} onChange={this.handleInputChange}/>
               </label>
               <br />
               <label>
@@ -149,18 +159,19 @@ class Settings extends Component {
                 {this.state.nicknames.map((nickname, idx) => (
                   <div key={idx}>
                     <input
+                      className="nick-name"
                       type="text"
                       placeholder={`Nickname #${idx + 1}`}
                       value={nickname.name}
                       onChange={this.handleNickNameChange(idx)}
                     />
-                    <button type="button" onClick={this.handleRemoveNickname(idx)} className="small">-</button>
+                    <button className="nick-name-button small" type="button" onClick={this.handleRemoveNickname(idx)}>-</button>
                   </div>
                 ))}
                 <button type="button" onClick={this.handleAddnickname} className="small">Add Nickname</button>
               </label>
               <br />
-              <label>
+              <label className="add-network-label">
                 Add Network<br />
                 {this.state.socialNetworks.map((network, idx) => (
                   <div key={idx}>
@@ -169,6 +180,7 @@ class Settings extends Component {
                       <option value="twitter">Twitter</option>
                       <option value="snapchat">Snapchat</option>
                       <option value="youtube">YouTube</option>
+                      <option value="twitch">Twitch</option>
                       <option value="linkedin">LinkedIn</option>
                       <option value="reddit">Reddit</option>
                       <option value="instagram">Instagram</option>
@@ -195,10 +207,10 @@ class Settings extends Component {
                     <button type="button" onClick={this.handleRemoveNetwork(idx)} className='small'>-</button>
                   </div>
                 ))}
-                <button type="button" onClick={this.handleAddNetwork}>Add Network</button>
+                <button className="add-network" type="button" onClick={this.handleAddNetwork}>Add Network</button>
               </label>
               <br />
-              <input type="submit" value="Save"/>
+              <input className="submit-button-network" type="submit" value="Save"/>
             </form>
           </div>
         ) : (

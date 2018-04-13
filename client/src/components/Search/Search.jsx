@@ -1,45 +1,45 @@
 import React, { Component } from 'react'
 // import Suggestions from './Suggestions.jsx'
 import API from '../../utils/API'
+import Autocomplete from 'react-autocomplete'
 
 class Search extends Component {
   state = {
-    query: '',
+    value : '',
     results: []
   };
 
   getInfo = () => {
     API.getUsers()
-      .then(({ data }) => {
+      .then((data) => {
         this.setState({
           results: data.data
         })
       })
   };
 
-  handleInputChange = () => {
+  handleInputChange = event => {
+    const { name, value } = event.target
     this.setState({
-      query: this.search.value
-    }, () => {
-      if (this.state.query && this.state.query.length > 1) {
-        if (this.state.query.length % 2 === 0) {
-          API.getUsers()
-        }
-      } else if (!this.state.query) {
-      }
+      value: value
     })
-  };
+    this.getInfo()
+  }
 
   render() {
+    console.log(this.state.results)
     return (
-      <form>
-        <input
-          placeholder="Search for..."
-          ref={input => this.search = input}
-          onChange={this.handleInputChange}
-        />
-        {/* <Suggestions results={this.state.results} /> */}
-      </form>
+      <Autocomplete
+        value= {this.state.value}
+        renderItem= {(item, isHighlighted) => 
+          <div key={item._id} style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
+            {item.email}
+          </div>
+        }
+        getItemValue={results => results.email}
+        onChange={this.handleInputChange}
+        items= {this.state.results}
+      />
     )
   }
 };

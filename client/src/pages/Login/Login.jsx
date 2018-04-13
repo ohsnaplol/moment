@@ -5,6 +5,7 @@ import "./style.css";
 // This will be uncommented out, with the image tag, one we have an image with transparency around it. 
 // import FLOWPINK from './flowtrans.png';
 
+// Marcello, please dont kill, Sherwino made me do it.  He wanted to fix something. lol. 
 class Login extends Component {
   constructor() {
     super()
@@ -28,7 +29,7 @@ class Login extends Component {
         // update App.js state
         this.props.updateUser({
           loggedIn: true,
-          username: response.data.username
+          id: response.data.username
         })
         // update the state to redirect to home
         this.setState({

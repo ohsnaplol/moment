@@ -31,42 +31,36 @@ class Navbar extends Component {
     const loggedIn = this.props.loggedIn;
 
     return (
-      <div>
-        <header className="navbar App-header" id="nav-container">
-          <div className="col-4" >
-            {loggedIn ? (
-              <section className="navbar-section">
-                <Link to="/home" className="btn btn-link text-secondary">
-                  <span className="text-secondary">Home</span>
-                </Link>
-                <SearchBar />
-                <Link to={"/profile/"+this.props.id} className="btn btn-link text-secondary">
-                  <span className="text-secondary">My Profile</span>
-                </Link>
-                <Link to="/settings" className="btn btn-link text-secondary">
-                  <span className="text-secondary">Settings</span>
-                </Link>
-                <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
-                  <span className="text-secondary">Logout</span>
-                </Link>
-              </section>
-            ) : (
-                <section className="navbar-section">
-                  <SearchBar />
-                  <Link to="/" className="btn btn-link text-secondary">
-                    <span className="text-secondary">login</span>
-                  </Link>
-                  <Link to="/signup" className="btn btn-link">
-                    <span className="text-secondary">sign up</span>
-                  </Link>
-                </section>
-              )}
-          </div>
-        </header>
-      </div>
-
+      <header className="navbar App-header" id="nav-container">
+      {loggedIn ? (
+        <section className="navbar-section">
+          <Link to="/home" className="btn btn-link text-secondary">
+            <span className="text-secondary">Home</span>
+          </Link>
+          <input className="input-section-nav"/>
+          <Link to={"/profile/"+this.props.id} className="btn btn-link text-secondary">
+            <span className="text-secondary">My Profile</span>
+          </Link>
+          <Link to="/settings" className="btn btn-link text-secondary">
+            <span className="text-secondary">Settings</span>
+          </Link>
+          <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
+            <span className="text-secondary">Logout</span>
+          </Link>
+        </section>
+      ) : (
+          <section className="navbar-section">
+            <input />
+            <Link to="/" className="btn btn-link text-secondary">
+              <span className="text-secondary">login</span>
+            </Link>
+            <Link to="/signup" className="btn btn-link">
+              <span className="text-secondary">sign up</span>
+            </Link>
+          </section>
+        )}
+      </header>
     );
-
   }
 }
 
