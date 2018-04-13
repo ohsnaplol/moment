@@ -45,9 +45,11 @@ class Signup extends Component {
       }).catch(error => console.log(error))
     } else {
       if(this.state.password1.length < 8 )
-        console.log("Password must be at least 8 characterse")
+        console.log("Password must be at least 8 characters")
+        alert("Password must be at least 8 characters")
       if (this.state.password1 !== this.state.password2)
         console.log("Passwords do not match")
+        alert("Passwords do not match")
     }
   }
 
@@ -67,6 +69,7 @@ class Signup extends Component {
           </header> 
           <form className="signup-form" onSubmit={this.handleFormSubmit}>
           <div className="email-entry"> 
+            <h3>Create your Account</h3>
             <label>
               <input 
               placeholder= "Email" 
@@ -101,10 +104,12 @@ class Signup extends Component {
               </input>
             </label>
             </div>
-            <input className="create-account" type="submit" value="Create Account" />
-            <Link to="/">
+            <div>
+            <input className="create-account" type="submit" value="Create my free account" />
+            </div>
+            {/* <Link to="/">
             <button className="back-login">Back to Login</button>
-          </Link>
+          </Link> */}
           </form>
         </div>
       )

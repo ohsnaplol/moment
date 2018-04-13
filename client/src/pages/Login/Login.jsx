@@ -35,10 +35,14 @@ class Login extends Component {
         this.setState({
           redirectTo: '/home'
         })
-      }
+      } 
     }).catch(err => {
+        // unknown user
+      console.log("User name or password incorrect")
+      alert("Username or password incorrect")
       console.log('Error in login handleFormSubmit ' + err)
     })
+    
   }
 
   handleInputChange = event => {
@@ -76,11 +80,16 @@ class Login extends Component {
               <input placeholder="Password" value={this.state.password} onChange={this.handleInputChange} name="password" type="password" />
             </label>
           </div>
-
-          <input className="login-button" type="submit" value="Login"/>
+          <div>
+          </div>
+          <div>
+          <input className="login-button" type="submit" value="Log In"/>
+          </div>
+          <div>
           <Link to="/signup">
-            <button className="create-button">Create Account</button>
+            Create Account
           </Link>
+          </div>
         </form>
       </div>
     )
