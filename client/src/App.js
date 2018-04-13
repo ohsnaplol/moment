@@ -70,7 +70,11 @@ class App extends Component {
               </div>
             )} />
             <Route exact path="/login" render={() => (
-              <Login updateUser={this.updateUser} loggedIn={this.state.loggedIn}/>
+              this.state.loggedIn ? (
+                <Redirect to="/home" />
+              ) : (
+                <Login updateUser={this.updateUser} loggedIn={this.state.loggedIn}/>
+              )
             )}/>
             <Route path="/profile/:id" render={({match}) => (
               <div>
