@@ -2,8 +2,8 @@ import axios from "axios";
 
 export default {
   // Gets all books
-  getUsers: function() {
-    return axios.get("/api/user");
+  getUsers: function(data) {
+    return axios.get("/api/user", data);
   },
   validate: function() {
     return axios.get("/api/user/validate");

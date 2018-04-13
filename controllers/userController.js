@@ -4,8 +4,6 @@ const passport = require('../passport')
 module.exports = {
   // Return information on every user
   findAll: function(req, res) {
-    console.log('findAll req : ' + req)
-    console.log('findAll req.query : ' + req.query)
     db.User
       .find()
       .sort({ date: -1 })

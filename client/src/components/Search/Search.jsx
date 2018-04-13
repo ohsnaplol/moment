@@ -9,8 +9,8 @@ class Search extends Component {
     results: []
   };
 
-  getInfo = () => {
-    API.getUsers()
+  getInfo = (query) => {
+    API.getUsers(query)
       .then((data) => {
         this.setState({
           results: data.data
@@ -19,11 +19,11 @@ class Search extends Component {
   };
 
   handleInputChange = event => {
-    const { name, value } = event.target
+    const { value } = event.target
     this.setState({
       value: value
     })
-    this.getInfo()
+    this.getInfo(this.state.value)
   }
 
   render() {
@@ -32,9 +32,11 @@ class Search extends Component {
       <Autocomplete
         value= {this.state.value}
         renderItem= {(item, isHighlighted) => 
-          <div key={item._id} style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
-            {item.email}
-          </div>
+          <a href={`/profile/${item._id}`} key={item._id}>
+            <div style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
+              <p>{item.realName}</p>
+            </div>
+          </a>
         }
         getItemValue={results => results.email}
         onChange={this.handleInputChange}
