@@ -11,6 +11,8 @@
   font-family: Helvetica;
   top: 161px;
   left: 301px;
+  margin-left: 432px;
+  margin-top: 130px;
 }
 .login-button { 
   background-color: #3e3973;
@@ -61,4 +63,10 @@ html {
 a:link {
     text-decoration: none;
     color:#141320; 
+}
+.header-class-login{ 
+  position: absolute;
+  top: 114px;
+  left: 536px;
+
 }
