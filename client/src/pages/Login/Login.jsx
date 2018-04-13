@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { withAlert } from 'react-alert'
+// import AlertTemplate from 'react-alert-template-oldschool-dark'
+import AlertTemplate from 'react-alert-template-basic'
 import { Link, Redirect } from 'react-router-dom'
 import API from "../../utils/API";
 import "./style.css";
@@ -16,6 +19,7 @@ class Login extends Component {
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
   }
+
 
   handleFormSubmit = event => {
     event.preventDefault()
@@ -38,8 +42,11 @@ class Login extends Component {
       } 
     }).catch(err => {
         // unknown user
-      console.log("User name or password incorrect")
-      alert("Username or password incorrect")
+      console.log("Username or password incorrect")
+      // test unknown user react alert
+      // pass component as a message
+      this.props.alert.show(<div style={{ color: 'blue' }}>Username or password incorrect</div>)
+      // alert("Username or password incorrect")
       console.log('Error in login handleFormSubmit ' + err)
     })
     
@@ -99,4 +106,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withAlert(Login);
