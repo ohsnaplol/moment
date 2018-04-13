@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import API from "../../utils/API";
-<<<<<<< HEAD
 import SearchBar from '../Search'
-=======
 import "./style.css";
 
->>>>>>> a0edab4550098a403a7960c3c8d39a19538f8364
 
 class Navbar extends Component {
   constructor() {
