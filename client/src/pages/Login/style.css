@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
   .login-form { 
      max-width: 187px;
@@ -20,6 +21,24 @@
 
 
 
+=======
+.login-form  { 
+  max-width: 187px;
+  position: absolute;
+  background-color: lavenderblush;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  padding-left: 150px;
+  padding-right: 150px;
+  text-align: center;
+  border-radius: 35px;
+  font-family: Helvetica;
+  top: 161px;
+  left: 301px;
+  margin-left: 432px;
+  margin-top: 130px;
+}
+>>>>>>> 36ffdf5d247938eb0c03ff3a95a1a89aa6aaa723
 .login-button { 
 margin-top: 20px;
 margin-right: 8px;
@@ -63,4 +82,10 @@ body{
 a:link {
     text-decoration: none;
     color:#141320; 
+}
+.header-class-login{ 
+  position: absolute;
+  top: 114px;
+  left: 536px;
+
 }

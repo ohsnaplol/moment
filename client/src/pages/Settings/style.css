@@ -3,12 +3,69 @@
     float: left;
     margin-right: 0;
     padding-left: 63px;
+<<<<<<< HEAD
+=======
+    position: relative;
+    margin-top: 112px;
+    margin-left: 146px;
+    font-family: helvetica; 
+    font-weight: bold;
+    color: #827176;
+
+>>>>>>> 36ffdf5d247938eb0c03ff3a95a1a89aa6aaa723
 }
 .nick-name{ 
     margin-top: 5px;
+    display: block;
+
 }
 
 .settings-screen{ 
     position: relative;
     top: 70px;
 }
+<<<<<<< HEAD
+=======
+.settings-header-message{ 
+    position: absolute;
+    left: 167px;
+    width: 100%;
+    font-family: helvetica;
+    color: #827176;
+    border-bottom: 2px #ecd3dc;
+    border-bottom-style: dashed;
+    border-bottom-width: 9px;
+
+}
+.name-change-input{ 
+    margin-bottom: 31px;
+    margin-left: 12px;
+
+}
+
+#add-nickname-ID{ 
+    margin-left: 0px;
+    margin-top: 12px;
+    position: relative;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #dad9e478;
+}
+.add-network{ 
+    margin-top: 8px;
+    margin-top: 9px;
+    border-radius: 3px;
+    background-color: #dad9e478;
+}
+.submit-button-network{ 
+    margin-top: 6px;
+    margin-left: 21px;
+    border-radius: 3px;
+    background-color: #dad9e478;
+}
+select{ 
+    background-color: #e4b6b6;
+    border-radius: 3px;
+    margin-right: 7px;
+}
+>>>>>>> 36ffdf5d247938eb0c03ff3a95a1a89aa6aaa723

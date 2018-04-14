@@ -54,16 +54,14 @@ class Login extends Component {
     } else {
     return (
       <div>
-        {/* <img src={ FLOWPINK }></img>  */}
-        <header>
-          <div className="Moment-login-page"> 
+        <div className="container-div">
+        <header className="header-class-login"> 
           <h1 className="solid-moment">
             Moment
           </h1> 
           <h2 className="moment-faded">
             Moment
           </h2> 
-          </div> 
         </header> 
         <form className="login-form" onSubmit={this.handleFormSubmit}>
           <div className="Email-Input">
@@ -84,6 +82,7 @@ class Login extends Component {
             <button className="create-button">Create Account</button>
           </Link>
         </form>
+      </div>
       </div>
     )
   }
