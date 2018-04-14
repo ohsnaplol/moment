@@ -65,7 +65,6 @@ class Login extends Component {
     } else {
     return (
       <div>
-        {/* <img src={ FLOWPINK }></img>  */}
         <div className="container-div">
         <header className="header-class-login"> 
           <h1 className="solid-moment">

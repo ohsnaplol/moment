@@ -1,7 +1,7 @@
-.signup-form { 
-    max-width: 187px;
+    .signup-form{ 
+     max-width: 217px;
     position: absolute;
-    background-color: #a4c2ff;
+    background-color: lavenderblush;
     padding-bottom: 50px;
     padding-top: 50px;
     padding-left: 150px;
@@ -75,3 +75,47 @@
   opacity: 0.1;
   left: 738px;
 }
+
+
+    
+
+    
+    .email-entry-text { 
+        margin-bottom: 13px;
+
+    }
+    .email-entry{ 
+        font-family: helvetica;
+        max-width: 204px;
+
+    }
+    .password-entry-text { 
+        margin-bottom: 13px;
+    }
+    .password-entry{ 
+        font-family: helvetica;
+            padding-right: 7px;
+
+
+    }
+    .password-verify-text{ 
+        margin-bottom: 13px;
+        padding-left: 7px;
+
+
+    }
+    .password-verify{ 
+        font-family: helvetica;
+
+    }
+    .create-account{ 
+        background-color: #dad9e478;
+        border-radius: 16px;
+
+    }
+    .back-login{ 
+
+        background-color: #dad9e478;
+        border-radius: 16px;
+        margin-left: 11px;
+    }

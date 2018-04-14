@@ -11,11 +11,28 @@
 /* How do we change the font here??? */
 .h1-profile { 
     position: absolute;
+}
+    .text-secondary{ 
+        padding: 0 20px 0 20px;
+        font-family: helvetica;
+        font-size: larger;
+    }
+
+.h1-profile{ 
     color: lavenderblush;
-    left: 35px;
-    top: 50px;
     font-size: 51px;
-    font-family: 'Nanum Gothic', sans-serif;
+    font-family: helvetica;
+    position: relative;
+    padding-top: 7px;
+    margin-left: 23px;
+    font-family: helvetica;
+}
+
+.also-known-as{ 
+    margin-left: -480px;
+    font-family: helvetica;
+    font-size: larger;
+    color: #9D8189;
 
 }
 

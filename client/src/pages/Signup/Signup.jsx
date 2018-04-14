@@ -63,12 +63,14 @@ class Signup extends Component {
       return (
         <div>
           <header> 
-            <h1 className="solid-moment-sup">
-              Scoop
-            </h1> 
-            <h2 className="moment-faded-sup">
-              Scoop
-            </h2> 
+            <div className="Moment-login-page">
+              <h1 className="solid-moment">
+                Moment
+              </h1>
+              <h2 className="moment-faded">
+                Moment
+              </h2>
+            </div> 
           </header> 
           <form className="signup-form" onSubmit={this.handleFormSubmit}>
           <div className="email-entry"> 

@@ -2,7 +2,7 @@
  /* 
  FUll nav bar css 
  */
- .navbar-section{ 
+.navbar-section { 
     background-color: #8bb1ff;
     padding-top: 8px;
     position: fixed;
@@ -11,13 +11,13 @@
     justify-content: space-between;
     width: 100%;
     height: 42px;
-    border-bottom: 1px solid #a4c2ff;
-
+    border-bottom: 1px solid #ecd3dc;
+    position: absolute;
+    left: 0px;
 }
 
-.btn btn-link text-secondary{ 
+.btn btn-link text-secondary { 
     padding-right: 20px; 
-
 }
 
 /*
@@ -33,7 +33,7 @@ a:link, a:visited {
 
 /*
 */ 
-.input-section-nav{ 
+.input-section-nav { 
     border-radius: 4px;
     padding: 5px;
 }
