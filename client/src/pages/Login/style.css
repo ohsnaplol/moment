@@ -45,7 +45,7 @@ body {
   vertical-align: middle;
 }
 html, body {
-height: 100%;
+  height: 100%;
 }
 .create-button{ 
 margin-top: 20px;
@@ -96,6 +96,6 @@ a:link {
 }
 /* error alert */
 .error-alert {
-  color: #e3ff58;
+  color: #f6ffdc;
   font-family: 'Nanum Gothic', sans-serif;
 }
