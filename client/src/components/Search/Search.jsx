@@ -10,12 +10,21 @@ class Search extends Component {
   };
 
   getInfo = (query) => {
-    API.getUsers(query)
+    if (query.trim()) {
+      API.getUserByNames(query.trim())
       .then((data) => {
         this.setState({
           results: data.data
         })
       })
+      .catch(err => {
+        console.log(err)
+      })
+    } else {
+      this.setState({
+        results: []
+      })
+    }
   };
 
   handleInputChange = event => {
@@ -23,11 +32,10 @@ class Search extends Component {
     this.setState({
       value: value
     })
-    this.getInfo(this.state.value)
+    this.getInfo(value)
   }
 
   render() {
-    console.log(this.state.results)
     return (
       <Autocomplete
         value= {this.state.value}
