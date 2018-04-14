@@ -5,25 +5,25 @@
 
 .text-secondary { 
     padding: 0 20px 0 20px;
-    font-family: helvetica;
+    font-family: 'Shadows Into Light Two', cursive;
     font-size: larger;
 }
-
+/* How do we change the font here??? */
 .h1-profile { 
     position: absolute;
     color: lavenderblush;
     left: 35px;
     top: 50px;
     font-size: 51px;
-    font-family: helvetica;
+    font-family: 'Nanum Gothic', sans-serif;
 
 }
-
 
 a:link {
     text-decoration: none;
     color:#141320; 
 }
+
 /* error alert */
 .error-alert {
     color: #e3ff58;

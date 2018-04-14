@@ -32,6 +32,7 @@
   font-family: 'Give You Glory', cursive;
   font-size: 20px;
 }
+
 body { 
   background-color: #bed3ff;
   display: table-cell;
@@ -64,18 +65,19 @@ html {
   opacity: 0.1;
   left: 238px;
 }
-.Email-Input { 
+.email-input { 
     padding-bottom: 10px;
 }
+
 a:link {
     text-decoration: none;
     color:#141320; 
 }
+
 .header-class-login { 
   position: absolute;
   top: 114px;
   left: 536px;
-
 }
 /* error alert */
 .error-alert {

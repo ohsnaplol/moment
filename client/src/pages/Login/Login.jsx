@@ -76,7 +76,7 @@ class Login extends Component {
           </h2> 
         </header> 
         <form className="login-form" onSubmit={this.handleFormSubmit}>
-          <div className="Email-Input">
+          <div className="email-input">
           <p>Welcome to Scoop. Your online self in one place.</p>
           <p>Please Login or Sign up</p>
             <label>

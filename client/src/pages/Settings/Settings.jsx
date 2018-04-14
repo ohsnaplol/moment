@@ -158,7 +158,7 @@ class Settings extends Component {
               </label>
               <br />
               <label>
-                Edit nicknames:<br />
+                Edit Nicknames:<br />
                 {this.state.nicknames.map((nickname, idx) => (
                   <div key={idx}>
                     <input
@@ -175,7 +175,7 @@ class Settings extends Component {
               </label>
               <br />
               <label className="add-network-label">
-                Add Network<br />
+                Add Network:<br />
                 {this.state.socialNetworks.map((network, idx) => (
                   <div key={idx}>
                     <select value={network.networkName} onChange={this.handleNetworkChange(idx)}>
