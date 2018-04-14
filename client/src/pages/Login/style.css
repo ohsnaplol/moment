@@ -1,7 +1,7 @@
 .login-form  { 
   max-width: 187px;
   position: absolute;
-  background-color: #a4c2ff;
+  background-color: #ffc1d1;
   padding-bottom: 50px;
   padding-top: 50px;
   padding-left: 150px;
@@ -15,7 +15,7 @@
   margin-top: 130px;
 }
 .login-button { 
-  background-color: #ff8bb1;
+  background-color: #8fabff;
   color: lavenderblush;
   /* margin-left: 11px; */
   font-family: 'Shadows Into Light Two', cursive;
@@ -28,13 +28,13 @@
   margin: 30px,
 }
 .create-link { 
-  color: #e3ff58;
+  color: #f6ffdc;
   font-family: 'Give You Glory', cursive;
   font-size: 20px;
 }
 
 body { 
-  background-color: #bed3ff;
+  background-color: lavenderblush;
   display: table-cell;
   vertical-align: middle;
 }
@@ -47,7 +47,7 @@ html {
 }
 
 .solid-moment { 
-  color: #ff8bb1;
+  color: #bed3ff;
   text-align: center;
   font-family: 'Shadows Into Light Two', cursive;
   position: absolute;
@@ -56,7 +56,7 @@ html {
   left: 300px;
 }
 .moment-faded { 
-  color: #ff588f;
+  color: #a4c2ff;
   text-align: center;
   font-family: 'Shadows Into Light Two', cursive;
   position: absolute;
