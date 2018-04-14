@@ -3,8 +3,6 @@
     float: left;
     margin-right: 0;
     padding-left: 63px;
-
-
 }
 .nick-name{ 
     margin-top: 5px;
@@ -14,39 +12,3 @@
     position: relative;
     top: 70px;
 }
-/*
-.navbar App-header{ 
-    color: white; 
-
-}
-a:link {
-    text-decoration: none;
-    color:#141320; 
-}
-.settings-screen{ 
-    font-family: helvetica; 
-}
-
-.name-change-input{ 
-    margin-bottom: 43px;
-
-}
-
-}
-.small{ 
-    margin-bottom: 24px;
-    margin-top: 7px;
-    border-radius: 5px; 
-}
-
-.nick-name-button{ 
-        border-radius: 3px;
-}
-.add-network{ 
-    border-radius: 5px; 
-    margin-bottom: 39px;
-
-}
-.submit-button-network{ 
-    border-radius: 5px; 
-} */

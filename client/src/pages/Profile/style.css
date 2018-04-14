@@ -20,8 +20,10 @@
 }
 
 .also-known-as{ 
-        margin-left: 21px;
-
+    margin-left: -480px;
+    font-family: helvetica;
+    font-size: larger;
+    color: #9D8189;
 
 }
 

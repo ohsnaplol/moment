@@ -1,19 +1,29 @@
     .signup-form{ 
-        background-color: lavenderblush;
-        padding: 84px;
-        max-width: 370px;
-        border-radius: 25px;
-        text-align: center;
-        margin-top: 161px;
-        margin-left: 301px;
-
+     max-width: 217px;
+    position: absolute;
+    background-color: lavenderblush;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    padding-left: 150px;
+    padding-right: 150px;
+    text-align: center;
+    border-radius: 35px;
+    font-family: Helvetica;
+    top: 185px;
+    
+  
     }
+
+    
+
+    
     .email-entry-text { 
         margin-bottom: 13px;
 
     }
     .email-entry{ 
         font-family: helvetica;
+        max-width: 204px;
 
     }
     .password-entry-text { 
@@ -21,10 +31,14 @@
     }
     .password-entry{ 
         font-family: helvetica;
+            padding-right: 7px;
+
 
     }
     .password-verify-text{ 
         margin-bottom: 13px;
+        padding-left: 7px;
+
 
     }
     .password-verify{ 

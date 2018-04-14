@@ -1,4 +1,4 @@
-@media (max-width: 1563px){ 
+
   .login-form { 
      max-width: 187px;
     position: absolute;
@@ -17,23 +17,7 @@
     position: absolute;
     top: 2px;
   }
-}
 
-
-   .login-form  {
-    max-width: 201px;
-    position: absolute;
-    background-color: lavenderblush;
-    padding-bottom: 50px;
-    padding-top: 50px;
-    padding-left: 150px;
-    padding-right: 150px;
-    text-align: center;
-    border-radius: 35px;
-    font-family: Helvetica;
-    margin: auto;
-
-  }
 
 
 .login-button { 
