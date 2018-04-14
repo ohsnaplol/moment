@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import API from "../../utils/API";
+import SearchBar from '../Search'
 import "./style.css";
 
 
@@ -36,7 +37,7 @@ class Navbar extends Component {
           <Link to="/home" className="btn btn-link text-secondary">
             <span className="text-secondary">Home</span>
           </Link>
-          <input className="input-section-nav"/>
+          <SearchBar />
           <Link to={"/profile/"+this.props.id} className="btn btn-link text-secondary">
             <span className="text-secondary">My Profile</span>
           </Link>
@@ -49,7 +50,7 @@ class Navbar extends Component {
         </section>
       ) : (
           <section className="navbar-section">
-            <input />
+            <SearchBar />
             <Link to="/" className="btn btn-link text-secondary">
               <span className="text-secondary">login</span>
             </Link>

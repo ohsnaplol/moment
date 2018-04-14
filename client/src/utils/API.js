@@ -12,6 +12,9 @@ export default {
   getUser: function(id) {
     return axios.get("/api/user/" + id);
   },
+  getUserByNames: function(query) {
+    return axios.get('/api/user/search/names/'+query)
+  },
   login: function(data) {
     return axios.post("/api/user/login", data);
   },
