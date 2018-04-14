@@ -21,7 +21,7 @@
   font-family: 'Shadows Into Light Two', cursive;
   font-size: 18px;
   height: 35px;
-  width: 170px;
+  width: 172px;
 }
 /* add gap between pw & login */
 .login-button-group {
@@ -46,18 +46,18 @@ html {
 }
 
 .solid-moment { 
-  color: #c2ffa4;
+  color: #ff8bb1;
   text-align: center;
-  font-family: 'Give You Glory', cursive;
+  font-family: 'Shadows Into Light Two', cursive;
   position: absolute;
   top: 10px;
   font-size: 75px;
   left: 300px;
 }
 .moment-faded { 
-  color: #8fff58;
+  color: #ff588f;
   text-align: center;
-  font-family: 'Give You Glory', cursive;
+  font-family: 'Shadows Into Light Two', cursive;
   position: absolute;
   top: -75px;
   font-size: 100px;
@@ -79,9 +79,6 @@ a:link {
 }
 /* error alert */
 .error-alert {
-  transition: fade;
-  color: lavenderblush;
-  font-family: 'Dosis', sans-serif;
-  timeout: 500;
-  position: center;
+  color: #e3ff58;
+  font-family: 'Nanum Gothic', sans-serif;
 }

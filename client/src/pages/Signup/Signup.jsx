@@ -63,16 +63,16 @@ class Signup extends Component {
       return (
         <div>
           <header> 
-            <h1 className="solid-moment">
-              Moment
+            <h1 className="solid-moment-sup">
+              Scoop
             </h1> 
-            <h2 className="moment-faded">
-              Moment
+            <h2 className="moment-faded-sup">
+              Scoop
             </h2> 
           </header> 
           <form className="signup-form" onSubmit={this.handleFormSubmit}>
           <div className="email-entry"> 
-            <h3>Create your Account</h3>
+            <p className="create-prompt">Create your Account</p>
             <label>
               <input 
               placeholder= "Email" 
@@ -108,7 +108,7 @@ class Signup extends Component {
             </label>
             </div>
             <div>
-            <input className="create-account" type="submit" value="Create my free account" />
+            <input className="create-account" type="submit" value="Create my account" />
             </div>
             {/* <Link to="/">
             <button className="back-login">Back to Login</button>

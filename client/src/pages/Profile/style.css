@@ -24,10 +24,8 @@ a:link {
     text-decoration: none;
     color:#141320; 
 }
-  /* error alert */
+/* error alert */
 .error-alert {
-    transition: fade;
-    color: lavenderblush;
-    font-family: 'Dosis', sans-serif;
-    timeout: 500;
+    color: #e3ff58;
+    font-family: 'Nanum Gothic', sans-serif;
 }

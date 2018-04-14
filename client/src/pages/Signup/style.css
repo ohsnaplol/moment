@@ -1,11 +1,18 @@
 .signup-form { 
-    background-color: lavenderblush;
-    padding: 84px;
-    max-width: 370px;
-    border-radius: 25px;
+    max-width: 187px;
+    position: absolute;
+    background-color: #a4c2ff;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    padding-left: 150px;
+    padding-right: 150px;
     text-align: center;
-    margin-top: 161px;
-    margin-left: 301px;
+    border-radius: 35px;
+    font-family: 'Nanum Gothic', sans-serif;
+    top: 161px;
+    left: 301px;
+    margin-top: 130px;
+    margin-left: 432px; 
 }
 .email-entry-text { 
     margin-bottom: 13px;
@@ -29,9 +36,12 @@
  /* .account-heading {
      font-family: 'Give You Glory', cursive; */
 .create-account { 
-    background-color: #3e3973;
-    color: lavenderblush;
-    border-radius: 16px;
+  background-color: #ff8bb1;
+  color: lavenderblush;
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 18px;
+  height: 35px;
+  width: 172px;
 }
 .back-login { 
     background-color: #3e3973;
@@ -40,8 +50,28 @@
 }
     /* error alert */
 .error-alert {
-    transition: fade;
-    color: lavenderblush;
-    font-family: 'Dosis', sans-serif;
-    timeout: 500;
+    color: #e3ff58;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+.create-prompt {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+.solid-moment-sup { 
+  color: #ff8bb1;
+  text-align: center;
+  font-family: 'Shadows Into Light Two', cursive;
+  position: absolute;
+  top: 125px;
+  font-size: 75px;
+  left: 800px;
+}
+.moment-faded-sup { 
+  color: #ff588f;
+  text-align: center;
+  font-family: 'Shadows Into Light Two', cursive;
+  position: absolute;
+  top: 25px;
+  font-size: 100px;
+  opacity: 0.1;
+  left: 738px;
 }
