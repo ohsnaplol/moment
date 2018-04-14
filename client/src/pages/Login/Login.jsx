@@ -45,7 +45,7 @@ class Login extends Component {
       console.log("Username or password incorrect")
       // test unknown user react alert
       // pass component as a message
-      this.props.alert.show(<div style={{ color: 'blue' }}>Username or password incorrect</div>)
+      this.props.alert.show(<div className="error-alert">Username or password incorrect</div>)
       // alert("Username or password incorrect")
       console.log('Error in login handleFormSubmit ' + err)
     })
@@ -69,16 +69,16 @@ class Login extends Component {
         <div className="container-div">
         <header className="header-class-login"> 
           <h1 className="solid-moment">
-            Moment
+            Scoop
           </h1> 
           <h2 className="moment-faded">
-            Moment
+            Scoop
           </h2> 
         </header> 
         <form className="login-form" onSubmit={this.handleFormSubmit}>
           <div className="Email-Input">
-          <h3>Welcome to Moment. Your online self in one place.</h3>
-          <h4>Please Login or Sign up</h4>
+          <p>Welcome to Scoop. Your online self in one place.</p>
+          <p>Please Login or Sign up</p>
             <label>
               <input placeholder= "Email" value={this.state.email} onChange={this.handleInputChange} name="email" type="email"/>
             </label>
@@ -90,12 +90,15 @@ class Login extends Component {
           </div>
           {/* trying to create padding between pw & lgin bttn */}
           <div className="login-button-group">
+          <p></p>
+          </div>
+          <div>
           <input className="login-button" type="submit" value="Log In"/>
           </div>
           <div>
             {/* switched to link vs bttn due to standard practice */}
           <Link to="/signup">
-            Create Account
+            <p className="create-link">Create Account</p>
           </Link>
           </div>
         </form>

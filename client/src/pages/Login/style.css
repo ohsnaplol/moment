@@ -1,36 +1,39 @@
 .login-form  { 
   max-width: 187px;
   position: absolute;
-  background-color: lavenderblush;
+  background-color: #a4c2ff;
   padding-bottom: 50px;
   padding-top: 50px;
   padding-left: 150px;
   padding-right: 150px;
   text-align: center;
   border-radius: 35px;
-  font-family: Helvetica;
+  font-family: 'Nanum Gothic', sans-serif;
   top: 161px;
   left: 301px;
   margin-left: 432px;
   margin-top: 130px;
 }
 .login-button { 
-  background-color: #3e3973;
+  background-color: #ff8bb1;
   color: lavenderblush;
-  border-radius: 16px;
-  margin-left: 11px;
+  /* margin-left: 11px; */
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 18px;
+  height: 35px;
+  width: 170px;
 }
 /* add gap between pw & login */
 .login-button-group {
-  margin: 10px,
+  margin: 30px,
 }
-.create-button { 
-  background-color: #3e3973;
-  color: lavenderblush;
-  border-radius: 16px;
+.create-link { 
+  color: #e3ff58;
+  font-family: 'Give You Glory', cursive;
+  font-size: 20px;
 }
 body { 
-  background-color: #dad9e478; 
+  background-color: #bed3ff;
   display: table-cell;
   vertical-align: middle;
 }
@@ -43,20 +46,20 @@ html {
 }
 
 .solid-moment { 
-  color: #ecd3dc;
+  color: #c2ffa4;
   text-align: center;
-  font-family: Helvetica;
+  font-family: 'Give You Glory', cursive;
   position: absolute;
-  top: 51px;
-  font-size: 51px;
-  left: 434px;
+  top: 10px;
+  font-size: 75px;
+  left: 300px;
 }
 .moment-faded { 
-  color: #af637e;
+  color: #8fff58;
   text-align: center;
-  font-family: Helvetica;
+  font-family: 'Give You Glory', cursive;
   position: absolute;
-  top: -54px;
+  top: -75px;
   font-size: 100px;
   opacity: 0.1;
   left: 238px;
@@ -69,7 +72,16 @@ a:link {
     color:#141320; 
 }
 .header-class-login { 
+  position: absolute;
   top: 114px;
   left: 536px;
 
+}
+/* error alert */
+.error-alert {
+  transition: fade;
+  color: lavenderblush;
+  font-family: 'Dosis', sans-serif;
+  timeout: 500;
+  position: center;
 }

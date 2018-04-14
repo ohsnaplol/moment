@@ -1,44 +1,47 @@
-    .signup-form{ 
-        background-color: lavenderblush;
-        padding: 84px;
-        max-width: 370px;
-        border-radius: 25px;
-        text-align: center;
-        margin-top: 161px;
-        margin-left: 301px;
-
-    }
-    .email-entry-text { 
-        margin-bottom: 13px;
-
-    }
-    .email-entry{ 
-        font-family: helvetica;
-
-    }
-    .password-entry-text { 
-        margin-bottom: 13px;
-    }
-    .password-entry{ 
-        font-family: helvetica;
-
-    }
-    .password-verify-text{ 
-        margin-bottom: 13px;
-
-    }
-    .password-verify{ 
-        font-family: helvetica;
-
-    }
-    .create-account{ 
-        background-color: #3e3973;
-        color: lavenderblush;
-        border-radius: 16px;
-
-    }
-    .back-login{ 
-        background-color: #3e3973;
-        color: lavenderblush;
-        border-radius: 16px;
-    }
+.signup-form { 
+    background-color: lavenderblush;
+    padding: 84px;
+    max-width: 370px;
+    border-radius: 25px;
+    text-align: center;
+    margin-top: 161px;
+    margin-left: 301px;
+}
+.email-entry-text { 
+    margin-bottom: 13px;
+}
+.email-entry { 
+    font-family: helvetica;
+}
+.password-entry-text { 
+    margin-bottom: 13px;
+}
+.password-entry { 
+    font-family: helvetica;
+}
+.password-verify-text { 
+    margin-bottom: 13px;
+}
+.password-verify { 
+    font-family: helvetica;
+}
+ /* h3 create your account */
+ /* .account-heading {
+     font-family: 'Give You Glory', cursive; */
+.create-account { 
+    background-color: #3e3973;
+    color: lavenderblush;
+    border-radius: 16px;
+}
+.back-login { 
+    background-color: #3e3973;
+    color: lavenderblush;
+    border-radius: 16px;
+}
+    /* error alert */
+.error-alert {
+    transition: fade;
+    color: lavenderblush;
+    font-family: 'Dosis', sans-serif;
+    timeout: 500;
+}

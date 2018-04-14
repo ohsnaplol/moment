@@ -47,11 +47,11 @@ class Signup extends Component {
     } else {
       if(this.state.password1.length < 8 )
         console.log("Password must be at least 8 characters")
-        this.props.alert.show(<div style={{ color: 'blue' }}>Password must be at least 8 characters</div>)
+        this.props.alert.show(<div className="error-alert">Password must be at least 8 characters</div>)
         // alert("Password must be at least 8 characters")
       if (this.state.password1 !== this.state.password2)
         console.log("Passwords do not match")
-        this.props.alert.show(<div style={{ color: 'blue' }}>Passwords do not match</div>)
+        this.props.alert.show(<div className="error-alert">Passwords do not match</div>)
         // alert("Passwords do not match")
     }
   }

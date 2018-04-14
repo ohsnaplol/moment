@@ -3,13 +3,13 @@
 
 } */
 
-    .text-secondary{ 
-        padding: 0 20px 0 20px;
-        font-family: helvetica;
-        font-size: larger;
-    }
+.text-secondary { 
+    padding: 0 20px 0 20px;
+    font-family: helvetica;
+    font-size: larger;
+}
 
-.h1-profile{ 
+.h1-profile { 
     position: absolute;
     color: lavenderblush;
     left: 35px;
@@ -23,4 +23,11 @@
 a:link {
     text-decoration: none;
     color:#141320; 
+}
+  /* error alert */
+.error-alert {
+    transition: fade;
+    color: lavenderblush;
+    font-family: 'Dosis', sans-serif;
+    timeout: 500;
 }
