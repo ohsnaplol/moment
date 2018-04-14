@@ -55,13 +55,15 @@ class Login extends Component {
     return (
       <div>
         {/* <img src={ FLOWPINK }></img>  */}
-        <header> 
+        <header>
+          <div className="Moment-login-page"> 
           <h1 className="solid-moment">
             Moment
           </h1> 
           <h2 className="moment-faded">
             Moment
           </h2> 
+          </div> 
         </header> 
         <form className="login-form" onSubmit={this.handleFormSubmit}>
           <div className="Email-Input">
