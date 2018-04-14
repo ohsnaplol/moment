@@ -18,6 +18,19 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))
   },
+  findByNames: function(req, res) {
+    var query = {}
+    if (req.params.query) {
+      query = {$or:[{realName: {$regex: req.params.query, $options: 'i'}},{nicknames:{$regex: req.params.query, $options: 'i'}}]}
+    }
+    console.log('SEARCH: ' + req.params.query)
+    db.User
+      .find({realName: {'$regex': req.params.query, '$options': 'i'}})
+      // un comment this if you want to test searching by realNames and nicknames
+      // .find(query)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err))
+  },
   // Create a new user
   create: function(req, res) {
     const { email, password } = req.body

@@ -50,4 +50,9 @@ router
   .put(userController.update)
   .delete(userController.remove);
 
+// Matches with '/api/user/search/names'
+router
+  .route('/search/names/:query')
+  .get(userController.findByNames)
+
 module.exports = router;

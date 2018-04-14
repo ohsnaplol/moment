@@ -2,8 +2,8 @@ import axios from "axios";
 
 export default {
   // Gets all books
-  getUsers: function(data) {
-    return axios.get("/api/user", data);
+  getUsers: function() {
+    return axios.get("/api/user");
   },
   validate: function() {
     return axios.get("/api/user/validate");
@@ -11,6 +11,9 @@ export default {
   // Gets the user with the given id
   getUser: function(id) {
     return axios.get("/api/user/" + id);
+  },
+  getUserByNames: function(query) {
+    return axios.get('/api/user/search/names/'+query)
   },
   login: function(data) {
     return axios.post("/api/user/login", data);
