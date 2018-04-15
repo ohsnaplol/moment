@@ -16,16 +16,13 @@
     }
 
 .network-tag-container{ 
-
     position: relative;
-    margin-left: -459px;
     margin-top: 17px;
 }
 
 .h1-profile{ 
     position: relative;
     margin-top: 78px;
-    margin-left: -486px;
     font-family: 'Nanum Gothic', sans-serif;
     color: #9D8189;
     font-size: 36px;
@@ -33,7 +30,6 @@
 }
 
 .also-known-as{ 
-    margin-left: -480px;
     font-family: helvetica;
     font-size: larger;
     font-family: 'Nanum Gothic', sans-serif;
@@ -45,7 +41,6 @@
 .welcome-home-h1{ 
     position: relative;
     margin-top: 78px;
-    margin-left: -486px;
     font-family: 'Nanum Gothic', sans-serif;
     color: #9D8189;
 
