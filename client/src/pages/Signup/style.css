@@ -1,6 +1,5 @@
     .signup-form{ 
-     max-width: 217px;
-    position: absolute;
+    position: relative;
     background: linear-gradient(lavenderblush, #ffc3ef);
     padding-bottom: 50px;
     padding-top: 50px;
@@ -9,10 +8,7 @@
     text-align: center;
     border-radius: 35px;
     font-family: 'Nanum Gothic', sans-serif;
-    top: 161px;
-    left: 301px;
-    margin-top: 130px;
-    margin-left: 432px; 
+    top: 197px;
 }
 .email-entry-text { 
     margin-bottom: 13px;
@@ -32,9 +28,7 @@
 .password-verify { 
     font-family: helvetica;
 }
- /* h3 create your account */
- /* .account-heading {
-     font-family: 'Give You Glory', cursive; */
+
 .create-account { 
   background-color: #868b78;
   color: lavenderblush;
@@ -43,12 +37,7 @@
   height: 35px;
   width: 172px;
 }
-/* .back-login { 
-    background-color: #3e3973;
-    color: lavenderblush;
-    border-radius: 16px;
-} */
-    /* error alert */
+
 .error-alert {
     color: #f6ffdc;
     font-family: 'Nanum Gothic', sans-serif;
@@ -56,30 +45,6 @@
 .create-prompt {
     font-family: 'Nanum Gothic', sans-serif;
 }
-/* .solid-moment-sup { 
-  color: #ff8bb1;
-  text-align: center;
-  font-family: 'Shadows Into Light Two', cursive;
-  position: absolute;
-  top: 125px;
-  font-size: 75px;
-  left: 800px;
-}
-.moment-faded-sup { 
-  color: #ff588f;
-  text-align: center;
-  font-family: 'Shadows Into Light Two', cursive;
-  position: absolute;
-  top: 40px;
-  font-size: 100px;
-  opacity: 0.1;
-  left: 738px;
-} */
-
-
-    
-
-    
     .email-entry-text { 
         margin-bottom: 13px;
 
@@ -108,14 +73,9 @@
         font-family: helvetica;
 
     }
-    /* .create-account{ 
-        background-color: #dad9e478;
-        border-radius: 16px;
 
-    } */
-    /* .back-login{ 
-
-        background-color: #dad9e478;
-        border-radius: 16px;
-        margin-left: 11px;
-    } */
+.Moment-login-page {
+    display: block;
+    margin-left: 55px;
+    top:18px; 
+}

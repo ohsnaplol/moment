@@ -10,7 +10,7 @@
     text-align: center;
     border-radius: 35px;
     font-family: Helvetica;
-    top: 185px;
+    top: 254px;
   
   }
   .Moment-login-page{
@@ -32,11 +32,16 @@
   margin: 30px,
 }
 .create-link { 
-  color: #868b78;
-  font-family: 'Give You Glory', cursive;
-  font-size: 20px;
+  background-color: #868b78;
+  color: lavenderblush;
+  /* margin-left: 11px; */
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 18px;
+  height: 35px;
+  width: 172px;
+  position: relative;
+    margin-left: 9px;
 }
-
 body { 
   background: linear-gradient(bottom right, #dad9e478, #FFDCF6, #dee4eb);
   display: table-cell;
@@ -44,18 +49,29 @@ body {
 }
 html, body {
   height: 100%;
+  max-width: 500px;
+  margin: auto;
+
 }
+
+
+/* body { 
+  background: linear-gradient(bottom right, #dad9e478, #FFDCF6, #dee4eb);
+  display: table-cell;
+  vertical-align: middle;
+
+}
+html, body {
+  max-width: 500px;
+  margin: auto;
+} */
+
 .create-button{ 
 margin-top: 20px;
 margin-right: 8px;
 border-radius: 30px; 
 }
 
-/* body{ 
-    max-width: 500px;
-    margin: auto;
-    background-color: #dad9e478; 
-} */
 
 .solid-moment { 
   color: #bed3ff;
@@ -89,8 +105,8 @@ a:link {
 
 .header-class-login { 
   position: absolute;
-  top: 114px;
-  left: 536px;
+  margin-top: 50px;
+  margin-left: 50px;
 }
 /* error alert */
 .error-alert {
