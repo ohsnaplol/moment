@@ -110,7 +110,7 @@ class Login extends Component {
 		          <ellipse className="honey-leftEye" transform="matrix(0.989 -0.148 0.148 0.989 192 28)" fill="#010202" cx="40.374" cy="66.952" rx="1.359" ry="1.789"/>
 	
 		          <ellipse className="honey-rightEye" transform="matrix(0.9889 -0.1484 0.1484 0.9889 192 30)" fill="#010202" cx="70.142" cy="69.318" rx="1.359" ry="1.789"/>
-              <path className="honey-mouth" transform="matrix(0.9899 0.1416 -0.1416 0.9899 215 20)" fill="#010202" d="M41.833,79.758l27.78,1.128C69.612,80.886,56.448,94.285,41.833,79.758z"/>
+              <path className="honey-mouth" transform="matrix(0.9899 0.1416 -0.1416 0.9899 213 20)" fill="#010202" d="M41.833,79.758l27.78,1.128C69.612,80.886,56.448,94.285,41.833,79.758z"/>
           </g>
         </svg>               
           <h1 className="solid-moment">
