@@ -12,18 +12,28 @@ class Profile extends Component {
       realName: '',
       nicknames: [],
     }
-    this.componentDidMount = this.componentDidMount.bind(this)
   }
-
-  componentDidMount() {
-    API.getUser(this.props.id) // normally use this.props.id
+  
+  componentWillMount() {
+    API.getUser(this.props.history.location.pathname.replace('/profile', '')) // normally use this.props.id
       .then(response => {
         this.setState(response.data)
-        console.log('user data: ' + JSON.stringify(this.state))
       })
       .catch(err => {
         console.log(err)
       })
+  }
+
+  componentWillReceiveProps() {
+    if (this.state._id) {
+      API.getUser(this.props.history.location.pathname.replace('/profile', '')) // normally use this.props.id
+      .then(response => {
+        this.setState(response.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    }
   }
 
   render() {
