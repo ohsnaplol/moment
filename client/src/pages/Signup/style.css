@@ -1,19 +1,57 @@
     .signup-form{ 
-        background-color: lavenderblush;
-        padding: 84px;
-        max-width: 370px;
-        border-radius: 25px;
-        text-align: center;
-        margin-top: 161px;
-        margin-left: 301px;
+    position: relative;
+    background: linear-gradient(lavenderblush, #ffc3ef);
+    padding-bottom: 50px;
+    padding-top: 50px;
+    padding-left: 150px;
+    padding-right: 150px;
+    text-align: center;
+    border-radius: 35px;
+    font-family: 'Nanum Gothic', sans-serif;
+    top: 197px;
+}
+.email-entry-text { 
+    margin-bottom: 13px;
+}
+.email-entry { 
+    font-family: helvetica;
+}
+.password-entry-text { 
+    margin-bottom: 13px;
+}
+.password-entry { 
+    font-family: helvetica;
+}
+.password-verify-text { 
+    margin-bottom: 13px;
+}
+.password-verify { 
+    font-family: helvetica;
+}
 
-    }
+.create-account { 
+  background-color: #868b78;
+  color: lavenderblush;
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 18px;
+  height: 35px;
+  width: 172px;
+}
+
+.error-alert {
+    color: #f6ffdc;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+.create-prompt {
+    font-family: 'Nanum Gothic', sans-serif;
+}
     .email-entry-text { 
         margin-bottom: 13px;
 
     }
     .email-entry{ 
         font-family: helvetica;
+        max-width: 204px;
 
     }
     .password-entry-text { 
@@ -21,24 +59,23 @@
     }
     .password-entry{ 
         font-family: helvetica;
+            padding-right: 7px;
+
 
     }
     .password-verify-text{ 
         margin-bottom: 13px;
+        padding-left: 7px;
+
 
     }
     .password-verify{ 
         font-family: helvetica;
 
     }
-    .create-account{ 
-        background-color: #dad9e478;
-        border-radius: 16px;
 
-    }
-    .back-login{ 
-
-        background-color: #dad9e478;
-        border-radius: 16px;
-        margin-left: 11px;
-    }
+.Moment-login-page {
+    display: block;
+    margin-left: 55px;
+    top:18px; 
+}

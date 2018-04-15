@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link, Redirect } from 'react-router-dom'
+import { withAlert } from 'react-alert'
 import API from "../../utils/API";
 import "./style.css";
 
@@ -45,9 +46,13 @@ class Signup extends Component {
       }).catch(error => console.log(error))
     } else {
       if(this.state.password1.length < 8 )
-        console.log("Password must be at least 8 characterse")
+        console.log("Password must be at least 8 characters")
+        this.props.alert.show(<div className="error-alert">Password must be at least 8 characters</div>)
+        // alert("Password must be at least 8 characters")
       if (this.state.password1 !== this.state.password2)
         console.log("Passwords do not match")
+        this.props.alert.show(<div className="error-alert">Passwords do not match</div>)
+        // alert("Passwords do not match")
     }
   }
 
@@ -58,54 +63,58 @@ class Signup extends Component {
       return (
         <div>
           <header> 
-            <h1 className="solid-moment">
-              Moment
-            </h1> 
-            <h2 className="moment-faded">
-              Moment
-            </h2> 
+            <div className="Moment-login-page">
+              <h1 className="solid-moment">
+                Scoop
+              </h1>
+              <h2 className="moment-faded">
+                Scoops
+              </h2>
+            </div> 
           </header> 
           <form className="signup-form" onSubmit={this.handleFormSubmit}>
           <div className="email-entry"> 
+            <p className="create-prompt">Create your Account</p>
             <label>
-              Email:
               <input 
-                className="email-entry-text"
-                type="email" 
-                value={this.state.email} 
-                name="email"
-                onChange={this.handleInputChange}
-              ></input>
+              placeholder= "Email" 
+              className="email-entry-text" 
+              type="email" 
+              value={this.state.email} 
+              name="email" 
+              onChange={this.handleInputChange}>
+              </input>
             </label>
             </div> 
             <div className="password-entry"> 
             <label>
-              Password:
-              <input 
-                className="password-entry-text"
-                type="password" 
-                value={this.state.password1} 
-                name="password1"
-                onChange={this.handleInputChange}
-              ></input>
+              <input placeholder= "Password" 
+              className="password-entry-text" 
+              type="password" 
+              value={this.state.password1} 
+              name="password1" 
+              onChange={this.handleInputChange}>
+              </input>
             </label>
             </div> 
             <div className="password-verify"> 
             <label>
-              Verify Password:
               <input 
+                placeholder= "Re-enter Password" 
                 className="password-verify-text"
                 type="password" 
                 value={this.state.password2} 
                 name="password2"
-                onChange={this.handleInputChange}
-              ></input>
+                onChange={this.handleInputChange}>
+              </input>
             </label>
             </div>
-            <input className="create-account" type="submit" value="Create Account" />
-            <Link to="/">
+            <div>
+            <input className="create-account" type="submit" value="Create my account" />
+            </div>
+            {/* <Link to="/">
             <button className="back-login">Back to Login</button>
-          </Link>
+          </Link> */}
           </form>
         </div>
       )
@@ -113,4 +122,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default withAlert(Signup);

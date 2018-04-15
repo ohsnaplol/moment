@@ -43,11 +43,11 @@ class Profile extends Component {
           <div>
             <h1 className="h1-profile">{this.state.realName}</h1>
             <div>
-              <h2>Also known as:
+              <div className="also-known-as">Also known as:
               {this.state.nicknames.map((nickname, idx) => (
                 <span key={idx}> {nickname.name}</span>
               ))}
-              </h2>
+              </div>
               {this.state.socialNetworks.map((network, idx) => 
               (
                 <NetworkTag key={idx} network={network.networkName} username={network.userName} url={network.url}/>

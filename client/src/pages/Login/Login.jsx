@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import { withAlert } from 'react-alert'
+// import AlertTemplate from 'react-alert-template-oldschool-dark'
+import AlertTemplate from 'react-alert-template-basic'
 import { Link, Redirect } from 'react-router-dom'
 import API from "../../utils/API";
 import "./style.css";
@@ -16,6 +19,7 @@ class Login extends Component {
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
   }
+
 
   handleFormSubmit = event => {
     event.preventDefault()
@@ -35,10 +39,17 @@ class Login extends Component {
         this.setState({
           redirectTo: '/home'
         })
-      }
+      } 
     }).catch(err => {
+        // unknown user
+      console.log("Username or password incorrect")
+      // test unknown user react alert
+      // pass component as a message
+      this.props.alert.show(<div className="error-alert">Username or password incorrect</div>)
+      // alert("Username or password incorrect")
       console.log('Error in login handleFormSubmit ' + err)
     })
+    
   }
 
   handleInputChange = event => {
@@ -54,38 +65,47 @@ class Login extends Component {
     } else {
     return (
       <div>
-        {/* <img src={ FLOWPINK }></img>  */}
-        <header> 
+        <div className="container-div">
+        <header className="header-class-login"> 
           <h1 className="solid-moment">
-            Moment
+            Scoop
           </h1> 
           <h2 className="moment-faded">
-            Moment
+            Scoop
           </h2> 
         </header> 
         <form className="login-form" onSubmit={this.handleFormSubmit}>
-          <div className="Email-Input">
+          <div className="email-input">
+          <p>Welcome to Scoop. Your online self in one place.</p>
+          <p>Please Login or Sign up</p>
             <label>
-              Email:
-              <input value={this.state.email} onChange={this.handleInputChange} name="email" type="email"/>
+              <input placeholder= "Email" value={this.state.email} onChange={this.handleInputChange} name="email" type="email"/>
             </label>
           </div> 
           <div className="Password-Entry">
             <label>
-              Password:
-              <input value={this.state.password} onChange={this.handleInputChange} name="password" type="password" />
+              <input placeholder="Password" value={this.state.password} onChange={this.handleInputChange} name="password" type="password" />
             </label>
           </div>
-
-          <input className="login-button" type="submit" value="Login"/>
+          {/* trying to create padding between pw & lgin bttn */}
+          <div className="login-button-group">
+          <p></p>
+          </div>
+          <div>
+          <input className="login-button" type="submit" value="Log In"/>
+          </div>
+          <div>
+            {/* switched to link vs bttn due to standard practice */}
           <Link to="/signup">
-            <button className="create-button">Create Account</button>
+            <p className="create-link">Create Account</p>
           </Link>
+          </div>
         </form>
+      </div>
       </div>
     )
   }
   }
 }
 
-export default Login;
+export default withAlert(Login);

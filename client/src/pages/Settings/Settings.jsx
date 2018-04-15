@@ -154,10 +154,11 @@ class Settings extends Component {
                 <input className="name-change-input" type='text' name="realName" value={this.state.realName} onChange={this.handleInputChange}/>
               </label>
               <br />
+              <div className="nick-name-div">
               <label>
-                Edit nicknames:<br />
+                Edit Nicknames:<br />
                 {this.state.nicknames.map((nickname, idx) => (
-                  <div key={idx}>
+                  <div  key={idx}>
                     <input
                       className="nick-name"
                       type="text"
@@ -168,11 +169,12 @@ class Settings extends Component {
                     <button className="nick-name-button small" type="button" onClick={this.handleRemoveNickname(idx)}>-</button>
                   </div>
                 ))}
-                <button type="button" onClick={this.handleAddnickname} className="small">Add Nickname</button>
+                <button type="button" onClick={this.handleAddnickname} className="small" id="nick-name-button">Add Nickname</button>
               </label>
+                </div>
               <br />
               <label className="add-network-label">
-                Add Network<br />
+                Add Network:<br />
                 {this.state.socialNetworks.map((network, idx) => (
                   <div key={idx}>
                     <select value={network.networkName} onChange={this.handleNetworkChange(idx)}>
@@ -204,7 +206,7 @@ class Settings extends Component {
                       <option value='secret'>Secret</option>
                     </select>
                     {this.getInputType(network, idx)}
-                    <button type="button" onClick={this.handleRemoveNetwork(idx)} className='small'>-</button>
+                    <button type="button" id="remove-network-button" onClick={this.handleRemoveNetwork(idx)} className='small'>-</button>
                   </div>
                 ))}
                 <button className="add-network" type="button" onClick={this.handleAddNetwork}>Add Network</button>
