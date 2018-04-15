@@ -79,12 +79,12 @@ class Login extends Component {
           <p>Welcome to Scoop. Your online self in one place.</p>
           <p>Please Login or Sign up</p>
             <label>
-              <input placeholder= "Email" value={this.state.email} onChange={this.handleInputChange} name="email" type="email"/>
+              <input placeholder= "Email" value={this.state.email} onChange={this.handleInputChange} name="email" type="email" autoComplete="current-email"/>
             </label>
           </div> 
           <div className="Password-Entry">
             <label>
-              <input placeholder="Password" value={this.state.password} onChange={this.handleInputChange} name="password" type="password" />
+              <input placeholder="Password" value={this.state.password} onChange={this.handleInputChange} name="password" type="password" autoComplete="current-password"/>
             </label>
           </div>
           {/* trying to create padding between pw & lgin bttn */}
