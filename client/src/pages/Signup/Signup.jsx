@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import { withAlert } from 'react-alert'
 import API from "../../utils/API";
 import "./style.css";
