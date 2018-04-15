@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { withAlert } from 'react-alert'
-// import AlertTemplate from 'react-alert-template-oldschool-dark'
-import AlertTemplate from 'react-alert-template-basic'
 import { Link, Redirect } from 'react-router-dom'
 import API from "../../utils/API";
 import "./style.css";
