@@ -3,7 +3,7 @@
  FUll nav bar css 
  */
 .navbar-section { 
-    background-color: #8bb1ff;
+    background: linear-gradient(lavenderblush, #ffc3ef);
     padding-top: 8px;
     position: fixed;
     top: 0;
@@ -27,7 +27,8 @@ a:link, a:visited {
     text-decoration: none;
     /* color: red; */
 
-    color: lavenderblush; 
+    color: #868b78;
+    font-family: 'Shadows Into Light Two', cursive;
     
 }
 
