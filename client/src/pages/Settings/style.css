@@ -1,15 +1,12 @@
  
 .form-settings { 
-    float: left;
-    margin-right: 0;
     padding-left: 63px;
-    position: relative;
-    margin-top: 112px;
-    margin-left: 146px;
     font-family: helvetica; 
     font-weight: bold;
-    color: #00143d
-    /* color: #827176; */
+    color: #00143d; 
+    position: relative;
+    margin-left: -375px;
+    margin-top: 35px;
 }
 .nick-name { 
     margin-top: 5px;
@@ -45,6 +42,32 @@
     position: relative;
     margin-bottom: 15px;
     width: 172px;
+}
+#nick-name-button{ 
+    background-color: #ff8bb1;
+    color: lavenderblush;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 18px;
+    margin-top: 8px;
+    margin-top: 8px;
+    width: 172px;
+}
+.nick-name-button{ 
+    background-color: #ff8bb1;
+    color: lavenderblush;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 18px;
+    margin-top: 8px;
+    width: 9%;
+}
+
+#remove-network-button{ 
+    background-color: #ff8bb1;
+    color: lavenderblush;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 18px;
+    margin-top: 8px;
+    width: 9%;
 }
 
 .add-network { 

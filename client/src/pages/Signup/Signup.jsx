@@ -65,10 +65,10 @@ class Signup extends Component {
           <header> 
             <div className="Moment-login-page">
               <h1 className="solid-moment">
-                Moment
+                Scoop
               </h1>
               <h2 className="moment-faded">
-                Moment
+                Scoops
               </h2>
             </div> 
           </header> 
