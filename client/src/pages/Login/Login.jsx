@@ -21,33 +21,33 @@ class Login extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault()
-    let password = this.state.password
-    let email = this.state.email
-    API.login({
-      username: email,
-      password: password
-    }).then(response => {
-      if (response.status === 200) {
-        // update App.js state
-        this.props.updateUser({
-          loggedIn: true,
-          id: response.data.username
-        })
-        // update the state to redirect to home
-        this.setState({
-          redirectTo: '/home'
-        })
-      } 
-    }).catch(err => {
-        // unknown user
-      console.log("Username or password incorrect")
-      // test unknown user react alert
-      // pass component as a message
-      this.props.alert.show(<div className="error-alert">Username or password incorrect</div>)
-      // alert("Username or password incorrect")
-      console.log('Error in login handleFormSubmit ' + err)
-    })
-    
+    const {email, password} = this.state
+    if (email && password) {
+      API.login({
+        username: email,
+        password: password
+      }).then(response => {
+        if (response.status === 200) {
+          // update App.js state
+          this.props.updateUser({
+            loggedIn: true,
+            id: response.data.username
+          })
+          // update the state to redirect to home
+          this.setState({
+            redirectTo: '/home'
+          })
+        } 
+      }).catch(err => {
+          // unknown user
+        console.log("Username or password incorrect")
+        // test unknown user react alert
+        // pass component as a message
+        this.props.alert.show(<div className="error-alert">Username or password incorrect</div>)
+        // alert("Username or password incorrect")
+        console.log('Error in login handleFormSubmit ' + err)
+      })
+    }
   }
 
   handleInputChange = event => {
