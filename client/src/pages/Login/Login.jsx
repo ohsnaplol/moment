@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { withAlert } from 'react-alert'
-// import AlertTemplate from 'react-alert-template-oldschool-dark'
-import AlertTemplate from 'react-alert-template-basic'
 import { Link, Redirect } from 'react-router-dom'
 import API from "../../utils/API";
 import "./style.css";
@@ -23,33 +21,33 @@ class Login extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault()
-    let password = this.state.password
-    let email = this.state.email
-    API.login({
-      username: email,
-      password: password
-    }).then(response => {
-      if (response.status === 200) {
-        // update App.js state
-        this.props.updateUser({
-          loggedIn: true,
-          id: response.data.username
-        })
-        // update the state to redirect to home
-        this.setState({
-          redirectTo: '/home'
-        })
-      } 
-    }).catch(err => {
-        // unknown user
-      console.log("Username or password incorrect")
-      // test unknown user react alert
-      // pass component as a message
-      this.props.alert.show(<div className="error-alert">Username or password incorrect</div>)
-      // alert("Username or password incorrect")
-      console.log('Error in login handleFormSubmit ' + err)
-    })
-    
+    const {email, password} = this.state
+    if (email && password) {
+      API.login({
+        username: email,
+        password: password
+      }).then(response => {
+        if (response.status === 200) {
+          // update App.js state
+          this.props.updateUser({
+            loggedIn: true,
+            id: response.data.username
+          })
+          // update the state to redirect to home
+          this.setState({
+            redirectTo: '/home'
+          })
+        } 
+      }).catch(err => {
+          // unknown user
+        console.log("Username or password incorrect")
+        // test unknown user react alert
+        // pass component as a message
+        this.props.alert.show(<div className="error-alert">Username or password incorrect</div>)
+        // alert("Username or password incorrect")
+        console.log('Error in login handleFormSubmit ' + err)
+      })
+    }
   }
 
   handleInputChange = event => {
@@ -125,12 +123,12 @@ class Login extends Component {
           <p>Welcome to Scoop. Your online self in one place.</p>
           <p>Please Login or Sign up</p>
             <label>
-              <input placeholder= "Email" value={this.state.email} onChange={this.handleInputChange} name="email" type="email"/>
+              <input placeholder= "Email" value={this.state.email} onChange={this.handleInputChange} name="email" type="email" autoComplete="current-email"/>
             </label>
           </div> 
           <div className="Password-Entry">
             <label>
-              <input placeholder="Password" value={this.state.password} onChange={this.handleInputChange} name="password" type="password" />
+              <input placeholder="Password" value={this.state.password} onChange={this.handleInputChange} name="password" type="password" autoComplete="current-password"/>
             </label>
           </div>
           {/* trying to create padding between pw & lgin bttn */}

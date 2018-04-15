@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import { withAlert } from 'react-alert'
 import API from "../../utils/API";
 import "./style.css";
@@ -131,7 +131,9 @@ class Signup extends Component {
               type="email" 
               value={this.state.email} 
               name="email" 
-              onChange={this.handleInputChange}>
+              onChange={this.handleInputChange}
+              autoComplete="email"
+              >
               </input>
             </label>
             </div> 
@@ -142,7 +144,9 @@ class Signup extends Component {
               type="password" 
               value={this.state.password1} 
               name="password1" 
-              onChange={this.handleInputChange}>
+              onChange={this.handleInputChange}
+              autoComplete="new-password"
+              >
               </input>
             </label>
             </div> 
@@ -154,7 +158,9 @@ class Signup extends Component {
                 type="password" 
                 value={this.state.password2} 
                 name="password2"
-                onChange={this.handleInputChange}>
+                onChange={this.handleInputChange}
+                autoComplete="new-password"
+                >
               </input>
             </label>
             </div>
