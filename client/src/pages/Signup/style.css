@@ -1,4 +1,4 @@
-    .signup-form{ 
+.signup-form{ 
     position: relative;
     background: linear-gradient(lavenderblush, #ffc3ef);
     padding-bottom: 50px;
@@ -30,7 +30,7 @@
 }
 
 .create-account { 
-  background-color: #868b78;
+  background-color: #696969;
   color: lavenderblush;
   font-family: 'Shadows Into Light Two', cursive;
   font-size: 18px;
@@ -45,7 +45,7 @@
 .create-prompt {
     font-family: 'Nanum Gothic', sans-serif;
 }
-    .email-entry-text { 
+    /* .email-entry-text { 
         margin-bottom: 13px;
 
     }
@@ -72,10 +72,15 @@
     .password-verify{ 
         font-family: helvetica;
 
-    }
+    } */
 
 .Moment-login-page {
     display: block;
     margin-left: 55px;
     top:18px; 
+}
+.back-login {
+    color: #696969;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 18px;
 }

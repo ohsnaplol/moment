@@ -19,7 +19,7 @@
   }
 
 .login-button { 
-  background-color: #868b78;
+  background-color: #696969;
   color: lavenderblush;
   /* margin-left: 11px; */
   font-family: 'Shadows Into Light Two', cursive;
@@ -31,16 +31,19 @@
 .login-button-group {
   margin: 30px,
 }
+/* link to create account vs button */
 .create-link { 
-  background-color: #868b78;
-  color: lavenderblush;
+  /* background-color: #868b78; */
+  color: #696969;
   /* margin-left: 11px; */
   font-family: 'Shadows Into Light Two', cursive;
+  /* Shadows is a more legitable font */
+  /* font-family: 'Give You Glory', cursive; */
   font-size: 18px;
-  height: 35px;
+  /* height: 35px;
   width: 172px;
   position: relative;
-    margin-left: 9px;
+  margin-left: 9px; */
 }
 body { 
   background: linear-gradient(bottom right, #dad9e478, #FFDCF6, #dee4eb);
@@ -66,11 +69,11 @@ html, body {
   margin: auto;
 } */
 
-.create-button{ 
+/* .create-button{ 
 margin-top: 20px;
 margin-right: 8px;
 border-radius: 30px; 
-}
+} */
 
 
 .solid-moment { 
