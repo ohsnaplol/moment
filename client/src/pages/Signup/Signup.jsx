@@ -92,15 +92,15 @@ class Signup extends Component {
             <g>
 	          <g>
 		
-              <ellipse className="honey-head" transform="matrix(0.9899 0.1416 -0.1416 0.9899 210 20)" fill="#dbff77" cx="54.196" cy="69.903" rx="43.351" ry="38.201"/>
+              <ellipse className="honey-head" transform="matrix(0.9899 0.1416 -0.1416 0.9899 210 20)" fill="#ccff66" cx="54.196" cy="69.903" rx="43.351" ry="38.201"/>
 		
-              <ellipse transform="matrix(0.9899 0.1416 -0.1416 0.9899 210 20)" fill="#dbff77" cx="41.894" cy="106.733" rx="18.195" ry="9.59"/>
+              <ellipse transform="matrix(0.9899 0.1416 -0.1416 0.9899 210 20)" fill="#ccff66" cx="41.894" cy="106.733" rx="18.195" ry="9.59"/>
 		
-              <ellipse transform="matrix(0.9899 0.1416 -0.1416 0.9899 210 20)" fill="#dbff77" cx="68.167" cy="104.422" rx="18.195" ry="9.591"/>
+              <ellipse transform="matrix(0.9899 0.1416 -0.1416 0.9899 210 20)" fill="#ccff66" cx="68.167" cy="104.422" rx="18.195" ry="9.591"/>
 		
-              <ellipse transform="matrix(0.9899 0.1416 -0.1416 0.9899 210 20)" fill="#dbff77" cx="87.537" cy="97.503" rx="18.194" ry="9.592"/>
+              <ellipse transform="matrix(0.9899 0.1416 -0.1416 0.9899 210 20)" fill="#ccff66" cx="87.537" cy="97.503" rx="18.194" ry="9.592"/>
 		
-              <ellipse transform="matrix(0.9899 0.1416 -0.1416 0.9899 210 20)" fill="#dbff77" cx="18.702" cy="93.726" rx="18.195" ry="9.592"/>
+              <ellipse transform="matrix(0.9899 0.1416 -0.1416 0.9899 210 20)" fill="#ccff66" cx="18.702" cy="93.726" rx="18.195" ry="9.592"/>
 	          </g>
               <path className="honey-stem" transform="matrix(0.9899 0.1416 -0.1416 0.9899 210 20)" fill="#F5DEB3" d="M68.673,22.524c0,0,3.6-17.221,11.463-22.524c0,0,3.871,1.068,2.842,2.46c0,0,0.129,1.768-1.176,2.238
 		          l-1.398-1.989c0,0-5.793-0.131-9.715,19.514L68.673,22.524z"/>
