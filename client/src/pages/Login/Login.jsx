@@ -119,9 +119,11 @@ class Login extends Component {
           </h2> 
         </header> 
         <form className="login-form" onSubmit={this.handleFormSubmit}>
+          <div className="login-prompt">
+              <p>Welcome to Scoop. Your online self in one place.</p>
+              <p>Please Log In or Sign up</p>
+          </div>
           <div className="email-input">
-          <p>Welcome to Scoop. Your online self in one place.</p>
-          <p>Please Login or Sign up</p>
             <label>
               <input placeholder= "Email" value={this.state.email} onChange={this.handleInputChange} name="email" type="email" autoComplete="current-email"/>
             </label>

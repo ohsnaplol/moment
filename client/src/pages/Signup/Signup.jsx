@@ -169,9 +169,10 @@ class Signup extends Component {
             </div>
             <div>
             {/* changed button to link */}
-            <Link to="/login">
+            {/* error when tryin got link to login */}
+            {/* <Link to="/login">
             <p className="back-login">Back to Login</p>
-          </Link>
+          </Link> */}
           </div>
           </form>
         </div>
