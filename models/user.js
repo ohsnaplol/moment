@@ -18,6 +18,7 @@ const userSchema = new Schema({
     privacy: { type: String }
   }],
   friends: [{ type: Schema.Types.ObjectId }],
+  requests: [{ type: Schema.Types.ObjectId }],
   following: [{ type: Schema.Types.ObjectId }],
   lastSettingsUpdate: { type: Date },
   dateJoined: { type: Date, default: Date.now }
