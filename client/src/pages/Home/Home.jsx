@@ -32,7 +32,7 @@ class Home extends Component {
       promiseQueue.push(API.getUser(element))
     })
     Promise.all(promiseQueue).then((response) => {
-      followerObject = response.filter(item => response.data).map(element => {
+      followerObject = response.filter(item => item.data).map(element => {
           return element.data
       })
       this.setState({
