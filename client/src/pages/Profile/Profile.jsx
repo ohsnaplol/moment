@@ -98,7 +98,7 @@ class Profile extends Component {
       // Show Follow, Add Friend buttons
       return (
         <div>
-          <button onClick={() => this.followButton()}>
+          <button className="follow-button" onClick={() => this.followButton()}>
             {this.state.viewerIsFollowing ? ('Unfollow') : ('Follow')}
           </button>
           {/* <button onClick={this.friendButton()}>{this.state.addFriendText}</button> */}

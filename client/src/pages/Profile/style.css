@@ -55,3 +55,11 @@ a:link {
     color: #ffaea5;
     font-family: 'Nanum Gothic', sans-serif;
 }
+.follow-button {
+        background-color: #ff8bb1;
+        color: lavenderblush;
+        font-family: 'Shadows Into Light Two', cursive;
+        font-size: 18px;
+        margin-top: 8px;
+        width: 172px;
+}
