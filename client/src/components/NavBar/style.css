@@ -16,6 +16,11 @@
     left: 0px;
 }
 
+.text-secondary {
+    font-family: 'Shadows Into Light Two', cursive;
+    color: #1c799a;
+}
+
 .btn btn-link text-secondary { 
     padding-right: 20px; 
 }
