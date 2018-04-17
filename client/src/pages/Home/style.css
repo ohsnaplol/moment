@@ -1,3 +1,16 @@
+.top-left {
+    fill:#FDFCF0;
+}
+
+.top-left:hover {
+    fill: yellow;
+}
+
+.scoopload:hover {
+    fill: yellow;
+}
+
+/* trying to change font, unable to */
 .welcome-home-h1 {
     color: #104659;
     font-family: 'Nanum Gothic', sans-serif;
