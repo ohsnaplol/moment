@@ -79,7 +79,7 @@ class App extends Component {
             <Route path="/profile/:id" render={({match}) => (
               <div>
                 <NavBar updateUser={this.updateUser} loggedIn={this.state.loggedIn} id={this.state.id}/>
-                <Profile id={match.params.id}/>
+                <Profile viewer={this.state.id} id={match.params.id}/>
               </div>
             )} />
             <Route exact path="/settings/" render={() => (
