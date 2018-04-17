@@ -1,0 +1,10 @@
+.top-left {
+    fill:#FDFCF0;
+}
+.top-left:hover {
+    fill: yellow;
+}
+
+.scoopload:hover {
+    fill: yellow;
+}
