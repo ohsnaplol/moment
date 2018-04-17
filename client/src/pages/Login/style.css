@@ -19,7 +19,7 @@
   }
 
 .login-button { 
-  background-color: #696969;
+  background: linear-gradient(#a9e9ff, #2bc7ff);
   color: lavenderblush;
   /* margin-left: 11px; */
   font-family: 'Shadows Into Light Two', cursive;
@@ -34,7 +34,7 @@
 /* link to create account vs button */
 .create-link { 
   /* background-color: #868b78; */
-  color: #696969;
+  color: #1c799a;
   /* margin-left: 11px; */
   font-family: 'Shadows Into Light Two', cursive;
   /* Shadows is a more legitable font */
