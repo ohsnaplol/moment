@@ -11,6 +11,7 @@
     sans-serif;
     top: 197px;
     max-width: 187px;
+    margin-top:-128px;
 }
 .email-entry-text { 
     margin-bottom: 13px;
@@ -47,6 +48,25 @@
 }
 .create-prompt {
     font-family: 'Nanum Gothic', sans-serif;
+}
+.solid-moment-sign {
+    color: #1c799a;
+    text-align: center;
+    font-family: 'Shadows Into Light Two', cursive;
+    position: absolute;
+    top: 39px;
+    font-size: 51px;
+    left: 58px;
+}
+.moment-faded-sign {
+    color: #104659;
+    text-align: center;
+    font-family: 'Shadows Into Light Two', cursive;
+    position: absolute;
+    top: -87px;
+    font-size: 100px;
+    left: -44px;
+    opacity: 0.1;
 }
     /* .email-entry-text { 
         margin-bottom: 13px;

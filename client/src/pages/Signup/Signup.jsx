@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { withAlert } from 'react-alert'
 import API from "../../utils/API";
 import "./style.css";
@@ -63,6 +63,7 @@ class Signup extends Component {
     } else {
       return (
         <div className="all-contect-signup">
+          <div className="container-div">
           <header>
             {/* <img src={mainLogo} className="honeydew"/>              */}
                         {/* version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -113,11 +114,11 @@ class Signup extends Component {
           </g>
         </svg> 
             <div className="Moment-login-page">
-              <h1 className="solid-moment">
+              <h1 className="solid-moment-sign">
                 Scoop
               </h1>
-              <h2 className="moment-faded">
-                Scoops
+              <h2 className="moment-faded-sign">
+                Scoop
               </h2>
             </div> 
           </header> 
@@ -167,10 +168,14 @@ class Signup extends Component {
             <div>
             <input className="create-account" type="submit" value="Create my account" />
             </div>
-            {/* <Link to="/">
-            <button className="back-login">Back to Login</button>
-          </Link> */}
+              <div>
+                {/* switched to link vs bttn due to standard practice */}
+                <Link to="/login">
+                  <p className="create-link">Back to Login</p>
+                </Link>
+              </div>
           </form>
+          </div>
         </div>
       )
     }
