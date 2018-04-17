@@ -3,7 +3,7 @@
  FUll nav bar css 
  */
 .navbar-section { 
-    background: linear-gradient(lavenderblush, #ffc3ef);
+    background: linear-gradient(bottom right, lavenderblush, #ffddf6, #dfdaf1);
     padding-top: 8px;
     position: fixed;
     top: 0;
@@ -11,7 +11,7 @@
     justify-content: space-between;
     width: 100%;
     height: 42px;
-    border-bottom: 1px solid #ecd3dc;
+    border-bottom: 1px solid #f1c4ff;
     position: absolute;
     left: 0px;
 }
