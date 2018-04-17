@@ -85,7 +85,7 @@ class App extends Component {
             <Route exact path="/settings/" render={() => (
               <div>
                 <NavBar updateUser={this.updateUser} loggedIn={this.state.loggedIn} id={this.state.id}/>
-                <Settings uid={this.state.id} />
+                <Settings uid={this.state.id} updateUser={this.updateUser}/>
               </div>
             )} />
           </Switch>
