@@ -117,7 +117,7 @@ class Signup extends Component {
                 Scoop
               </h1>
               <h2 className="moment-faded">
-                Scoops
+                Scoop
               </h2>
             </div> 
           </header> 
