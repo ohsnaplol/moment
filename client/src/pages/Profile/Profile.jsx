@@ -24,17 +24,24 @@ class Profile extends Component {
       following: this.state.viewerFollowingList
     }
     let isFollowing = this.state.viewerIsFollowing
+    // Commented out portions are attempts at using non-mutating arrays
+    // var newArray = []
     if(this.state.viewerIsFollowing === true) {
-      updateObject.following = updateObject.following.filter(e => e === this.state_id)
+      // newArray = updateObject.following.filter(e => e !== this.state_id)
+      updateObject.following.splice(updateObject.following.indexOf(this.state._id), 1)
       isFollowing = false
     } else if (this.state.viewerIsFollowing === false){
-      updateObject.following = updateObject.following.concat(this.state._id)
+      // newArray = updateObject.following.concat(this.state._id)
+      updateObject.following.push(this.state._id)
       isFollowing = true
     }
+    console.log('your are now following: '+JSON.stringify(updateObject.following))
+    // updateObject.following = newArray
     API.update(updateObject)
       .then(response => {
         this.setState({
-          viewerIsFollowing: isFollowing
+          viewerIsFollowing: isFollowing,
+          viewerFollowingList: updateObject.following
         })
       })
   }
@@ -59,6 +66,7 @@ class Profile extends Component {
     if (this.props.viewer) {
       API.getUser(this.props.viewer)
       .then(response => {
+        console.log('You follow: ' + response.data.following)
         // If viewer is following this person,
         this.setState({
           viewerIsFollowing: response.data.following.includes(this.state._id),
