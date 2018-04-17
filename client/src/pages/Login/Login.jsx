@@ -61,7 +61,7 @@ class Login extends Component {
       return <Redirect to={{ pathname: this.state.redirectTo }} />
     } else {
     return (
-      <div>
+      <div className="All-Content">
         <div className="container-div">
         <header className="header-class-login">  
             {/* version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -119,11 +119,9 @@ class Login extends Component {
           </h2> 
         </header> 
         <form className="login-form" onSubmit={this.handleFormSubmit}>
-          <div className="login-prompt">
-              <p>Welcome to Scoop. Your online self in one place.</p>
-              <p>Please Log In or Sign up</p>
-          </div>
           <div className="email-input">
+          <p>Welcome to Scoop. Your online self in one place.</p>
+          <p>Please Login or Sign up</p>
             <label>
               <input placeholder= "Email" value={this.state.email} onChange={this.handleInputChange} name="email" type="email" autoComplete="current-email"/>
             </label>

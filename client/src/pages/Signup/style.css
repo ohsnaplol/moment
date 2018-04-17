@@ -7,8 +7,10 @@
     padding-right: 150px;
     text-align: center;
     border-radius: 35px;
-    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'Nanum Gothic',
+    sans-serif;
     top: 197px;
+    max-width: 187px;
 }
 .email-entry-text { 
     margin-bottom: 13px;
@@ -84,4 +86,8 @@
     color: #1c799a;
     font-family: 'Shadows Into Light Two', cursive;
     font-size: 18px;
+}
+.all-contect-signup {
+    max-width: 500px;
+    margin: auto;
 }

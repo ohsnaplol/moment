@@ -62,7 +62,7 @@ class Signup extends Component {
       return <Redirect to={{ pathname: this.state.redirectTo}} />
     } else {
       return (
-        <div>
+        <div className="all-contect-signup">
           <header>
             {/* <img src={mainLogo} className="honeydew"/>              */}
                         {/* version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -117,7 +117,7 @@ class Signup extends Component {
                 Scoop
               </h1>
               <h2 className="moment-faded">
-                Scoop
+                Scoops
               </h2>
             </div> 
           </header> 
@@ -167,13 +167,9 @@ class Signup extends Component {
             <div>
             <input className="create-account" type="submit" value="Create my account" />
             </div>
-            <div>
-            {/* changed button to link */}
-            {/* error when tryin got link to login */}
-            {/* <Link to="/login">
-            <p className="back-login">Back to Login</p>
+            {/* <Link to="/">
+            <button className="back-login">Back to Login</button>
           </Link> */}
-          </div>
           </form>
         </div>
       )

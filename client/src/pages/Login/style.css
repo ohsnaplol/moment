@@ -45,9 +45,8 @@
   position: relative;
   margin-left: 9px; */
 }
-body { 
+/* body { 
   background: linear-gradient(bottom right, #d3a9e5, #FFDCF6, #dee4eb, #b0a2dc);
-  /* background: #FFDCF6; */
   display: table-cell;
   vertical-align: middle;
 }
@@ -56,8 +55,27 @@ html, body {
   max-width: 500px;
   margin: auto;
 
+} */
+body {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  zoom: 1;
+  display*: inline;
 }
 
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  background: linear-gradient(bottom right, #d3a9e5, #FFDCF6, #dee4eb, #b0a2dc);
+}
+
+.All-Content {
+  max-width: 500px;
+  margin: auto;
+}
 
 /* body { 
   background: linear-gradient(bottom right, #dad9e478, #FFDCF6, #dee4eb);
