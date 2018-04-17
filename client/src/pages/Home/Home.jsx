@@ -8,9 +8,9 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div className="welcome-home-h1">
         {this.props.loggedIn && 
-          <h1 className="welcome-home-h1">Welcome Home, {this.props.name}</h1>
+          <h1>Welcome Home, {this.props.name}</h1>
         }
         <img src={Logo} className="scoopload"/>
       </div>

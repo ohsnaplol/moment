@@ -1,7 +1,7 @@
  
 .form-settings { 
     padding-left: 63px;
-    font-family: helvetica; 
+    font-family: 'Nanum Gothic', sans-serif;
     font-weight: bold;
     color: #00143d; 
     position: relative;
@@ -20,7 +20,7 @@
     position: absolute;
     left: 167px;
     width: 100%;
-    font-family: helvetica;
+    font-family: 'Nanum Gothic', sans-serif;
     color: #000d29;
     border-bottom: 2px #ecd3dc;
     border-bottom-style: dashed;

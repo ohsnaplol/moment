@@ -41,7 +41,7 @@ class Profile extends Component {
       <div>
         {this.state._id ? (
           <div>
-            <h1 className="h1-profile">{this.state.realName}</h1>
+            <div className="h1-profile">{this.state.realName}</div>
             <div>
               <div className="also-known-as">Also known as:
               {this.state.nicknames.map((nickname, idx) => (
