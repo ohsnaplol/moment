@@ -71,9 +71,17 @@ class Home extends Component {
   render() {
     return (
       <div>
+        <div classname="scoop-div">   
         <img src={Logo} className="scoopload" />
+          <h1 className="solid-moment-home">
+            Scoop
+          </h1>
+          <h1 className="moment-faded-home">
+            Scoop
+          </h1>
+        </div>
         {this.props.loggedIn && this.state.followerData ? (
-          <div>
+          <div class="follow-div">
             {this.state.followerData.map((user, idx) => (
               <div key={idx}>
                 <Link to={'/profile/'+user._id}><h2>{user.realName}</h2></Link>

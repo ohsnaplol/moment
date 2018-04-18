@@ -3,7 +3,8 @@
  FUll nav bar css 
  */
 .navbar-section { 
-    background: linear-gradient(bottom right, lavenderblush, #ffddf6, #dfdaf1);
+    text-align: center;
+    background: linear-gradient(to left, lavenderblush, #ffddf6, #dfdaf1);
     padding-top: 8px;
     position: fixed;
     top: 0;
@@ -43,3 +44,8 @@ a:link, a:visited {
     border-radius: 4px;
     padding: 5px;
 }
+/* .nav-container {
+    max-width: 500px;
+    margin: auto;
+    height: 100%;
+} */

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 import { Redirect } from 'react-router-dom'
+import { withAlert } from 'react-alert'
 import API from '../../utils/API'
 import "./style.css";
 
@@ -20,6 +21,7 @@ class Settings extends Component {
     API.update(this.state)
       .then(response => {
         console.log('upload success')
+        this.props.alert.show(<div className="error-alert">Saved!</div>)
       })
       .catch(err => {
         console.log('Error in handleFormSubmit in Settings.jsx: ' + err)
@@ -253,4 +255,4 @@ class Settings extends Component {
   }
 }
 
-export default withRouter(Settings)
+export default withAlert(withRouter(Settings))

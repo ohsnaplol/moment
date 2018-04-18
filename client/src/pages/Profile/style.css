@@ -63,3 +63,8 @@ a:link {
         margin-top: 8px;
         width: 172px;
 }
+.profile-container {
+    max-width: 500px;
+    margin: auto;
+    height: 100%;
+}

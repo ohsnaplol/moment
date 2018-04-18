@@ -33,7 +33,6 @@
 }
 /* link to create account vs button */
 .create-link { 
-  /* background-color: #868b78; */
   color: #1c799a;
   /* margin-left: 11px; */
   font-family: 'Shadows Into Light Two', cursive;
@@ -55,34 +54,15 @@ body {
 
 html,
 body {
-  height: 100%;
   width: 100%;
   margin: 0 auto;
-  background: linear-gradient(bottom right, #d3a9e5, #FFDCF6, #dee4eb, #b0a2dc);
+  background: linear-gradient(to left, #d3a9e5, #FFDCF6, #dee4eb, #b0a2dc);
 }
 
 .All-Content {
   max-width: 500px;
   margin: auto;
 }
-
-/* body { 
-  background: linear-gradient(bottom right, #dad9e478, #FFDCF6, #dee4eb);
-  display: table-cell;
-  vertical-align: middle;
-
-}
-html, body {
-  max-width: 500px;
-  margin: auto;
-} */
-
-/* .create-button{ 
-margin-top: 20px;
-margin-right: 8px;
-border-radius: 30px; 
-} */
-
 
 .solid-moment { 
   color: #1c799a;

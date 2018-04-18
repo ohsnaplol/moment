@@ -103,3 +103,7 @@ select {
         margin-top: 8px;
         width: 172px;
 }
+.error-alert {
+    color: #ffaea5;
+    font-family: 'Nanum Gothic', sans-serif;
+}

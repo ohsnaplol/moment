@@ -112,6 +112,7 @@ class Profile extends Component {
       <div>
         {this.state._id ? (
           <div>
+            <div className="profile-container">
             <div className="h1-profile">{this.state.realName}</div>
             {this.setupSocialButtons()}
             <div>
@@ -125,11 +126,13 @@ class Profile extends Component {
                 <NetworkTag key={idx} network={network.networkName} username={network.userName} url={network.url}/>
               ))}
             </div>
+            </div>
           </div>
         ) : (
           <p>Loading</p>
         )}
       </div>
+    
     )
   }
 }
