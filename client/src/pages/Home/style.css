@@ -10,6 +10,10 @@
     fill: yellow;
 }
 
+.scoopload {
+    max-width: 470px;
+    margin-left: 125px;
+}
 /* trying to change font, unable to */
 /* .welcome-home-h1 {
     color: #104659;

@@ -240,8 +240,9 @@ class Settings extends Component {
                 </label>
                 <br />
                 <input className="submit-button-network" type="submit" value="Save"/>
+                <br/>
+              <input className="delete-button" onClick={this.handleFormDeleteSubmit.bind(this)} type="submit" value="Delete My Account"/>
               </form>
-              <input onClick={this.handleFormDeleteSubmit.bind(this)} type="submit" value="Delete My Account"/>
             </div>
           ) : (
             <p>Loading</p>
