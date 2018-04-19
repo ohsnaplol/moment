@@ -24,16 +24,15 @@
     position: relative;
     margin-top: 78px;
     font-family: 'Nanum Gothic', sans-serif;
-    color: #9D8189;
+    color: #104659;
     font-size: 36px;
     font-weight: 100;
 }
 
 .also-known-as{ 
-    font-family: helvetica;
     font-size: larger;
     font-family: 'Nanum Gothic', sans-serif;
-    color: #9D8189;
+    color: #104659;
     font-size: 36px;
     font-weight: 100;
 
@@ -41,8 +40,8 @@
 .welcome-home-h1{ 
     position: relative;
     margin-top: 78px;
+    color: #104659;
     font-family: 'Nanum Gothic', sans-serif;
-    color: #9D8189;
 
 }
 
@@ -53,6 +52,19 @@ a:link {
 
 /* error alert */
 .error-alert {
-    color: #f6ffdc;
+    color: #ffaea5;
     font-family: 'Nanum Gothic', sans-serif;
+}
+.follow-button {
+        background-color: #ff8bb1;
+        color: lavenderblush;
+        font-family: 'Shadows Into Light Two', cursive;
+        font-size: 18px;
+        margin-top: 8px;
+        width: 172px;
+}
+.profile-container {
+    max-width: 500px;
+    margin: auto;
+    height: 100%;
 }

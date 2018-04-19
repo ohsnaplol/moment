@@ -19,7 +19,7 @@
   }
 
 .login-button { 
-  background-color: #868b78;
+  background: linear-gradient(#a9e9ff, #2bc7ff);
   color: lavenderblush;
   /* margin-left: 11px; */
   font-family: 'Shadows Into Light Two', cursive;
@@ -31,50 +31,41 @@
 .login-button-group {
   margin: 30px,
 }
+/* link to create account vs button */
 .create-link { 
-  background-color: #868b78;
-  color: lavenderblush;
+  color: #1c799a;
   /* margin-left: 11px; */
   font-family: 'Shadows Into Light Two', cursive;
+  /* Shadows is a more legitable font */
+  /* font-family: 'Give You Glory', cursive; */
   font-size: 18px;
-  height: 35px;
+  /* height: 35px;
   width: 172px;
   position: relative;
-    margin-left: 9px;
+  margin-left: 9px; */
 }
-body { 
-  background: linear-gradient(bottom right, #dad9e478, #FFDCF6, #dee4eb);
-  display: table-cell;
-  vertical-align: middle;
-}
-html, body {
+body {
   height: 100%;
+  width: 100%;
+  display: inline-block;
+  zoom: 1;
+  display*: inline;
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0 auto;
+  background: linear-gradient(to left, #d3a9e5, #FFDCF6, #dee4eb, #b0a2dc);
+}
+
+.All-Content {
   max-width: 500px;
   margin: auto;
-
 }
-
-
-/* body { 
-  background: linear-gradient(bottom right, #dad9e478, #FFDCF6, #dee4eb);
-  display: table-cell;
-  vertical-align: middle;
-
-}
-html, body {
-  max-width: 500px;
-  margin: auto;
-} */
-
-.create-button{ 
-margin-top: 20px;
-margin-right: 8px;
-border-radius: 30px; 
-}
-
 
 .solid-moment { 
-  color: #bed3ff;
+  color: #1c799a;
   text-align: center;
   font-family: 'Shadows Into Light Two', cursive;
   position: absolute;
@@ -83,10 +74,10 @@ border-radius: 30px;
   left: 300px;
   top: 51px;
   font-size: 51px;
-  left: 143px;
+  left: 100px;
 }
 .moment-faded { 
-  color: #a4c2ff;
+  color: #104659;
   text-align: center;
   font-family: 'Shadows Into Light Two', cursive;
   position: absolute;
@@ -110,6 +101,15 @@ a:link {
 }
 /* error alert */
 .error-alert {
-  color: #f6ffdc;
+  color: #ffaea5;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+/* .honey-login {
+    bottom: 25px;
+} */
+.honey-head {
+  left: 300px;
+}
+.login-prompt {
   font-family: 'Nanum Gothic', sans-serif;
 }
