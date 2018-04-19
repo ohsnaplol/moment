@@ -1,15 +1,15 @@
  
 .form-settings { 
-    padding-left: 63px;
+    max-width: 350px;
     font-family: 'Nanum Gothic', sans-serif;
     font-weight: bold;
     color: #00143d; 
-    position: relative;
     margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .nick-name { 
     margin-top: 5px;
-    display: block;
 
 }
 .settings-screen { 
@@ -57,7 +57,7 @@
     font-family: 'Shadows Into Light Two', cursive;
     font-size: 18px;
     margin-top: 8px;
-    width: 9%;
+    width: 30px;
 }
 
 #remove-network-button{ 
@@ -66,7 +66,7 @@
     font-family: 'Shadows Into Light Two', cursive;
     font-size: 18px;
     margin-top: 8px;
-    width: 9%;
+    width: 30px;
 }
 
 .add-network { 
