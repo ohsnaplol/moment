@@ -22,7 +22,7 @@
 }
 
 .follow-div {
-    max-width: 500px;
+    max-width: 702px;
     margin: auto;
     height: 100%;
 
@@ -49,4 +49,8 @@
     left: 675px;
     font-size: 100px;
     opacity: 0.1;
+}
+
+.followers-collection {
+    margin-top: 80px;
 }
