@@ -1,0 +1,94 @@
+ 
+.form-settings { 
+    padding-left: 63px;
+    font-family: helvetica; 
+    font-weight: bold;
+    color: #00143d; 
+    position: relative;
+    margin-top: 35px;
+}
+.nick-name { 
+    margin-top: 5px;
+    display: block;
+
+}
+.settings-screen { 
+    position: relative;
+    top: 70px;
+}
+.settings-header-message { 
+    position: absolute;
+    left: 167px;
+    width: 100%;
+    font-family: helvetica;
+    color: #000d29;
+    border-bottom: 2px #ecd3dc;
+    border-bottom-style: dashed;
+    border-bottom-width: 9px;
+}
+.name-change-input { 
+    margin-bottom: 31px;
+    margin-left: 12px;
+}
+
+#add-nickname-ID { 
+    background-color: #ff8bb1;
+    color: lavenderblush;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 18px;
+    margin-left: 0px;
+    margin-top: 12px;
+    position: relative;
+    margin-bottom: 15px;
+    width: 172px;
+}
+#nick-name-button{ 
+    background-color: #ff8bb1;
+    color: lavenderblush;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 18px;
+    margin-top: 8px;
+    margin-top: 8px;
+    width: 172px;
+}
+.nick-name-button{ 
+    background-color: #ff8bb1;
+    color: lavenderblush;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 18px;
+    margin-top: 8px;
+    width: 9%;
+}
+
+#remove-network-button{ 
+    background-color: #ff8bb1;
+    color: lavenderblush;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 18px;
+    margin-top: 8px;
+    width: 9%;
+}
+
+.add-network { 
+    background-color: #ff8bb1;
+    color: lavenderblush;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 18px;
+    margin-top: 8px;
+    margin-top: 8px;
+    width: 172px;
+}
+.submit-button-network { 
+    background-color: #ff8bb1;
+    color: lavenderblush;
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 18px;
+    margin-top: 8px;
+    width: 172px;
+}
+
+select { 
+    background-color: #e4b6b6;
+    border-radius: 3px;
+    margin-right: 7px;
+}
