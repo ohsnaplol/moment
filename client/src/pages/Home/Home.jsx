@@ -3,7 +3,7 @@ import "./style.css"
 import API from '../../utils/API'
 import NetworkTag from '../../components/NetworkTag'
 import { Link } from 'react-router-dom'
-import Logo from "./scoopload.svg"
+// import Logo from "./scoopload.svg"
 
 class Home extends Component {
   constructor() {
@@ -70,18 +70,18 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
-        <div classname="scoop-div">   
-        <img src={Logo} className="scoopload" />
+      <div className='followers-collection'>
+        {/* <div className="scoop-div">   
+        <img src={Logo} className="scoopload" alt="Ice-cream logo"/>
           <h1 className="solid-moment-home">
             Scoop
           </h1>
           <h1 className="moment-faded-home">
             Scoop
           </h1>
-        </div>
+        </div> */}
         {this.props.loggedIn && this.state.followerData ? (
-          <div class="follow-div">
+          <div className="follow-div">
             {this.state.followerData.map((user, idx) => (
               <div key={idx}>
                 <Link to={'/profile/'+user._id}><h2>{user.realName}</h2></Link>
