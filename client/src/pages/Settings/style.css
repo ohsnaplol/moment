@@ -1,15 +1,15 @@
  
 .form-settings { 
-    padding-left: 63px;
-    font-family: helvetica; 
+    max-width: 350px;
+    font-family: 'Nanum Gothic', sans-serif;
     font-weight: bold;
     color: #00143d; 
-    position: relative;
     margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .nick-name { 
     margin-top: 5px;
-    display: block;
 
 }
 .settings-screen { 
@@ -20,7 +20,7 @@
     position: absolute;
     left: 167px;
     width: 100%;
-    font-family: helvetica;
+    font-family: 'Nanum Gothic', sans-serif;
     color: #000d29;
     border-bottom: 2px #ecd3dc;
     border-bottom-style: dashed;
@@ -57,7 +57,7 @@
     font-family: 'Shadows Into Light Two', cursive;
     font-size: 18px;
     margin-top: 8px;
-    width: 9%;
+    width: 30px;
 }
 
 #remove-network-button{ 
@@ -66,7 +66,7 @@
     font-family: 'Shadows Into Light Two', cursive;
     font-size: 18px;
     margin-top: 8px;
-    width: 9%;
+    width: 30px;
 }
 
 .add-network { 
@@ -86,9 +86,24 @@
     margin-top: 8px;
     width: 172px;
 }
+.submit-button-network:hover {
+    background-color: #104659;
+}
 
 select { 
     background-color: #e4b6b6;
     border-radius: 3px;
     margin-right: 7px;
+}
+.delete-button {
+        background-color: #104659;
+        color: lavenderblush;
+        font-family: 'Shadows Into Light Two', cursive;
+        font-size: 18px;
+        margin-top: 8px;
+        width: 172px;
+}
+.error-alert {
+    color: #ffaea5;
+    font-family: 'Nanum Gothic', sans-serif;
 }

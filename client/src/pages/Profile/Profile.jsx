@@ -98,7 +98,7 @@ class Profile extends Component {
       // Show Follow, Add Friend buttons
       return (
         <div>
-          <button onClick={() => this.followButton()}>
+          <button className="follow-button" onClick={() => this.followButton()}>
             {this.state.viewerIsFollowing ? ('Unfollow') : ('Follow')}
           </button>
           {/* <button onClick={this.friendButton()}>{this.state.addFriendText}</button> */}
@@ -112,7 +112,8 @@ class Profile extends Component {
       <div>
         {this.state._id ? (
           <div>
-            <h1 className="h1-profile">{this.state.realName}</h1>
+            <div className="profile-container">
+            <div className="h1-profile">{this.state.realName}</div>
             {this.setupSocialButtons()}
             <div>
               <div className="also-known-as">Also known as:
@@ -125,11 +126,13 @@ class Profile extends Component {
                 <NetworkTag key={idx} network={network.networkName} username={network.userName} url={network.url}/>
               ))}
             </div>
+            </div>
           </div>
         ) : (
           <p>Loading</p>
         )}
       </div>
+    
     )
   }
 }
