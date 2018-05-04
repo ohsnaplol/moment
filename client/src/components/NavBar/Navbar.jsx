@@ -40,7 +40,7 @@ class Navbar extends Component {
         <header className="navbar App-header" id="nav-container">
         {loggedIn ? (
           <section className="navbar-section">
-            <Link to="/home" className="btn btn-link text-secondary">
+            <Link to="/" className="btn btn-link text-secondary">
               <span className="text-secondary">Home</span>
             </Link>
             <SearchBar />
