@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import Home from "./pages/Home"
@@ -57,25 +57,15 @@ class App extends Component {
           <Switch>
             <Route exact path="/" render={() => (
               this.state.loggedIn ? (
-                <Redirect to="/home" />
-              ) : (
-                <Redirect to="/login"/>
-              )
-            )}/>
-            <Route exact path="/signup" component={Signup} />
-            <Route exact path="/home" render={() => (
-              <div>
-                <NavBar updateUser={this.updateUser} loggedIn={this.state.loggedIn} id={this.state.id}/>
-                <Home uid={this.state.id} loggedIn={this.state.loggedIn}/>
-              </div>
-            )} />
-            <Route exact path="/login" render={() => (
-              this.state.loggedIn ? (
-                <Redirect to="/home" />
+                <div>
+                  <NavBar updateUser={this.updateUser} loggedIn={this.state.loggedIn} id={this.state.id}/>
+                  <Home uid={this.state.id} loggedIn={this.state.loggedIn}/>
+                </div>
               ) : (
                 <Login updateUser={this.updateUser} loggedIn={this.state.loggedIn}/>
               )
             )}/>
+            <Route exact path="/signup" component={Signup} />
             <Route path="/profile/:id" render={({match}) => (
               <div>
                 <NavBar updateUser={this.updateUser} loggedIn={this.state.loggedIn} id={this.state.id}/>
