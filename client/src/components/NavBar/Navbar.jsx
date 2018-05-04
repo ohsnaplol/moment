@@ -23,7 +23,7 @@ class Navbar extends Component {
           username: null
         })
         this.setState({
-          redirectTo: '/login'
+          redirectTo: '/'
         })
       }
     }).catch(error => {
