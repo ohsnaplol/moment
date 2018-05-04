@@ -41,7 +41,7 @@ class Settings extends Component {
               username: null
             })
             this.setState({
-              redirectTo: '/login'
+              redirectTo: '/'
             })
           }
         })

@@ -170,7 +170,7 @@ class Signup extends Component {
             </div>
               <div>
                 {/* switched to link vs bttn due to standard practice */}
-                <Link to="/login">
+                <Link to="/">
                   <p className="create-link">Back to Login</p>
                 </Link>
               </div>
