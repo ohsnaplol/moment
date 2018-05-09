@@ -85,7 +85,13 @@ class Home extends Component {
             {this.state.followerData.map((user, idx) => (
               <div key={idx}>
                 <Link to={'/profile/'+user._id}><h2>{user.realName}</h2></Link>
-                {user.socialNetworks.map((network, id) => (
+                {user.socialNetworks.filter(function(network) {
+                  // TODO: (Important) this will only display public profiles
+                  // even though the client still technically receives the data.
+                  // This is a temporary solution for demonstration purposes
+                  // This MUST be fixed or else private/secret data isn't really private.
+                  return network.privacy === 'public'
+                }).map((network, id) => (
                   <NetworkTag key={id} network={network.networkName} username={network.userName} url={network.url}/>
                 ))}
                 {/* got the svg to hover, but we have this whole div mess to deal with */}

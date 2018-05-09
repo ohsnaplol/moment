@@ -204,6 +204,9 @@ class Settings extends Component {
                 <br />
                 <label className="add-network-label">
                   Add Network:<br />
+                  <p>
+                    Warning: Private and secret functionality is currently under development.
+                  </p> 
                   {this.state.socialNetworks.map((network, idx) => (
                     <div key={idx}>
                       <select value={network.networkName} onChange={this.handleNetworkChange(idx)}>
