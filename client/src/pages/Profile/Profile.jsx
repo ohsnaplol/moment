@@ -113,19 +113,32 @@ class Profile extends Component {
         {this.state._id ? (
           <div>
             <div className="profile-container">
-            <div className="h1-profile">{this.state.realName}</div>
-            {this.setupSocialButtons()}
-            <div>
-              <div className="also-known-as">Also known as:
-              {this.state.nicknames.map((nickname, idx) => (
-                <span key={idx}> {nickname.name}</span>
-              ))}
+              <div className="h1-profile">{this.state.realName}</div>
+              {this.setupSocialButtons()}
+              <div>
+                <div className="also-known-as">Also known as:
+                {this.state.nicknames.map((nickname, idx) => (
+                  <span key={idx}> {nickname.name}</span>
+                ))}
+                </div>
+                {this.state.socialNetworks.filter((network) => {
+                  // TODO: (Important) this will only display public profiles
+                  // even though the client still technically receives the data.
+                  // This is a temporary solution for demonstration purposes.
+                  // This MUST be fixed or else private/secret data isn't really private.
+                  
+                  // If I'm looking at my own profile, show all networks, including private/secret
+                  if (this.state._id === this.props.viewer) {
+                    return true
+                  } else {
+                  // otherwise, only show public data until we get friends working
+                    return network.privacy === 'public'
+                  }
+                }).map((network, idx) => 
+                ( 
+                  <NetworkTag key={idx} network={network.networkName} username={network.userName} url={network.url}/>
+                ))}
               </div>
-              {this.state.socialNetworks.map((network, idx) => 
-              (
-                <NetworkTag key={idx} network={network.networkName} username={network.userName} url={network.url}/>
-              ))}
-            </div>
             </div>
           </div>
         ) : (

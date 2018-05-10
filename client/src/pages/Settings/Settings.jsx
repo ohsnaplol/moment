@@ -91,35 +91,11 @@ class Settings extends Component {
     })
   }
 
-  handleNetworkChange = (idx) => (event, type) => {
+  handleNetworkChange = (idx) => (event) => {
+    console.log(JSON.stringify(event.target.name))
     const newNetworks = this.state.socialNetworks.map((network, sidx) => {
       if (idx !== sidx) return network
-      return { ...network, networkName: event.target.value }
-      // return { ...network, [type]: event.target.value }
-    })
-    this.setState({ socialNetworks: newNetworks })
-  }
-
-  handleNetworkUrlChange = (idx) => (event) => {
-    const newNetworks = this.state.socialNetworks.map((network, sidx) => {
-      if (idx !== sidx) return network
-      return { ...network, url: event.target.value }
-    })
-    this.setState({ socialNetworks: newNetworks })
-  }
-
-  handleNetworkUsernameChange = (idx) => (event) => {
-    const newNetworks = this.state.socialNetworks.map((network, sidx) => {
-      if (idx !== sidx) return network
-      return { ...network, userName: event.target.value }
-    })
-    this.setState({ socialNetworks: newNetworks })
-  }
-
-  handleNetworkPrivacyChange = (idx) => (event) => {
-    const newNetworks = this.state.socialNetworks.map((network, sidx) => {
-      if (idx !== sidx) return network
-      return { ...network, privacy: event.target.value }
+      return { ...network, [event.target.name]: event.target.value }
     })
     this.setState({ socialNetworks: newNetworks })
   }
@@ -131,13 +107,15 @@ class Settings extends Component {
   }
 
   getUserData(id) {
-    API.getUser(id)
+    if(id) {
+      API.getUser(id)
       .then(response => {
         this.setState(response.data)
       })
       .catch(err => {
         console.log(err)
       })
+    }
   }
 
   getInputType(network, idx) {
@@ -146,23 +124,21 @@ class Settings extends Component {
       case 'xbox':
       case 'playstation':
       case 'twitch':
-        return <input type='text' placeholder='Username' value={network.userName} onChange={this.handleNetworkUsernameChange(idx)}/>
+        return <input type='text' placeholder='Username' value={network.userName} name="userName" onChange={this.handleNetworkChange(idx)}/>
       case 'twitter':
         return (
             <span>
             @
-            <input type='text' placeholder='Username' value={network.userName} onChange={this.handleNetworkUsernameChange(idx)}/>
+            <input type='text' placeholder='Username' value={network.userName} name="userName" onChange={this.handleNetworkChange(idx)}/>
             </span>
         )
         default:
-        return <input type='text' placeholder='URL' value={network.url} onChange={this.handleNetworkUrlChange(idx)}/>
+        return <input type='text' placeholder='URL' value={network.url} name="url" onChange={this.handleNetworkChange(idx)}/>
     }
   }
 
   componentDidMount() {
-    if(this.props.uid) {
-      this.getUserData(this.props.uid)
-    }
+    this.getUserData(this.props.uid)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -204,9 +180,12 @@ class Settings extends Component {
                 <br />
                 <label className="add-network-label">
                   Add Network:<br />
+                  <p>
+                    Warning: Private and secret functionality is currently under development.
+                  </p> 
                   {this.state.socialNetworks.map((network, idx) => (
                     <div key={idx}>
-                      <select value={network.networkName} onChange={this.handleNetworkChange(idx)}>
+                      <select value={network.networkName} name="networkName" onChange={this.handleNetworkChange(idx)}>
                         <option default value="facebook">Facebook</option>
                         <option value="twitter">Twitter</option>
                         <option value="snapchat">Snapchat</option>
@@ -229,7 +208,7 @@ class Settings extends Component {
                         <option value="xbox">Xbox</option>
                         <option value="playstation">Playstation</option>
                       </select>
-                      <select value={network.privacy} onChange={this.handleNetworkPrivacyChange(idx)}>
+                      <select value={network.privacy} name="privacy" onChange={this.handleNetworkChange(idx)}>
                         <option value='public'>Public</option>
                         <option default value='private'>Private</option>
                         <option value='secret'>Secret</option>
@@ -242,6 +221,8 @@ class Settings extends Component {
                 </label>
                 <br />
                 <input className="submit-button-network" type="submit" value="Save"/>
+                <br/>
+                <br/>
                 <br/>
               <input className="delete-button" onClick={this.handleFormDeleteSubmit.bind(this)} type="submit" value="Delete My Account"/>
               </form>
