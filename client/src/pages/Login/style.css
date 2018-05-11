@@ -1,115 +1,31 @@
-
-  .login-form { 
-    max-width: 187px;
-    position: absolute;
-    background: linear-gradient(lavenderblush,#ffc3ef);
-    padding-bottom: 50px;
-    padding-top: 50px;
-    padding-left: 150px;
-    padding-right: 150px;
-    text-align: center;
-    border-radius: 35px;
-    font-family: Helvetica;
-    top: 254px;
-  
-  }
-  .Moment-login-page{
-    position: absolute;
-    top: 2px;
-  }
-
-.login-button { 
-  background: linear-gradient(#a9e9ff, #2bc7ff);
-  color: lavenderblush;
-  /* margin-left: 11px; */
-  font-family: 'Shadows Into Light Two', cursive;
-  font-size: 18px;
-  height: 35px;
-  width: 172px;
-}
-/* add gap between pw & login */
-.login-button-group {
-  margin: 30px,
-}
-/* link to create account vs button */
-.create-link { 
-  color: #1c799a;
-  /* margin-left: 11px; */
-  font-family: 'Shadows Into Light Two', cursive;
-  /* Shadows is a more legitable font */
-  /* font-family: 'Give You Glory', cursive; */
-  font-size: 18px;
-  /* height: 35px;
-  width: 172px;
-  position: relative;
-  margin-left: 9px; */
-}
 body {
-  height: 100%;
-  width: 100%;
-  display: inline-block;
-  zoom: 1;
-  display*: inline;
+  background-color: lavenderblush;
+}
+.scoop-headline {
+  width: 300px;
+  margin: 50px auto 0 auto;
 }
 
-html,
-body {
-  width: 100%;
-  margin: 0 auto;
-  background: linear-gradient(to left, #d3a9e5, #FFDCF6, #dee4eb, #b0a2dc);
-}
-
-.All-Content {
-  max-width: 500px;
-  margin: auto;
-}
-
-.solid-moment { 
-  color: #1c799a;
-  text-align: center;
-  font-family: 'Shadows Into Light Two', cursive;
-  position: absolute;
-  top: 10px;
-  font-size: 75px;
-  left: 300px;
-  top: 51px;
-  font-size: 51px;
-  left: 100px;
-}
-.moment-faded { 
-  color: #104659;
-  text-align: center;
-  font-family: 'Shadows Into Light Two', cursive;
-  position: absolute;
-  top: -75px;
-  font-size: 100px;
-  opacity: 0.1;
-}
-.email-input { 
-    padding-bottom: 10px;
+.login-card {
+  margin-top: 50px;
 }
 
 a:link {
-    text-decoration: none;
-    color:#141320; 
+  text-decoration: none;
+  color:#141320; 
 }
 
-.header-class-login { 
-  position: absolute;
-  margin-top: 50px;
-  margin-left: 50px;
+@media (min-width: 768px) {
+  .scoop-headline {
+    margin-top: 155px;
+  }
 }
+
+.login-btn {
+  margin-bottom: 10px;
+}
+
 /* error alert */
 .error-alert {
   color: #ffaea5;
-  font-family: 'Nanum Gothic', sans-serif;
-}
-/* .honey-login {
-    bottom: 25px;
-} */
-.honey-head {
-  left: 300px;
-}
-.login-prompt {
-  font-family: 'Nanum Gothic', sans-serif;
 }
