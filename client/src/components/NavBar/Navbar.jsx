@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import API from "../../utils/API";
 import SearchBar from '../Search'
-import "./style.css";
+// import "./style.css";
 
 
 class Navbar extends Component {
@@ -37,35 +37,40 @@ class Navbar extends Component {
       return <Redirect to={{ pathname: this.state.redirectTo }} />
     } else {
       return (
-        <header className="navbar App-header" id="nav-container">
-        {loggedIn ? (
-          <section className="navbar-section">
-            <Link to="/" className="btn btn-link text-secondary">
-              <span className="text-secondary">Home</span>
-            </Link>
-            <SearchBar />
-            <Link to={"/profile/"+this.props.id} className="btn btn-link text-secondary">
-              <span className="text-secondary">My Profile</span>
-            </Link>
-            <Link to="/settings" className="btn btn-link text-secondary">
-              <span className="text-secondary">Settings</span>
-            </Link>
-            <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
-              <span className="text-secondary">Logout</span>
-            </Link>
-          </section>
-        ) : (
-            <section className="navbar-section">
-              <SearchBar />
-              <Link to="/" className="btn btn-link text-secondary">
-                <span className="text-secondary">login</span>
-              </Link>
-              <Link to="/signup" className="btn btn-link">
-                <span className="text-secondary">sign up</span>
-              </Link>
-            </section>
-          )}
-        </header>
+        <nav className="navbar navbar-expand-sm navbar-light bg-light">
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            {loggedIn ? (
+              <ul className="navbar-nav mx-auto">
+                <Link to="/" className="nav-item">
+                  <li className="nav-link">Home</li>
+                </Link>
+                <SearchBar />
+                <Link to={"/profile/" + this.props.id} className="nav-item">
+                  <li className="nav-link">My Profile</li>
+                </Link>
+                <Link to="/settings" className="nav-item">
+                  <li className="nav-link">Settings</li>
+                </Link>
+                <Link to="#" className="nav-item" onClick={this.logout}>
+                  <li className="nav-link">Logout</li>
+                </Link>
+              </ul>
+            ) : (
+                <ul className="navbar-nav mx-auto">
+                  <SearchBar />
+                  <Link to="/" className="nav-item">
+                    <li className="nav-link">login</li>
+                  </Link>
+                  <Link to="/signup" className="btn btn-link">
+                    <li className="nav-link">sign up</li>
+                  </Link>
+                </ul>
+              )}
+          </div>
+        </nav>
       );
     }
   }
