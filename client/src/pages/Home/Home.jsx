@@ -69,9 +69,9 @@ class Home extends Component {
 
   render() {
     return (
-      <div className='followers-collection'>
+      <div className='container'>
         {this.props.loggedIn && this.state.followerData ? (
-          <div className="follow-div">
+          <div>
             {this.state.followerData.map((user, idx) => (
               <div key={idx}>
                 <Link to={'/profile/'+user._id}><h2>{user.realName}</h2></Link>
