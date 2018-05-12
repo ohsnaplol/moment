@@ -76,7 +76,7 @@ class Settings extends Component {
 
   handleRemoveNickname = (idx) => () => {
     if (this.state.nicknames.length === 1) {
-      this.setState({nicknames: []}) // not working
+      this.setState({ nicknames: [] }) // not working
     } else {
       this.setState({
         nicknames: this.state.nicknames.filter((s, sidx) => idx !== sidx)
@@ -107,14 +107,14 @@ class Settings extends Component {
   }
 
   getUserData(id) {
-    if(id) {
+    if (id) {
       API.getUser(id)
-      .then(response => {
-        this.setState(response.data)
-      })
-      .catch(err => {
-        console.log(err)
-      })
+        .then(response => {
+          this.setState(response.data)
+        })
+        .catch(err => {
+          console.log(err)
+        })
     }
   }
 
@@ -124,16 +124,17 @@ class Settings extends Component {
       case 'xbox':
       case 'playstation':
       case 'twitch':
-        return <input type='text' placeholder='Username' value={network.userName} name="userName" onChange={this.handleNetworkChange(idx)}/>
+      case 'instagram':
+      case 'reddit':
+      case 'tumblr':
+      case 'bandcamp':
+        return <input className="form-control col" type='text' placeholder='Username' value={network.userName} name="userName" onChange={this.handleNetworkChange(idx)} />
       case 'twitter':
         return (
-            <span>
-            @
-            <input type='text' placeholder='Username' value={network.userName} name="userName" onChange={this.handleNetworkChange(idx)}/>
-            </span>
+          <input className="form-control col" type='text' placeholder='@' value={network.userName} name="userName" onChange={this.handleNetworkChange(idx)} />
         )
-        default:
-        return <input type='text' placeholder='URL' value={network.url} name="url" onChange={this.handleNetworkChange(idx)}/>
+      default:
+        return <input className="form-control col" type='text' placeholder='URL' value={network.url} name="url" onChange={this.handleNetworkChange(idx)} />
     }
   }
 
@@ -150,42 +151,44 @@ class Settings extends Component {
       return <Redirect to={{ pathname: this.state.redirectTo }} />
     } else {
       return (
-        <div>
+        <div className="container">
           {this.state._id ? (
-            <div className="settings-screen">
-              <form className="form-settings" onSubmit={this.handleFormSubmit}>
-                <label className="name-change">
-                  Change name:
-                  <input className="name-change-input" type='text' name="realName" value={this.state.realName} onChange={this.handleInputChange}/>
-                </label>
-                <br />
-                <div className="nick-name-div">
-                <label>
-                  Edit Nicknames:<br />
+            <div className="card mt-4 settings-card">
+              <form className="card-body mx-auto" onSubmit={this.handleFormSubmit}>
+                <div className="form-group">
+                  <h3>Name</h3>
+                  <input className="form-control" type='text' name="realName" value={this.state.realName} onChange={this.handleInputChange} />
+                </div>
+                <div className="form-group">
+                  <h3>
+                    Nicknames
+                  </h3>
                   {this.state.nicknames.map((nickname, idx) => (
-                    <div  key={idx}>
+                    <div className="input-group mb-2" key={idx}>
                       <input
-                        className="nick-name"
+                        className="form-control"
                         type="text"
                         placeholder={`Nickname #${idx + 1}`}
                         value={nickname.name}
                         onChange={this.handleNickNameChange(idx)}
                       />
-                      <button className="nick-name-button small" type="button" onClick={this.handleRemoveNickname(idx)}>-</button>
+                      <div className="input-group-append">
+                        <button className="btn btn-danger" type="button" onClick={this.handleRemoveNickname(idx)}>X</button>
+                      </div>
                     </div>
                   ))}
-                  <button type="button" onClick={this.handleAddnickname} className="small" id="nick-name-button">Add Nickname</button>
-                </label>
-                  </div>
-                <br />
-                <label className="add-network-label">
-                  Add Network:<br />
+                  <button type="button" onClick={this.handleAddnickname} className="btn btn-primary">Add Nickname</button>
+                </div>
+                <div className="form-group">
+                  <h3>
+                    Networks
+                  </h3>
                   <p>
                     Warning: Private and secret functionality is currently under development.
-                  </p> 
+                  </p>
                   {this.state.socialNetworks.map((network, idx) => (
-                    <div key={idx}>
-                      <select value={network.networkName} name="networkName" onChange={this.handleNetworkChange(idx)}>
+                    <div className="form-row mb-3" key={idx}>
+                      <select className="form-control col-3 mr-1 " value={network.networkName} name="networkName" onChange={this.handleNetworkChange(idx)}>
                         <option default value="facebook">Facebook</option>
                         <option value="twitter">Twitter</option>
                         <option value="snapchat">Snapchat</option>
@@ -208,28 +211,27 @@ class Settings extends Component {
                         <option value="xbox">Xbox</option>
                         <option value="playstation">Playstation</option>
                       </select>
-                      <select value={network.privacy} name="privacy" onChange={this.handleNetworkChange(idx)}>
+                      <select className="form-control col-2 mr-1" value={network.privacy} name="privacy" onChange={this.handleNetworkChange(idx)}>
                         <option value='public'>Public</option>
                         <option default value='private'>Private</option>
                         <option value='secret'>Secret</option>
                       </select>
                       {this.getInputType(network, idx)}
-                      <button type="button" id="remove-network-button" onClick={this.handleRemoveNetwork(idx)} className='small'>-</button>
+                      <button className='btn btn-danger ml-1' type="button" onClick={this.handleRemoveNetwork(idx)}>X</button>
                     </div>
                   ))}
-                  <button className="add-network" type="button" onClick={this.handleAddNetwork}>Add Network</button>
-                </label>
-                <br />
-                <input className="submit-button-network" type="submit" value="Save"/>
+                  <button className="btn btn-primary" type="button" onClick={this.handleAddNetwork}>Add Network</button>
+                </div>
+                <input className="btn btn-success" type="submit" value="Save" />
                 <br/>
                 <br/>
                 <br/>
-              <input className="delete-button" onClick={this.handleFormDeleteSubmit.bind(this)} type="submit" value="Delete My Account"/>
+                <input className="btn btn-danger" onClick={this.handleFormDeleteSubmit.bind(this)} type="submit" value="Delete My Account" />
               </form>
             </div>
           ) : (
-            <p>Loading</p>
-          )}
+              <p>Loading</p>
+            )}
         </div>
       )
     }
