@@ -11,6 +11,16 @@ class NetworkTag extends Component {
     function setUpUrl(url) {
       if (network === 'twitter') return `http://twitter.com/${username}`
       if (network === 'twitch') return `http://twitch.tv/${username}`
+      if (network === 'xbox') return `https://account.xbox.com/en-us/Profile?GamerTag=${username}`
+      if (network === 'instagram') return `https://www.instagram.com/${username}`
+      if (network === 'reddit') return `https://www.reddit.com/user/${username}`
+      if (network === 'tumblr') return `https://${username}.tumblr.com`
+      if (network === 'bandcamp') return `https://${username}.bandcamp.com/`
+      if (network === 'medium') return `https://medium.com/@${username}`
+      if (network === 'soundcloud') return `https://soundcloud.com/${username}`
+      if (network === 'deviantart') return `https://${username}.deviantart.com/`
+      if (network === 'pinterest') return `https://www.pinterest.com/${username}/`
+      if (network === 'github') return `https://github.com/${username}`
       return insertHttpsIfMissing(url)
     }
 

@@ -1,14 +1,14 @@
 .network-tag-container {
   /* background-color: lavenderblush Do not change. Done programmatically in jsx file*/
   display: inline-block;
-  margin: 3px;
-  width: 200px; 
+  width: 230px; 
+  /* Could use percentages in width */
   padding: 14px;
 }
 
 .network-tag-text {
   /* color: lavenderblush Do not change. Done programmatically in jsx file */
-  line-height: 40px;
+  line-height: 48px;
   font-family: Arial;
   color: textcolor; 
   font-size: 4vb; 

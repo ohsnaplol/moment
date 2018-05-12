@@ -5,21 +5,21 @@ import Autocomplete from 'react-autocomplete'
 
 class Search extends Component {
   state = {
-    value : '',
+    value: '',
     results: []
   };
 
   getInfo = (query) => {
     if (query.trim()) {
       API.getUserByNames(query.trim())
-      .then((data) => {
-        this.setState({
-          results: data.data
+        .then((data) => {
+          this.setState({
+            results: data.data
+          })
         })
-      })
-      .catch(err => {
-        console.log(err)
-      })
+        .catch(err => {
+          console.log(err)
+        })
     } else {
       this.setState({
         results: []
@@ -37,30 +37,33 @@ class Search extends Component {
 
   render() {
     return (
-      <Autocomplete
-        value= {this.state.value}
-        renderItem= {(item, isHighlighted) => 
-          <a href={`/profile/${item._id}`} key={item._id}>
-            <div style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
-              <p>{item.realName}</p>
-            </div>
-          </a>
-        }
-        getItemValue={results => results.email}
-        onChange={this.handleInputChange}
-        items= {this.state.results}
-        menuStyle={{
-          borderRadius: '3px',
-          boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
-          background: 'rgba(255, 255, 255)',
-          padding: '2px 0',
-          fontSize: '90%',
-          position: 'fixed',
-          overflow: 'auto',
-          zIndex: '10',
-          maxHeight: '50%', // TODO: don't cheat, let it flow to the bottom
-        }}
-      />
+      <div className="form-inline">
+        <Autocomplete
+          value={this.state.value}
+          renderItem={(item, isHighlighted) =>
+            <a href={`/profile/${item._id}`} key={item._id}>
+              <div style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
+                <p>{item.realName}</p>
+              </div>
+            </a>
+          }
+          getItemValue={results => results.email}
+          onChange={this.handleInputChange}
+          items={this.state.results}
+          inputProps={{placeholder: 'Search'}}
+          menuStyle={{
+            borderRadius: '3px',
+            boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
+            background: 'rgba(255, 255, 255)',
+            padding: '2px 0',
+            fontSize: '90%',
+            position: 'fixed',
+            overflow: 'auto',
+            zIndex: '10',
+            maxHeight: '50%', // TODO: don't cheat, let it flow to the bottom
+          }}
+        />
+      </div>
     )
   }
 };

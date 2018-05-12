@@ -18,39 +18,4 @@
 }
 .scoop-div {
     position: relative;
-
-}
-
-.follow-div {
-    max-width: 702px;
-    margin: auto;
-    height: 100%;
-
-}
-
-.solid-moment-home {
-    color: #1c799a;
-    text-align: center;
-    font-family: 'Shadows Into Light Two', cursive;
-    position: absolute;
-    top: 10px;
-    font-size: 75px;
-    left: 300px;
-    top: 350px;
-    font-size: 51px;
-    left: 725px;
-}
-.moment-faded-home {
-    color: #104659;
-    text-align: center;
-    font-family: 'Shadows Into Light Two', cursive;
-    position: absolute;
-    top: 275px;
-    left: 675px;
-    font-size: 100px;
-    opacity: 0.1;
-}
-
-.followers-collection {
-    margin-top: 80px;
 }

@@ -8,8 +8,8 @@ import registerServiceWorker from './registerServiceWorker';
 // testing react alert, setting up Provider/optional config
 const options = {
     positon: 'bottom center',
-    timeout: 5000,
-    offset: '30px',
+    timeout: 2000,
+    offset: '60px',
     transition: 'scale'
 }
 ReactDOM.render(

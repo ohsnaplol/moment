@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 class Home extends Component {
   constructor() {
     super()
-    this.state= {
+    this.state = {
       _id: '',
       followerData: []
     }
@@ -33,7 +33,7 @@ class Home extends Component {
     })
     Promise.all(promiseQueue).then((response) => {
       followerObject = response.filter(item => item.data).map(element => {
-          return element.data
+        return element.data
       })
       this.setState({
         followerData: followerObject
@@ -44,52 +44,48 @@ class Home extends Component {
   componentDidMount() {
     if (this.props.uid) {
       API.getUser(this.props.uid)
-      .then(response => {
-        this.setState(response.data)
-        this.getFollowerData()
-      })
-      .catch(err => {
-        console.log(err)
-      })
+        .then(response => {
+          this.setState(response.data)
+          this.getFollowerData()
+        })
+        .catch(err => {
+          console.log(err)
+        })
     }
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.uid) {
       API.getUser(nextProps.uid)
-      .then(response => {
-        this.setState(response.data)
-        this.getFollowerData()
-      })
-      .catch(err => {
-        console.log(err)
-      })
+        .then(response => {
+          this.setState(response.data)
+          this.getFollowerData()
+        })
+        .catch(err => {
+          console.log(err)
+        })
     }
   }
 
   render() {
     return (
-      <div className='followers-collection'>
-        {this.props.loggedIn && this.state.followerData ? (
-          <div className="follow-div">
+      <div className='container'>
+        {this.props.loggedIn && this.state.followerData && (
+          <div className="mt-4">
             {this.state.followerData.map((user, idx) => (
-              <div key={idx}>
-                <Link to={'/profile/'+user._id}><h2>{user.realName}</h2></Link>
-                {user.socialNetworks.filter(function(network) {
+              <div className="mb-3" key={idx}>
+                <Link to={'/profile/' + user._id}><h2>{user.realName}</h2></Link>
+                {user.socialNetworks.filter(function (network) {
                   // TODO: (Important) this will only display public profiles
                   // even though the client still technically receives the data.
                   // This is a temporary solution for demonstration purposes
                   // This MUST be fixed or else private/secret data isn't really private.
                   return network.privacy === 'public'
                 }).map((network, id) => (
-                  <NetworkTag key={id} network={network.networkName} username={network.userName} url={network.url}/>
+                  <NetworkTag key={id} network={network.networkName} username={network.userName} url={network.url} />
                 ))}
               </div>
             ))}
-          </div>
-        ) : (
-          <div>
-            <h1>loading</h1>
           </div>
         )}
       </div>
