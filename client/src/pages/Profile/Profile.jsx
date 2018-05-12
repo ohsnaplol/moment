@@ -98,9 +98,15 @@ class Profile extends Component {
       // Show Follow, Add Friend buttons
       return (
         <div>
-          <button className="follow-button" onClick={() => this.followButton()}>
-            {this.state.viewerIsFollowing ? ('Unfollow') : ('Follow')}
-          </button>
+          {this.state.viewerIsFollowing ? 
+            <button className="btn btn-primary" onClick={() => this.followButton()}>
+              Following
+            </button>
+            : 
+            <button className="btn btn-outline-primary" onClick={() => this.followButton()}>
+              Follow
+            </button>
+          }
           {/* <button onClick={this.friendButton()}>{this.state.addFriendText}</button> */}
         </div>
       )
@@ -110,13 +116,13 @@ class Profile extends Component {
   render() {
     return (
       <div className="container">
-        {this.state._id ? (
-          <div>
+        {this.state._id && (
+          <div className="mt-4">
             <h1>{this.state.realName}</h1>
             {this.setupSocialButtons()}
             <h2>Also known as:
                 {this.state.nicknames.map((nickname, idx) => (
-                <span key={idx}> {nickname.name}</span>
+                <span key={idx}>{idx === 0 && <span> </span>}{idx > 0 && <span>, </span>}{nickname.name}</span>
               ))}
             </h2>
             {this.state.socialNetworks.filter((network) => {
@@ -137,9 +143,7 @@ class Profile extends Component {
                 <NetworkTag key={idx} network={network.networkName} username={network.userName} url={network.url} />
               ))}
           </div>
-        ) : (
-            <p>Loading</p>
-          )}
+        )}
       </div>
     )
   }

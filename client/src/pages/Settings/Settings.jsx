@@ -152,7 +152,7 @@ class Settings extends Component {
     } else {
       return (
         <div className="container">
-          {this.state._id ? (
+          {this.state._id && (
             <div className="card mt-4 mb-4 settings-card">
               <form className="card-body mx-auto" onSubmit={this.handleFormSubmit}>
                 <div className="form-group">
@@ -229,9 +229,7 @@ class Settings extends Component {
                 <input className="btn btn-danger" onClick={this.handleFormDeleteSubmit.bind(this)} type="submit" value="Delete My Account" />
               </form>
             </div>
-          ) : (
-              <p>Loading</p>
-            )}
+          )}
         </div>
       )
     }
