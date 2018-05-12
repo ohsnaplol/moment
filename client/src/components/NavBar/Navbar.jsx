@@ -62,10 +62,10 @@ class Navbar extends Component {
                 <ul className="navbar-nav mx-auto">
                   <SearchBar />
                   <Link to="/" className="nav-item">
-                    <li className="nav-link">login</li>
+                    <li className="nav-link">Login</li>
                   </Link>
-                  <Link to="/signup" className="btn btn-link">
-                    <li className="nav-link">sign up</li>
+                  <Link to="/signup" className="nav-item">
+                    <li className="nav-link">Sign up</li>
                   </Link>
                 </ul>
               )}
