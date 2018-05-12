@@ -153,7 +153,7 @@ class Settings extends Component {
       return (
         <div className="container">
           {this.state._id ? (
-            <div className="card mt-4 settings-card">
+            <div className="card mt-4 mb-4 settings-card">
               <form className="card-body mx-auto" onSubmit={this.handleFormSubmit}>
                 <div className="form-group">
                   <h3>Name</h3>
