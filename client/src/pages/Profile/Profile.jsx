@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import API from "../../utils/API"
 import { withRouter } from 'react-router';
 import NetworkTag from '../../components/NetworkTag'
-import "./style.css";
+// import "./style.css";
 
 
 class Profile extends Component {

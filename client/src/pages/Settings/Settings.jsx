@@ -3,7 +3,7 @@ import { withRouter } from 'react-router'
 import { Redirect } from 'react-router-dom'
 import { withAlert } from 'react-alert'
 import API from '../../utils/API'
-import "./style.css";
+// import "./style.css";
 
 
 
@@ -21,7 +21,7 @@ class Settings extends Component {
     API.update(this.state)
       .then(response => {
         console.log('upload success')
-        this.props.alert.show(<div className="error-alert">Saved!</div>)
+        this.props.alert.show(<div>Saved!</div>)
       })
       .catch(err => {
         console.log('Error in handleFormSubmit in Settings.jsx: ' + err)
@@ -128,8 +128,13 @@ class Settings extends Component {
       case 'reddit':
       case 'tumblr':
       case 'bandcamp':
+      case 'soundcloud':
+      case 'deviantart':
+      case 'pinterest':
+      case 'github':
         return <input className="form-control col" type='text' placeholder='Username' value={network.userName} name="userName" onChange={this.handleNetworkChange(idx)} />
       case 'twitter':
+      case 'medium' :
         return (
           <input className="form-control col" type='text' placeholder='@' value={network.userName} name="userName" onChange={this.handleNetworkChange(idx)} />
         )

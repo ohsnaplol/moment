@@ -44,7 +44,7 @@ class Login extends Component {
         console.log("Username or password incorrect")
         // test unknown user react alert
         // pass component as a message
-        this.props.alert.show(<div className="error-alert">Username or password incorrect</div>)
+        this.props.alert.show(<div>Username or password incorrect</div>)
         // alert("Username or password incorrect")
         console.log('Error in login handleFormSubmit ' + err)
       })
