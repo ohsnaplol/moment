@@ -94,21 +94,19 @@ class Profile extends Component {
       // Show Follow, Add Friend buttons
       return (
         <div>
-          {this.state.viewerIsFollowing !== undefined ? (
+          {this.state.viewerIsFollowing !== undefined && (
             <div>
               {this.state.viewerIsFollowing ? (
-                <button className="btn btn-primary" onClick={() => this.followButton()}>
+                <button className="btn btn-primary mt-1" onClick={() => this.followButton()}>
                   Following
                 </button>
               ) : (
-                  <button className="btn btn-outline-primary" onClick={() => this.followButton()}>
+                  <button className="btn btn-outline-primary mt-1" onClick={() => this.followButton()}>
                     Follow
                 </button>
                 )}
             </div>
-          ) : (
-              <div style={{ marginBottom: '46px' }} />
-            )}
+          )}
           {/* <button onClick={this.friendButton()}>{this.state.addFriendText}</button> */}
         </div>
       )
@@ -120,8 +118,14 @@ class Profile extends Component {
       <div className="container">
         {this.state._id && (
           <div className="mt-4">
-            <h1>{this.state.realName}</h1>
-            {this.setupSocialButtons()}
+            <div className="row">
+              <div className="col-sm-8">
+                <h1>{this.state.realName}</h1>
+              </div>
+              <div className="col-sm-4">
+                {this.setupSocialButtons()}
+              </div>
+            </div>
             {/* Only show nicknames section if they have any */}
             {this.state.nicknames.length !== 0 && (
               <h2>Also known as:
