@@ -130,23 +130,25 @@ class Profile extends Component {
                 ))}
               </h2>
             )}
-            {this.state.socialNetworks.filter((network) => {
-              // TODO: (Important) this will only display public profiles
-              // even though the client still technically receives the data.
-              // This is a temporary solution for demonstration purposes.
-              // This MUST be fixed or else private/secret data isn't really private.
+            <div className="mt-3">
+              {this.state.socialNetworks.filter((network) => {
+                // TODO: (Important) this will only display public profiles
+                // even though the client still technically receives the data.
+                // This is a temporary solution for demonstration purposes.
+                // This MUST be fixed or else private/secret data isn't really private.
 
-              // If I'm looking at my own profile, show all networks, including private/secret
-              if (this.state._id === this.props.viewer) {
-                return true
-              } else {
-                // otherwise, only show public data until we get friends working
-                return network.privacy === 'public'
-              }
-            }).map((network, idx) =>
-              (
-                <NetworkTag key={idx} network={network.networkName} username={network.userName} url={network.url} />
-              ))}
+                // If I'm looking at my own profile, show all networks, including private/secret
+                if (this.state._id === this.props.viewer) {
+                  return true
+                } else {
+                  // otherwise, only show public data until we get friends working
+                  return network.privacy === 'public'
+                }
+              }).map((network, idx) =>
+                (
+                  <NetworkTag key={idx} network={network.networkName} username={network.userName} url={network.url} />
+                ))}
+            </div>
           </div>
         )}
       </div>
