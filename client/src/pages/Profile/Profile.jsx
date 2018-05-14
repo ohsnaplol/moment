@@ -9,12 +9,7 @@ class Profile extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      realName: '',
-      nicknames: [],
-      viewerIsFollowing: false,
-      viewerIsFriend: false,
-      viewerFollowingList: [],
-      viewerFriendList: []
+      viewerIsFollowing: undefined,
     }
   }
 
@@ -98,15 +93,19 @@ class Profile extends Component {
       // Show Follow, Add Friend buttons
       return (
         <div>
-          {this.state.viewerIsFollowing ? 
-            <button className="btn btn-primary" onClick={() => this.followButton()}>
-              Following
+          {this.state.viewerIsFollowing !== undefined && (
+            <div>
+              {this.state.viewerIsFollowing ?
+                <button className="btn btn-primary" onClick={() => this.followButton()}>
+                  Following
             </button>
-            : 
-            <button className="btn btn-outline-primary" onClick={() => this.followButton()}>
-              Follow
+                :
+                <button className="btn btn-outline-primary" onClick={() => this.followButton()}>
+                  Follow
             </button>
-          }
+              }
+            </div>
+          )}
           {/* <button onClick={this.friendButton()}>{this.state.addFriendText}</button> */}
         </div>
       )
