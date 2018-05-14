@@ -10,6 +10,7 @@ class Profile extends Component {
     super(props)
     this.state = {
       viewerIsFollowing: undefined,
+      nicknames: undefined
     }
   }
 
@@ -93,19 +94,21 @@ class Profile extends Component {
       // Show Follow, Add Friend buttons
       return (
         <div>
-          {this.state.viewerIsFollowing !== undefined && (
+          {this.state.viewerIsFollowing !== undefined ? (
             <div>
-              {this.state.viewerIsFollowing ?
+              {this.state.viewerIsFollowing ? (
                 <button className="btn btn-primary" onClick={() => this.followButton()}>
                   Following
-            </button>
-                :
-                <button className="btn btn-outline-primary" onClick={() => this.followButton()}>
-                  Follow
-            </button>
-              }
+                </button>
+              ) : (
+                  <button className="btn btn-outline-primary" onClick={() => this.followButton()}>
+                    Follow
+                </button>
+                )}
             </div>
-          )}
+          ) : (
+              <div style={{ marginBottom: '46px' }} />
+            )}
           {/* <button onClick={this.friendButton()}>{this.state.addFriendText}</button> */}
         </div>
       )
@@ -119,11 +122,14 @@ class Profile extends Component {
           <div className="mt-4">
             <h1>{this.state.realName}</h1>
             {this.setupSocialButtons()}
-            <h2>Also known as:
+            {/* Only show nicknames section if they have any */}
+            {this.state.nicknames.length !== 0 && (
+              <h2>Also known as:
                 {this.state.nicknames.map((nickname, idx) => (
-                <span key={idx}>{idx === 0 && <span> </span>}{idx > 0 && <span>, </span>}{nickname.name}</span>
-              ))}
-            </h2>
+                  <span key={idx}>{idx === 0 && <span> </span>}{idx > 0 && <span>, </span>}{nickname.name}</span>
+                ))}
+              </h2>
+            )}
             {this.state.socialNetworks.filter((network) => {
               // TODO: (Important) this will only display public profiles
               // even though the client still technically receives the data.
