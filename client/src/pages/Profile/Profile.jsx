@@ -101,13 +101,13 @@ class Profile extends Component {
                   Following
                 </button>
               ) : (
-                <button className="btn btn-outline-primary" onClick={() => this.followButton()}>
+                <button className="btn btn-outline-primary mr-2" onClick={() => this.followButton()}>
                   Follow
                 </button>
                 )}
-              <button className="btn btn-primary" type="button" disabled > Add Friend</button >
             </div>
           )}
+          <button className="btn btn-primary" type="button" disabled > Add Friend</button >
         </div >
       )
     }
