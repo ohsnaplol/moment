@@ -7,10 +7,7 @@ import { Link } from 'react-router-dom'
 class Home extends Component {
   constructor() {
     super()
-    this.state = {
-      _id: '',
-      followerData: []
-    }
+    this.state = {}
   }
 
   getUserData(id) {
@@ -72,20 +69,29 @@ class Home extends Component {
       <div className='container'>
         {this.props.loggedIn && this.state.followerData && (
           <div className="mt-4">
-            {this.state.followerData.map((user, idx) => (
-              <div className="mb-3" key={idx}>
-                <Link to={'/profile/' + user._id}><h2>{user.realName}</h2></Link>
-                {user.socialNetworks.filter(function (network) {
-                  // TODO: (Important) this will only display public profiles
-                  // even though the client still technically receives the data.
-                  // This is a temporary solution for demonstration purposes
-                  // This MUST be fixed or else private/secret data isn't really private.
-                  return network.privacy === 'public'
-                }).map((network, id) => (
-                  <NetworkTag key={id} network={network.networkName} username={network.userName} url={network.url} />
-                ))}
-              </div>
-            ))}
+            {this.state.followerData.length === 0 ? (
+              <h2>
+                You aren't following anyone on Scoop yet. 
+                Look up someone you know and follow them!
+              </h2>
+            ) : (
+                <div>
+                  {this.state.followerData.map((user, idx) => (
+                    <div className="mb-3" key={idx}>
+                      <Link to={'/profile/' + user._id}><h2>{user.realName}</h2></Link>
+                      {user.socialNetworks.filter(function (network) {
+                        // TODO: (Important) this will only display public profiles
+                        // even though the client still technically receives the data.
+                        // This is a temporary solution for demonstration purposes
+                        // This MUST be fixed or else private/secret data isn't really private.
+                        return network.privacy === 'public'
+                      }).map((network, id) => (
+                        <NetworkTag key={id} network={network.networkName} username={network.userName} url={network.url} />
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              )}
           </div>
         )}
       </div>
