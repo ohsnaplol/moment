@@ -11,13 +11,16 @@ class Home extends Component {
   }
 
   getUserData(id) {
-    API.getUser(id)
+    if(id) {
+      API.getUser(id)
       .then(response => {
         return response.data
       })
       .catch(err => {
         console.log(err)
       })
+    }
+
   }
 
   // This should be changed to a single call as opposed to
@@ -79,13 +82,7 @@ class Home extends Component {
                   {this.state.followerData.map((user, idx) => (
                     <div className="mb-3" key={idx}>
                       <Link to={'/profile/' + user._id}><h2>{user.realName}</h2></Link>
-                      {user.socialNetworks.filter(function (network) {
-                        // TODO: (Important) this will only display public profiles
-                        // even though the client still technically receives the data.
-                        // This is a temporary solution for demonstration purposes
-                        // This MUST be fixed or else private/secret data isn't really private.
-                        return network.privacy === 'public'
-                      }).map((network, id) => (
+                      {user.socialNetworks.map((network, id) => (
                         <NetworkTag key={id} network={network.networkName} username={network.userName} url={network.url} />
                       ))}
                     </div>
