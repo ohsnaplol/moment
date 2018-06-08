@@ -188,9 +188,6 @@ class Settings extends Component {
                   <h3>
                     Networks
                   </h3>
-                  <p>
-                    Warning: Private and secret functionality is currently under development.
-                  </p>
                   {this.state.socialNetworks.map((network, idx) => (
                     <div className="form-row mb-3" key={idx}>
                       <select className="form-control col-3 mr-1 " value={network.networkName} name="networkName" onChange={this.handleNetworkChange(idx)}>
