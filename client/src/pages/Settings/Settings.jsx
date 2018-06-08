@@ -215,7 +215,7 @@ class Settings extends Component {
                       </select>
                       <select className="form-control col-2 mr-1" value={network.privacy} name="privacy" onChange={this.handleNetworkChange(idx)}>
                         <option value='public'>Public</option>
-                        <option default value='private'>Private</option>
+                        <option default value='private'>Friends</option>
                         <option value='secret'>Secret</option>
                       </select>
                       {this.getInputType(network, idx)}
