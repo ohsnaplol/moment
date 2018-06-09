@@ -16,22 +16,20 @@ module.exports = {
       if (err || dbModel == null) {
         res.json(err)
       } else {
-        // If viewer requests info on someone else, remove secret networks
-        if (req.params.id != req.user._id) {
-          var filteredNetworks
-          filteredNetworks = dbModel.socialNetworks.filter(function (i) {
-            if (i.privacy == 'private') {
-              if (!dbModel.friends.includes(req.user._id)) {
-                return false
-              } else {
-                return true
-              }
-            }
-            // always remove secret networks
-            return i.privacy !== 'secret'
-          })
-          dbModel.socialNetworks = filteredNetworks
-        }
+        let filteredNetworks
+        filteredNetworks = dbModel.socialNetworks.filter(function (i) {
+          // Show everything if user viewing themself
+          if (req.user && req.params.id == req.user._id) {
+            return true
+          }
+          // Show private profiles if viewer is target's friend
+          if (req.user && i.privacy === 'private') {
+            return dbModel.friends.includes(req.user._id)
+          }
+          // Always show public profiles
+          return i.privacy === 'public'
+        })
+        dbModel.socialNetworks = filteredNetworks
         res.json(dbModel)
       }
     })
