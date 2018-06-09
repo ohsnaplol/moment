@@ -188,9 +188,6 @@ class Settings extends Component {
                   <h3>
                     Networks
                   </h3>
-                  <p>
-                    Warning: Private and secret functionality is currently under development.
-                  </p>
                   {this.state.socialNetworks.map((network, idx) => (
                     <div className="form-row mb-3" key={idx}>
                       <select className="form-control col-3 mr-1 " value={network.networkName} name="networkName" onChange={this.handleNetworkChange(idx)}>
@@ -218,7 +215,7 @@ class Settings extends Component {
                       </select>
                       <select className="form-control col-2 mr-1" value={network.privacy} name="privacy" onChange={this.handleNetworkChange(idx)}>
                         <option value='public'>Public</option>
-                        <option default value='private'>Private</option>
+                        <option default value='private'>Friends</option>
                         <option value='secret'>Secret</option>
                       </select>
                       {this.getInputType(network, idx)}
