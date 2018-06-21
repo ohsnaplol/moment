@@ -183,6 +183,8 @@ class Settings extends Component {
                     </div>
                   ))}
                   <button type="button" onClick={this.handleAddnickname} className="btn btn-primary">Add Nickname</button>
+                  <h3>Location</h3>
+                  <input className="form-control" type="text" name="location" value={this.state.location} onChange={this.handleInputChange} />
                 </div>
                 <div className="form-group">
                   <h3>

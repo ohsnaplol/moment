@@ -10,6 +10,7 @@ const userSchema = new Schema({
   }],
   email: { type: String, required: true },
   password: { type: String, required: true},
+  location: {type: String },
   socialNetworks: [{
     _id: false,
     networkName: { type: String },
