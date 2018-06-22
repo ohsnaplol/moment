@@ -121,6 +121,7 @@ class Profile extends Component {
             <div className="row">
               <div className="col-9">
                 <h1>{this.state.realName}</h1>
+                <span>Location: {this.state.location}</span>
               </div>
               <div className="col-lg-3">
                 {this.setupSocialButtons()}
