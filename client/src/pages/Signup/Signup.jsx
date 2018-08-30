@@ -39,8 +39,9 @@ class Signup extends Component {
       }).then(res => {
         console.log('api create user res is ' + JSON.stringify(res))
         if (res.data.error) {
-          console.log('entry exists')
+          this.props.alert.show('A user with this email already exists.')
         } else {
+          this.props.alert.show('Account successfully created.')
           this.setState({ //redirect to login page (try to)
             redirectTo: '/'
           })
