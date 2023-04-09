@@ -1,3 +1,4 @@
+require("dotenv").config()
 const express = require("express")
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
@@ -10,7 +11,6 @@ const routes = require("./routes")
 const path = require('path')
 const app = express()
 const PORT = process.env.PORT || 3001
-require("dotenv").config()
 // Serve up static assets
 app.use(express.static(path.join(__dirname, "client", "build")))
 app.use(morgan('dev'))
