@@ -2,20 +2,18 @@ const mongoose = require("mongoose");
 const db = require("../models");
 mongoose.Promise = global.Promise;
 // This file empties the Books collection and inserts the books below
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/moment",
-  {
-    useMongoClient: true
-  }
-);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/moment", {
+  useNewUrlParser: true
+});
 
-const Users = [
+const UsersSeed = [
   {
     realName: "Giancarlo",
     nicknames: [{
       'name':'ginny'
     }],
     email: "456@456.com",
+    password: "123456",
     socialNetworks : [{
       networkName: "Snapchat",
       userName: "Pilzy",
@@ -36,8 +34,11 @@ const Users = [
 
   {
     realName: "Marcello",
-    nicknames: "",
+    nicknames: [{
+      'name':'marvello'
+    }],
     email: "123@123.com",
+    password: "123456",
     socialNetworks : [{
       networkName: "Snapchat",
       userName: "Marce10",
@@ -57,8 +58,11 @@ const Users = [
 
   {
     realName: "Yesenia",
-    nicknames: "",
+    nicknames: [{
+      'name':'yessy'
+    }],
     email: "345@345.com",
+    password: "123456",
     socialNetworks : [{
       networkName: "Snapchat",
       userName: "Yeseni@",
@@ -79,8 +83,9 @@ const Users = [
 
   {
     realName: "Keissy",
-    nicknames: "",
+    nicknames: [{}],
     email: "567@567.com",
+    password: "123456",
     socialNetworks : [{
       networkName: "Snapchat",
       userName: "KC3PO",
@@ -101,16 +106,14 @@ const Users = [
   
 ];
 
-function newFunction() {
-  db.Users
-    .remove({})
-    .then(() => db.Users.collection.insertMany(UsersSeed))
-    .then(data => {
-      console.log(data.insertedIds.length + " records inserted!");
-      process.exit(0);
-    })
-    .catch(err => {
-      console.error(err);
-      process.exit(1);
-    });
-}
+db.User
+  .deleteMany({})
+  .then(() => db.User.insertMany(UsersSeed))
+  .then(data => {
+    console.log(data + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
