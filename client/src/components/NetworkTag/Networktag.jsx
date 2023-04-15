@@ -1,41 +1,54 @@
 import React, { Component } from 'react'
-// eslint-disable-next-line
-import brands from '@fortawesome/fontawesome-free-brands'
+// optimize later
+import { faBandcamp, faTwitter, faTwitch, faXbox, faInstagram, faReddit, faTumblr, faMedium, faSoundcloud, faDeviantart ,faPinterest, faGithub, faFontAwesome, faFacebook, faSnapchatGhost } from '@fortawesome/fontawesome-free-brands'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import "./style.css"
 
 class NetworkTag extends Component {
   render() {
-    const { network, username, url } = this.props
+    const { network, username } = this.props
 
-    function setUpUrl(url) {
-      if (network === 'twitter') return `http://twitter.com/${username}`
-      if (network === 'twitch') return `http://twitch.tv/${username}`
-      if (network === 'xbox') return `https://account.xbox.com/en-us/Profile?GamerTag=${username}`
-      if (network === 'instagram') return `https://www.instagram.com/${username}`
-      if (network === 'reddit') return `https://www.reddit.com/user/${username}`
-      if (network === 'tumblr') return `https://${username}.tumblr.com`
-      if (network === 'bandcamp') return `https://${username}.bandcamp.com/`
-      if (network === 'medium') return `https://medium.com/@${username}`
-      if (network === 'soundcloud') return `https://soundcloud.com/${username}`
-      if (network === 'deviantart') return `https://${username}.deviantart.com/`
-      if (network === 'pinterest') return `https://www.pinterest.com/${username}/`
-      if (network === 'github') return `https://github.com/${username}`
-      return insertHttpsIfMissing(url)
+    function url() {
+      if (network === 'Facebook') return `https://www.facebook.com/${username}`
+      if (network === 'Snapchat') return `https://www.snapchat.com/add/${username}`
+      if (network === 'Twitter') return `http://twitter.com/${username}`
+      if (network === 'Twitch') return `http://twitch.tv/${username}`
+      if (network === 'Xbox') return `https://account.xbox.com/en-us/Profile?GamerTag=${username}`
+      if (network === 'Instagram') return `https://www.instagram.com/${username}`
+      if (network === 'Reddit') return `https://www.reddit.com/user/${username}`
+      if (network === 'Tumblr') return `https://${username}.tumblr.com`
+      if (network === 'Bandcamp') return `https://${username}.bandcamp.com/`
+      if (network === 'Medium') return `https://medium.com/@${username}`
+      if (network === 'Soundcloud') return `https://soundcloud.com/${username}`
+      if (network === 'Deviantart') return `https://${username}.deviantart.com/`
+      if (network === 'Pinterest') return `https://www.pinterest.com/${username}/`
+      if (network === 'Github') return `https://github.com/${username}`
+      return 'Unknown network'
     }
 
-    function insertHttpsIfMissing(url) {
-      if (url.startsWith('http://') || url.startsWith('https://'))
-        return url
-      else
-        return `http://${url}`
+    function icon() {
+      if (network === 'Facebook') return faFacebook
+      if (network === 'Snapchat') return faSnapchatGhost
+      if (network === 'Twitter') return faTwitter
+      if (network === 'Twitch') return faTwitch
+      if (network === 'Xbox') return faXbox
+      if (network === 'Instagram') return faInstagram
+      if (network === 'Reddit') return faReddit
+      if (network === 'Tumblr') return faTumblr
+      if (network === 'Bandcamp') return faBandcamp
+      if (network === 'Medium') return faMedium
+      if (network === 'Soundcloud') return faSoundcloud
+      if (network === 'Deviantart') return faDeviantart
+      if (network === 'Pinterest') return faPinterest
+      if (network === 'Github') return faGithub      
+      return faFontAwesome
     }
 
-    function snippet(fanetworkname, bgcolor, logocolor, textcolor, text) {
+    function snippet(bgcolor, logocolor, textcolor, text) {
       return (
-        <a href={setUpUrl(url)} target="blank">
+        <a href={url()} target="blank">
           <div style={{ backgroundColor: bgcolor }} className='network-tag-container'>
-            <FontAwesomeIcon color={logocolor} icon={["fab", fanetworkname]} size='3x' />
+            <FontAwesomeIcon color={logocolor} icon={icon()} size='3x' />
             <span style={{ color: textcolor }} className='network-tag-text'>{text}</span>
           </div>
         </a>
@@ -43,89 +56,78 @@ class NetworkTag extends Component {
     }
 
     switch (network) {
-      case 'facebook':
+      case 'Facebook':
         return snippet(
-          'facebook',
           'rgb(59, 89, 152)',
           'white',
           'white',
           'Facebook'
         );
-      case 'snapchat':
+      case 'Snapchat':
         return snippet(
-          'snapchat-ghost',
           'rgb(255, 251, 83',
           'white',
           'black',
           username,
         );
-      case 'twitch':
+      case 'Twitch':
         return snippet(
-          'twitch',
           'rgb(72, 56, 120',
           'white',
           'white',
           username,
         );
-      case 'twitter':
+      case 'Twitter':
         return snippet(
-          'twitter',
           'rgb(29, 161, 242)',
           'white',
           'white',
           username,
         );
-      case 'linkedin':
+      case 'Linkedin':
         return snippet(
-          'linkedin',
           'rgb(0, 119, 181)',
           'white',
           'white',
           'LinkedIn',
         );
-      case 'youtube':
+      case 'Youtube':
         return snippet(
-          'youtube',
           'white',
           'rgb(236, 51, 36)',
           'black',
           username,
         );
-      case 'reddit':
+      case 'Reddit':
         return snippet(
-          'reddit',
           'white',
           'rgb(237, 85, 40)',
           'black',
           username,
         );
-      case 'instagram':
+      case 'Instagram':
         return snippet(
-          'instagram',
           'rgb(229, 221, 210)',
           'rgb(101, 71, 62)',
           'rgb(101, 71, 62)',
           username,
         );
-      case 'tumblr':
+      case 'Tumblr':
         return snippet(
-          'tumblr',
           'rgb(57, 70, 91)',
           'white',
           'white',
           username,
         );
-      case 'flickr':
+      case 'Flickr':
         return snippet(
-          'flickr',
           'rgb(56, 56, 56)',
           'white',
           'white',
           username,
         );
-      case 'steam':
+      case 'Steam':
         return snippet(
-          'steam',
           'black',
           'white',
           'white',
@@ -133,7 +135,6 @@ class NetworkTag extends Component {
         );
       case 'xbox':
         return snippet(
-          'xbox',
           'green',
           'white',
           'white',
@@ -141,7 +142,6 @@ class NetworkTag extends Component {
         );
       case 'playstation':
         return snippet(
-          'playstation',
           'rgb(0, 55, 145)',
           'white',
           'white',
@@ -149,7 +149,6 @@ class NetworkTag extends Component {
         );
       case 'pinterest':
         return snippet(
-          'pinterest',
           'rgb(246, 245, 243)',
           'rgb(189, 8, 28)',
           'black',
@@ -157,7 +156,6 @@ class NetworkTag extends Component {
         );
       case 'google':
         return snippet(
-          'google-plus',
           'white',
           'rgb(204, 79, 64)',
           'black',
@@ -165,7 +163,6 @@ class NetworkTag extends Component {
         );
       case 'github':
         return snippet(
-          'github',
           'rgb(37, 41, 46',
           'white',
           'white',
@@ -173,7 +170,6 @@ class NetworkTag extends Component {
         );
       case 'deviantart':
         return snippet(
-          'deviantart',
           'rgb(75, 91, 78)',
           'rgb(89, 200, 89)',
           'white',
@@ -181,7 +177,6 @@ class NetworkTag extends Component {
         );
       case 'bandcamp':
         return snippet(
-          'bandcamp',
           'rgb(107, 145, 155)',
           'white',
           'white',
@@ -189,7 +184,6 @@ class NetworkTag extends Component {
         );
       case 'soundcloud':
         return snippet(
-          'soundcloud',
           'rgb(238, 97, 43)',
           'white',
           'white',
@@ -197,7 +191,6 @@ class NetworkTag extends Component {
         );
       case 'medium':
         return snippet(
-          'medium',
           'white',
           'black',
           'black',
@@ -205,7 +198,6 @@ class NetworkTag extends Component {
         );
       case 'gitlab':
         return snippet(
-          'gitlab',
           'white',
           'rgb(236, 117, 60)',
           'black',
