@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // optimize later
 import { faBandcamp, faTwitter, faTwitch, faXbox, faInstagram, faReddit, faTumblr, faMedium, faSoundcloud, faDeviantart ,faPinterest, faGithub, faFontAwesome, faFacebook, faSnapchatGhost } from '@fortawesome/fontawesome-free-brands'
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import  { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import "./style.css"
 
 class NetworkTag extends Component {
