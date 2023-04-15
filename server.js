@@ -6,7 +6,6 @@ const dbConnection = require('./db')
 const passport = require('./passport')
 const morgan = require("morgan")
 const bodyParser = require("body-parser")
-const mongoose = require("mongoose")
 const routes = require("./routes")
 const path = require('path')
 const app = express()
@@ -34,9 +33,9 @@ app.use(passport.session()) // calls serializeUser and deserializeUser
 // Add routes, both API and view
 app.use(routes)
 
-app.get("*", (req, res) => {  
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-});
+// app.get("*", (req, res) => {  
+//   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+// });
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
