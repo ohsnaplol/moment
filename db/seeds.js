@@ -14,7 +14,6 @@ const UsersSeed = [
       'name':'ginny'
     }],
     email: "456@456.com",
-    password: "123456",
     socialNetworks : [{
       networkName: "Snapchat",
       userName: "Pilzy",
@@ -39,7 +38,6 @@ const UsersSeed = [
       'name':'marvello'
     }],
     email: "123@123.com",
-    password: "123456",
     socialNetworks : [{
       networkName: "Snapchat",
       userName: "Marce10",
@@ -63,7 +61,6 @@ const UsersSeed = [
       'name':'yessy'
     }],
     email: "345@345.com",
-    password: "123456",
     socialNetworks : [{
       networkName: "Snapchat",
       userName: "Yeseni@",
@@ -86,7 +83,6 @@ const UsersSeed = [
     realName: "Keissy",
     nicknames: [{}],
     email: "567@567.com",
-    password: "123456",
     socialNetworks : [{
       networkName: "Snapchat",
       userName: "KC3PO",
