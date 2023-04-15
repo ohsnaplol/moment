@@ -110,7 +110,7 @@ db.User
   .deleteMany({})
   .then(() => db.User.insertMany(UsersSeed))
   .then(data => {
-    console.log(data + " records inserted!");
+    console.log(data.length + " records inserted!");
     process.exit(0);
   })
   .catch(err => {
